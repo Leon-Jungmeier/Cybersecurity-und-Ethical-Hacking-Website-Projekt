@@ -64,8 +64,7 @@ body::before {
 }
 
 .topbar a:hover {
-  transform: scale(1.2);
-  color: #e1e1ff;
+  color: #bfbfbf;
 }
 a{
   text-decoration: none;
