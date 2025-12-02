@@ -2,8 +2,8 @@
   font-size: 3rem;
   color: #fff;
   position: absolute;
-  top: 50px;
-  left:100px;
+  top: 7%;
+  left:6%;
 }
 body {
   margin: 0;
@@ -19,8 +19,8 @@ body {
 .firstSentence{
   font-size: 1rem;
   position: absolute;
-  top: 220px;
-  left:100px;
+  top: 30%;
+  left:7%;
 }
 .PeoplePicture{
   position: absolute;
@@ -85,7 +85,7 @@ a{
 }
 .passwortBild{
   position: absolute;
-  top: 535px;
-  left:200px;
+  top:70%;
+  left:10%;
   transform:rotate(-17deg);
 }
