@@ -3,8 +3,8 @@
   font-size: 3rem;
   color: #fff;
   position: absolute;
-  top: 50px;
-  left:100px;
+  top: 7%;
+  left:6%;
 }
 /* alles */
 body {
@@ -21,14 +21,14 @@ body {
 .firstSentence{
   font-size: 1rem;
   position: absolute;
-  top: 220px;
-  left:100px;
+  top: 30%;
+  left:7%;
 }
 /* startseite */
 .PeoplePicture{
   position: absolute;
-  top: 275px;
-  left:1250px;
+  top: 30%;
+  left:70%;
 }
 /* alles */
 body::before {
@@ -43,17 +43,17 @@ body::before {
 }
 /* startseite */
 .topbar {
-  position: fixed;        /* bleibt oben kleben */
+  position:absolute;        /* bleibt oben kleben */
   top: 0;
   left: 0;
   width: 100%;            /* voller Bildschirm */
-  height: 60px;           /* Höhe des Balkens */
-  background: #a163ff; /* halbtransparent */
+  height: 40px;           /* Höhe des Balkens */
+  background: #807196; /* halbtransparent */
   backdrop-filter: blur(8px);
   display: flex;          /* Links in einer Reihe */
   align-items: center;    /* vertikal mittig */
-  gap: 40px;              /* Abstand zwischen Links */
-  padding-left: 280px;
+  gap: 20px;              /* Abstand zwischen Links */
+  padding-left: 162px;
   z-index: 9999;          /* über allem */
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
@@ -68,7 +68,7 @@ body::before {
 }
 /* startseite */
 .topbar a:hover {
-  color: #bfbfbf;
+  color: #574a6a;
 }
 /* alles */
 a{
@@ -93,8 +93,8 @@ a{
 /* startseite */
 .passwortBild{
   position: absolute;
-  top: 535px;
-  left:200px;
+  top:70%;
+  left:10%;
   transform:rotate(-17deg);
 }
 /* Was ist Cybersecurity */
