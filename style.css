@@ -11,9 +11,9 @@ body {
   margin: 0;
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
-  background: radial-gradient(circle at top right, rgba(60, 0, 100, 0.4), transparent 40%),
-              radial-gradient(circle at bottom left, rgba(0, 80, 160, 0.3), transparent 50%),
-              linear-gradient(135deg, #070014, #0a0420 60%, #0d022c);
+  background: radial-gradient(circle at top right, rgba(139, 109, 158, 0.4), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(79, 92, 105, 0.3), transparent 50%),
+              linear-gradient(135deg, #291057, #140e2d 60%, #0d022c);
   color: #fff;
   overflow-x: hidden;
 }
@@ -57,22 +57,7 @@ body::before {
   z-index: 9999;          /* über allem */
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-/* startseite */
-.topbar {
-  position: fixed;        /* bleibt oben kleben */
-  top: 0;
-  left: 0;
-  width: 100%;            /* voller Bildschirm */
-  height: 60px;           /* Höhe des Balkens */
-  background: #a163ff; /* halbtransparent */
-  backdrop-filter: blur(8px);
-  display: flex;          /* Links in einer Reihe */
-  align-items: center;    /* vertikal mittig */
-  gap: 40px;              /* Abstand zwischen Links */
-  padding-left: 280px;
-  z-index: 9999;          /* über allem */
-  border-bottom: 1px solid rgba(255,255,255,0.15);
-}
+
 /* startseite */
 .topbar a:hover {
   transform: scale(1.2);
