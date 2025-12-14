@@ -12,8 +12,8 @@ body {
   min-height: 100vh;
   font-family: 'Inter', sans-serif;
   background: radial-gradient(circle at top right, rgba(139, 109, 158, 0.4), transparent 40%),
-              radial-gradient(circle at bottom left, rgba(79, 92, 105, 0.3), transparent 50%),
-              linear-gradient(135deg, #291057, #140e2d 60%, #0d022c);
+              radial-gradient(circle at bottom left, rgba(134, 158, 181, 0.3), transparent 50%),
+              linear-gradient(135deg, #08050c, #140e2d 60%, #070609);
   color: #fff;
   overflow-x: hidden;
 }
@@ -48,7 +48,7 @@ body::before {
   left: 0;
   width: 100%;            /* voller Bildschirm */
   height: 40px;           /* Höhe des Balkens */
-  background: #807196; /* halbtransparent */
+  background: #614d80; /* halbtransparent */
   backdrop-filter: blur(8px);
   display: flex;          /* Links in einer Reihe */
   align-items: center;    /* vertikal mittig */
@@ -57,7 +57,6 @@ body::before {
   z-index: 9999;          /* über allem */
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
-
 /* startseite */
 .topbar a:hover {
   transform: scale(1.2);
