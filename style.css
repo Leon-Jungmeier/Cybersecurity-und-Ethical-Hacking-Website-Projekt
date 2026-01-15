@@ -9,7 +9,7 @@
 /* alles */
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 160vh;
   font-family: 'Inter', sans-serif;
   background: radial-gradient(circle at top right, rgba(139, 109, 158, 0.4), transparent 40%),
               radial-gradient(circle at bottom left, rgba(134, 158, 181, 0.3), transparent 50%),
@@ -53,7 +53,7 @@ body::before {
   display: flex;          /* Links in einer Reihe */
   align-items: center;    /* vertikal mittig */
   gap: 20px;              /* Abstand zwischen Links */
-  padding-left: 162px;
+  padding-left: 220px;
   z-index: 9999;          /* über allem */
   border-bottom: 1px solid rgba(255,255,255,0.15);
 }
@@ -85,7 +85,7 @@ a{
 /* startseite */
 .passwortBild{
   position: absolute;
-  top:70%;
+  top:85%;
   left:10%;
   transform:rotate(-17deg);
 }
@@ -115,9 +115,14 @@ div[id^="II-"], div[id^="III-"], div[id^="IV-"],div[id^="V-"], div[id^="VI-"] {
 }
 
 /* Hover Effekt für Sektionen */
-div[id^="II-"]:hover, div[id^="III-"], div[id^="IV-"],div[id^="V-"], div[id^="VI-"]:hover {
+div[id^="II-"]:hover,
+div[id^="III-"]:hover,
+div[id^="IV-"]:hover,
+div[id^="V-"]:hover,
+div[id^="VI-"]:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Überschriften */
