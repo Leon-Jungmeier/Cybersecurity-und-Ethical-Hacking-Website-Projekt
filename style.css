@@ -28,7 +28,7 @@ body {
 .PeoplePicture{
   position: absolute;
   top: 30%;
-  left:70%;
+  left:65%;
 }
 /* alles */
 body::before {
@@ -72,7 +72,7 @@ a{
 .firstParagraph{
   font-size: large;
   position: absolute;
-  top: 350px;
+  top: 300px;
   left: 100px;
 }
 /* startseite */
