@@ -9,7 +9,7 @@
 /* alles */
 body {
   margin: 0;
-  min-height: 160vh;
+  min-height: 140vh;
   font-family: 'Inter', sans-serif;
   background: radial-gradient(circle at top right, rgba(139, 109, 158, 0.4), transparent 40%),
               radial-gradient(circle at bottom left, rgba(134, 158, 181, 0.3), transparent 50%),
@@ -80,7 +80,7 @@ a{
   font-size: large;
   position: absolute;
   top: 650px;
-  left: 1050px;
+  left: 800px;
 }
 /* startseite */
 .passwortBild{
