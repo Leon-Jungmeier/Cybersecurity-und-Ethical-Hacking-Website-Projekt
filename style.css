@@ -1,89 +1,144 @@
+/* =========================
+   RESET & BASIS
+   ========================= */
 * {
-  margin: 0; /* Entfernt standardmäßige Außenabstände von allen Elementen */
-  padding: 0; /* Entfernt standardmäßige Innenabstände von allen Elementen */
-  box-sizing: border-box; /* Inklusive Padding & Border in der Breite/Höhe des Elements */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: 'Inter', 'Segoe UI', sans-serif; /* Schriftartenreihenfolge für den Body */
-  background: linear-gradient(135deg, #f4f6ff, #eef2ff); /* Hintergrundgradient von hellblau zu leicht lila */
-  color: #1f2937; /* Standard Textfarbe dunkelgrau */
-  line-height: 1.7; /* Zeilenhöhe für bessere Lesbarkeit */
-  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #f4f6ff, #eef2ff);
+  color: #1f2937;
+  line-height: 1.75;
+  overflow-x: hidden;
 }
 
+/* =========================
+   TOPBAR
+   ========================= */
 .topbar {
-  position: sticky; /* Klebt am oberen Rand beim Scrollen */
-  top: 0; /* Positioniert oben im Viewport */
-  width: 100%; /* Nimmt die komplette Breite ein */
-  height: 60px; /* Höhe der Topbar */
-  background: rgba(255, 255, 255, 0.9); /* Weißer Hintergrund mit leichter Transparenz */
-  backdrop-filter: blur(10px); /* Hintergrund unscharf machen (Glass-Effekt) */
-  display: flex; /* Flexbox für Elemente in der Topbar */
-  align-items: center; /* Zentriert Elemente vertikal */
-  justify-content: center; /* Zentriert Elemente horizontal */
-  gap: 25px; /* Abstand zwischen den Elementen */
-  border-bottom: 1px solid #e5e7eb; /* Untere Linie */
-  z-index: 1000; /* Sorgt dafür, dass Topbar über anderen Elementen liegt */
+  position: sticky;
+  top: 0;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
 }
 
 .topbar a {
-  text-decoration: none; /* Entfernt Unterstreichung bei Links */
-  font-weight: 600; /* Etwas dickere Schrift */
-  color: #4f46e5; /* Lila Linkfarbe */
-  transition: color 0.2s ease, transform 0.2s ease; /* Sanfte Übergänge bei Hover */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #4f46e5;
+  letter-spacing: 0.01em;
+  transition: color 0.2s ease;
 }
 
 .topbar a:hover {
-  color: #3730a3; /* Dunklere Farbe beim Hover */
-  transform: translateY(-2px); /* Link bewegt sich leicht nach oben beim Hover */
+  color: #3730a3;
+}
+
+/* =========================
+   STARTSEITE – HERO
+   ========================= */
+.h1-cyra {
+  margin-top: 160px;
+  text-align: center;
 }
 
 .h1-cyra h1 {
-  font-size: 4rem; /* Sehr große Überschrift */
-  background: linear-gradient(90deg, #6366f1, #22d3ee); /* Farbverlauf für Text */
-  -webkit-background-clip: text; /* Clippt Hintergrund nur auf den Text */
-  -webkit-text-fill-color: transparent; /* Text selbst transparent, Hintergrundgradient sichtbar */
-}
-
-.h1-cyra {
-  margin-top: 80px; /* Abstand nach oben */
-  margin-left: 8%; /* Abstand links */
+  font-size: 4.8rem;
+  letter-spacing: -0.03em;
+  background: linear-gradient(90deg, #6366f1, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .firstSentence {
-  margin-left: 8%; /* Abstand links */
-  margin-top: 20px; /* Abstand nach oben */
-  font-size: 1.2rem; /* Schriftgröße leicht größer als Standardtext */
-  color: #4b5563; /* Mittelgraue Farbe */
+  margin: 30px auto 0;
+  max-width: 720px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #4b5563;
 }
 
+/* =========================
+   STARTSEITE – BOXEN & TEXTBEREICHE
+   ========================= */
 .firstParagraph,
 .secondParagraph {
-  max-width: 650px; /* Maximale Breite für besseren Lesefluss */
-  margin: 80px 8%; /* Oben/unten 80px, links/rechts 8% */
-  font-size: 1.05rem; /* Etwas größere Lesbarkeit */
+  max-width: 900px;
+  margin: 60px auto;
+  text-align: center;
+  font-size: 1.08rem;
+  padding: 50px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeUp 0.8s forwards;
 }
 
+.firstParagraph {
+  animation-delay: 0.2s;
+}
+
+.secondParagraph {
+  animation-delay: 0.4s;
+}
+
+.firstParagraph:hover,
+.secondParagraph:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   BILDER
+   ========================= */
 .PeoplePicture,
 .passwortBild {
-  max-width: 400px; /* Maximale Bildbreite */
-  margin: 40px auto; /* 40px Abstand oben/unten, zentriert horizontal */
-  display: block; /* Blockelement, damit margin auto wirkt */
+  display: block;
+  max-width: 600px;
+  margin: 60px auto 140px;
+  filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.06));
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s forwards;
 }
 
+.PeoplePicture {
+  animation-delay: 0.6s;
+}
+
+.passwortBild {
+  animation-delay: 0.8s;
+}
+
+/* =========================
+   CONTENT-SEITEN (II–VI)
+   ========================= */
 div[id^="II-"],
 div[id^="III-"],
 div[id^="IV-"],
 div[id^="V-"],
 div[id^="VI-"] {
-  background: white; /* Weißer Hintergrund */
-  margin: 60px auto; /* 60px Abstand oben/unten, zentriert horizontal */
-  padding: 60px 10%; /* Innenabstand: 60px oben/unten, 10% links/rechts */
-  max-width: 1200px; /* Maximale Breite */
-  border-radius: 20px; /* Abgerundete Ecken */
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05); /* Schatten für 3D-Effekt */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Sanfte Animation bei Hover */
+  background: #ffffff;
+  margin: 100px auto;
+  padding: 80px 6%;
+  max-width: 1400px;
+  border-radius: 24px;
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 div[id^="II-"]:hover,
@@ -91,66 +146,106 @@ div[id^="III-"]:hover,
 div[id^="IV-"]:hover,
 div[id^="V-"]:hover,
 div[id^="VI-"]:hover {
-  transform: translateY(-5px); /* Hebt das Element beim Hover leicht an */
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08); /* Schatten wird stärker */
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
 }
 
+/* =========================
+   TYPOGRAFIE
+   ========================= */
 h1 {
-  font-size: 3rem; /* Große Überschrift */
-  margin-bottom: 30px; /* Abstand nach unten */
-  color: #111827; /* Sehr dunkle Farbe für Kontrast */
+  font-size: 3rem;
+  margin-bottom: 28px;
+  color: #111827;
 }
 
 h2 {
-  font-size: 1.8rem; /* Überschrift mittlerer Größe */
-  margin-bottom: 15px; /* Abstand nach unten */
-  color: #4338ca; /* Lila Farbe */
+  font-size: 1.9rem;
+  margin-bottom: 18px;
+  color: #4338ca;
+  letter-spacing: -0.01em;
 }
 
 p {
-  margin-bottom: 20px; /* Abstand nach unten */
-  color: #374151; /* Mittelgrau */
-  font-size: 1.05rem; /* Lesbare Textgröße */
+  margin-bottom: 24px;
+  color: #374151;
+  font-size: 1.05rem;
 }
 
+/* =========================
+   LISTEN
+   ========================= */
 ul {
-  list-style: none; /* Entfernt Standard-Aufzählungszeichen */
-  margin-left: 10px; /* Kleiner Abstand links */
+  list-style: none;
+  margin-left: 12px;
 }
 
 li {
-  margin-bottom: 10px; /* Abstand zwischen Listeneinträgen */
-  padding-left: 20px; /* Platz für eigenes Symbol */
-  position: relative; /* Damit ::before relativ positioniert werden kann */
+  margin-bottom: 12px;
+  padding-left: 22px;
+  position: relative;
 }
 
 li::before {
-  content: "✔"; /* Fügt Häkchen vor jedem Listeneintrag ein */
-  position: absolute; /* Absolute Position innerhalb li */
-  left: 0; /* Ganz links */
-  color: #6366f1; /* Lila Häkchenfarbe */
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #6366f1;
 }
 
+/* =========================
+   TABELLEN
+   ========================= */
 table {
-  width: 100%; /* Tabelle füllt die Breite aus */
-  border-collapse: collapse; /* Entfernt doppelte Linien zwischen Zellen */
-  margin-top: 20px; /* Abstand nach oben */
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 28px;
 }
 
 th, td {
-  padding: 12px; /* Innenabstand */
-  border-bottom: 1px solid #e5e7eb; /* Untere Linie für Zellen */
-  text-align: left; /* Text linksbündig */
+  padding: 14px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
 }
 
 th {
-  background: #eef2ff; /* Hellblauer Hintergrund für Header */
-  color: #4338ca; /* Lila Schriftfarbe */
+  background: #eef2ff;
+  color: #4338ca;
 }
 
-@media (max-width: 768px) { /* Mobile Ansicht / Tablets */
+/* =========================
+   ANIMATION KEYFRAMES
+   ========================= */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+@media (max-width: 768px) {
   .h1-cyra h1 {
-    font-size: 2.8rem; /* Kleinere Überschrift auf kleineren Bildschirmen */
+    font-size: 3.2rem;
+  }
+
+  .firstSentence {
+    font-size: 1.2rem;
+    margin: 24px 8%;
+  }
+
+  .firstParagraph,
+  .secondParagraph {
+    margin: 60px 5%;
+    padding: 30px;
+  }
+
+  .PeoplePicture,
+  .passwortBild {
+    margin: 40px auto 80px;
+    max-width: 90%;
   }
 
   div[id^="II-"],
@@ -158,6 +253,6 @@ th {
   div[id^="IV-"],
   div[id^="V-"],
   div[id^="VI-"] {
-    padding: 40px 6%; /* Weniger Innenabstand auf mobilen Geräten */
+    padding: 50px 4%;
   }
 }
