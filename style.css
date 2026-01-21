@@ -16,12 +16,13 @@ body {
   position: sticky; /* Klebt am oberen Rand beim Scrollen */
   top: 0; /* Positioniert oben im Viewport */
   width: 100%; /* Nimmt die komplette Breite ein */
-  height: 60px; /* Höhe der Topbar */
+  height: 50px; /* Höhe der Topbar */
   background: rgba(255, 255, 255, 0.9); /* Weißer Hintergrund mit leichter Transparenz */
   backdrop-filter: blur(10px); /* Hintergrund unscharf machen (Glass-Effekt) */
   display: flex; /* Flexbox für Elemente in der Topbar */
   align-items: center; /* Zentriert Elemente vertikal */
-  justify-content: center; /* Zentriert Elemente horizontal */
+  justify-content: flex-end; /* Zentriert Elemente horizontal */
+  padding-right: 80px;
   gap: 25px; /* Abstand zwischen den Elementen */
   border-bottom: 1px solid #e5e7eb; /* Untere Linie */
   z-index: 1000; /* Sorgt dafür, dass Topbar über anderen Elementen liegt */
