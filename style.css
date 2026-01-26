@@ -48,7 +48,13 @@ body {
   background-color: #2f6fde;
 }
 
-
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 
 .topbar a {
   text-decoration: none;
@@ -66,13 +72,11 @@ body {
    Was ist Cybersecurity – HERO
    ========================= */
 
-   .hero {
+.hero {
   text-align: center;
-  padding: 120px 20px 60px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(34,211,238,0.15), transparent 40%);
+  padding: 110px 20px 0px;
 }
+
 
 .hero-icon {
   width: 56px;
