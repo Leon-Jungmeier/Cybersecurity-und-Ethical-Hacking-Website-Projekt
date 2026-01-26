@@ -62,6 +62,32 @@ body {
 .topbar a:hover {
   color: #3730a3;
 }
+/* =========================
+   Was ist Cybersecurity – HERO
+   ========================= */
+
+   .hero {
+  text-align: center;
+  padding: 120px 20px 60px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 40%),
+    radial-gradient(circle at 80% 30%, rgba(34,211,238,0.15), transparent 40%);
+}
+
+.hero-icon {
+  width: 56px;
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+.hero-icon {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
 
 /* =========================
    STARTSEITE – HERO
