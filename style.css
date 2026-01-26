@@ -375,3 +375,80 @@ th {
   color: #9ca3af;
 }
 
+/* =========================
+   CYBER BOX DESIGN
+   ========================= */
+.cyber-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.cyber-text {
+    flex: 1;
+}
+
+.cyber-text h2 {
+    color: #4338ca;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cyber-text p {
+    font-size: 1.05rem;
+    color: #1f2937;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cyber-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.cyber-text ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    color: #374151;
+}
+
+.cyber-text ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: #6366f1;
+    font-weight: bold;
+}
+
+.cyber-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.cyber-img img {
+    max-width: 100%;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cyber-img img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+@media (max-width: 900px) {
+    .cyber-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
