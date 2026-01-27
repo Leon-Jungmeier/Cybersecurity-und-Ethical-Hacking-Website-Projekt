@@ -452,3 +452,45 @@ th {
         gap: 30px;
     }
 }
+/* =========================
+   WER BRAUCHT CYBERSECURITY – BILD
+   ========================= */
+
+.cyra-who-image {
+  margin-top: 45px;
+  text-align: center;
+}
+
+.cyra-who-image img {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto 22px;
+
+  border-radius: 22px;
+  background: linear-gradient(135deg, #eef2ff, #f8faff);
+  padding: 35px;
+
+  box-shadow: 0 20px 45px rgba(0,0,0,0.07);
+  animation: float 5s ease-in-out infinite;
+}
+
+.cyra-who-image p {
+  font-size: 1rem;
+  color: #4b5563;
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Hover-Effekt */
+.cyra-who-image img:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cyra-who-image img {
+    padding: 25px;
+  }
+}
