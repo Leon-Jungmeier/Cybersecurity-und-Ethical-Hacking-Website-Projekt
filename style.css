@@ -494,3 +494,45 @@ th {
     padding: 25px;
   }
 }
+/* =========================
+   CYBERANGRIFF – BILD DESIGN
+   ========================= */
+
+.attack-image-box {
+  position: relative;
+  max-width: 520px;
+  margin: 40px auto 10px;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #eef2ff, #f8faff);
+  box-shadow: 0 25px 60px rgba(79, 70, 229, 0.15);
+  overflow: hidden;
+}
+
+.attack-image-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(99, 102, 241, 0.25),
+    transparent
+  );
+}
+
+.attack-image-box img {
+  width: 100%;
+  border-radius: 16px;
+  display: block;
+}
+
+.attack-image-label {
+  display: block;
+  margin-top: 14px;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #4f46e5;
+  letter-spacing: 0.02em;
+}
