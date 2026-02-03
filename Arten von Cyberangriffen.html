@@ -1,190 +1,114 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet">
-        <title>Cyra - Arten von Cyberangriffen</title>
-    </head>
-    <body>
-        <nav class="topbar">
-            <a href="Startseite.html">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-8h-1V7a5 5 0 00-10 0v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-2a3 3 0 016 0v2H10V7zm8 12H6v-8h12v8z"/>
-            </svg>
-            </a>            
-            <a href="Was ist Cybersecurity.html">Was ist Cybersecurity?</a>
-            <a href="Arten von Cyberangriffen.html">Cyberangriffe</a>
-            <a href="Schutzmaßnahmen.html">Schutzmaßnahmen</a>
-            <a href="CyberSecurity im Alltag.html">Alltag & Tipps</a>
-            <a href="Statistiken und Fakten.html">Statistiken</a>
-        </nav>  
-        <div id="III-Überschrift">
-            <h1>Arten von Cyberangriffen</h1>
-        </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arten von Cyberangriffen | Bedrohungstypen</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <div id="III-FirstParagraph">
-            <h2>Einführung</h2>
-            <p>Cyberangriffe sind Versuche, Geräte, Daten oder ganze Netzwerke zu beschädigen, zu stehlen oder zu manipulieren. Sie kommen in vielen Formen vor - manche sieht man sofort, andere bleiben lange unbemerkt. Hier lernst du die häufigsten Angriffsarten kennen, die im Alltag eine Rolle spielen.</p>
-        </div>
-
-        <div id="III-SecondParagraph">
-                        <div class="attack-image-box">
-            <img src="pishing.png" alt="Beispiel für Phishing-Angriff">
-            <span class="attack-image-label">Beispiel: Phishing-Nachricht</span>
-        </div>
-            <h2>Phishing - Die Betrugsnachricht</h2>
-            <p>Phishing ist einer der bekanntesten Angriffe. Dabei versuchen Kriminelle, dich mit gefälschten E-Mails, SMS oder Webseiten zu täuschen, um an deine Daten zu kommen.</p>
+    <header>
+        <nav>
+            <div class="logo">Cyber<span>Shield</span></div>
             <ul>
-                <li>Nachrichten wirken offiziell, z. B. von Banken oder Paketdiensten.</li>
-                <li>Es wird Druck aufgebaut („Ihr Konto wird gesperrt!“).</li>
-                <li>Links führen zu gefälschten Login-Seiten.</li>
-                <li>Dateianhänge können Schadsoftware enthalten.</li>
+                <li><a href="startseite.html">Startseite</a></li>
+                <li><a href="Was ist Cybersecurity.html">Definition</a></li>
+                <li><a href="Arten von Cyberangriffen.html" class="active">Angriffsarten</a></li>
+                <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
+                <li><a href="Cybersecurity im Alltag.html">Alltag</a></li>
+                <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
             </ul>
-            <p><strong>Ziel:</strong> Zugangsdaten, Passwörter oder persönliche Informationen stehlen.</p>
-        </div>
+        </nav>
+    </header>
 
-        <div id="III-ThirdParagraph">
-            <h2>Malware - Schädliche Software</h2>
-            <p>„Malware“ umfasst verschiedene Arten von Programmen, die Geräte infizieren und Schaden anrichten können.</p>
-            <ul>
-                <li><strong>Viren:</strong> verbreiten sich selbst und beschädigen Systeme.</li>
-                <li><strong>Trojaner:</strong> tarnen sich als harmlose Programme.</li>
-                <li><strong>Spyware:</strong> spioniert Daten im Hintergrund aus.</li>
-                <li><strong>Ransomware:</strong> sperrt Geräte oder Dateien und verlangt Lösegeld.</li>
-            </ul>
-            <p><strong>Ziel:</strong> Geräte manipulieren, überwachen oder erpressen.</p>
-        </div>
+    <main class="container">
+        <section class="content-header">
+            <h1>Das Arsenal der Hacker</h1>
+            <p class="subtitle">Ein detaillierter Einblick in die Methoden moderner Cyberkriminalität.</p>
+        </section>
 
-        <div id="III-FourthParagraph">
-            <h2>Ransomware - Digitale Erpressung</h2>
-            <p>Ransomware verschlüsselt persönliche Dateien oder sperrt das gesamte Gerät. Danach wird ein Lösegeld gefordert.</p>
-            <p><strong>Typische Merkmale:</strong></p>
-            <ul>
-                <li>Plötzliche Warnmeldung auf dem Bildschirm.</li>
-                <li>Kein Zugriff mehr auf Bilder, Dokumente oder Programme.</li>
-                <li>Lösegeldforderung, oft in Kryptowährungen.</li>
-            </ul>
-            <p><strong>Ziel:</strong> Geld erpressen.</p>
-        </div>
+        <section class="text-block">
+            <h2>Warum Angriffe immer komplexer werden</h2>
+            <p>Früher waren Cyberangriffe oft wahllos. Heute sehen wir hochspezialisierte Attacken, die oft monatelang vorbereitet werden. Dabei kombinieren Angreifer technische Exploits mit menschlicher Psychologie, um Sicherheitsbarrieren zu umgehen.</p>
+        </section>
 
-       <div id="III-FifthParagraph" class="editorial-section">
+        <section class="attack-list">
+            
+            <article class="attack-card-large">
+                <div class="attack-header">
+                    <span class="icon">🎣</span>
+                    <h2>Phishing & Social Engineering</h2>
+                </div>
+                <div class="attack-content">
+                    <p>Hier ist der Mensch das Ziel. Durch emotionale Manipulation (Zeitdruck, Autorität oder Neugier) werden Opfer dazu verleitet, sensible Daten preiszugeben.</p>
+                    
+                    
+                    
+                    <div class="sub-points">
+                        <strong>Varianten:</strong>
+                        <ul>
+                            <li><strong>Spear Phishing:</strong> Gezielte Angriffe auf eine bestimmte Person.</li>
+                            <li><strong>Whaling:</strong> Angriffe auf Führungskräfte (CEOs).</li>
+                        </ul>
+                    </div>
+                </div>
+            </article>
 
-    <div class="editorial-text">
-        <span class="editorial-tag">Cyberangriff</span>
-        <h2>Social Engineering</h2>
+            <article class="attack-card-large">
+                <div class="attack-header">
+                    <span class="icon">🔒</span>
+                    <h2>Ransomware: Die digitale Erpressung</h2>
+                </div>
+                <div class="attack-content">
+                    <p>Ransomware ist eine der größten Bedrohungen für Unternehmen weltweit. Sobald die Malware das System infiziert hat, verschlüsselt sie alle Dateien unknackbar.</p>
+                    
+                    
+                    
+                    <p>Der Nutzer erhält eine Nachricht mit einer Zahlungsaufforderung in Kryptowährungen. Ohne Backup ist der Datenverlust oft permanent.</p>
+                </div>
+            </article>
 
-        <p class="editorial-intro">
-            Der gefährlichste Angriff zielt nicht auf Computer - sondern auf Menschen.
-        </p>
+            <article class="attack-card-large">
+                <div class="attack-header">
+                    <span class="icon">🌐</span>
+                    <h2>DDoS (Distributed Denial of Service)</h2>
+                </div>
+                <div class="attack-content">
+                    <p>Stellen Sie sich vor, zehntausende Menschen versuchen gleichzeitig durch eine einzige Tür zu gehen – niemand kommt mehr durch. Genau das macht ein DDoS-Angriff mit einem Server.</p>
+                    
+                    
+                    
+                    <p>Angreifer nutzen dafür oft "Botnetze" – tausende infizierte IoT-Geräte (wie Kameras oder Kühlschränke), die gleichzeitig den Zielserver mit Anfragen fluten.</p>
+                </div>
+            </article>
 
-        <p>
-            Beim Social Engineering manipulieren Angreifer gezielt Vertrauen,
-            Stress oder Hilfsbereitschaft, um an Informationen zu gelangen.
-        </p>
+            <article class="attack-card-large">
+                <div class="attack-header">
+                    <span class="icon">🕵️</span>
+                    <h2>Man-in-the-Middle (MitM)</h2>
+                </div>
+                <div class="attack-content">
+                    <p>Ein digitaler Lauschangriff. Der Angreifer schaltet sich unbemerkt zwischen zwei Kommunikationspartner und fängt Daten ab, bevor sie verschlüsselt werden oder verändert sie sogar in Echtzeit.</p>
+                    
+                    
+                </div>
+            </article>
 
-        <ul>
-            <li>Fake-Support-Anrufe</li>
-            <li>Manipulative Nachrichten</li>
-            <li>Vortäuschen von Dringlichkeit</li>
-            <li>Missbrauch von Vertrauen</li>
-        </ul>
+        </section>
 
-        <p><strong>Ziel:</strong> Zugriff auf Daten oder Systeme - ohne Technik zu hacken.</p>
-    </div>
+        <section class="cta-box">
+            <h2>Wissen ist die erste Verteidigungslinie</h2>
+            <p>Jeder dieser Angriffe nutzt eine spezifische Schwachstelle aus. Erfahren Sie auf unserer nächsten Seite, wie Sie diese Lücken schließen können.</p>
+            <a href="Schutzmaßnahmen.html" class="btn-primary">Zu den Schutzmaßnahmen</a>
+        </section>
+    </main>
 
-    <div class="editorial-image">
-        <img src="control.jpg" alt="Social Engineering Angriff">
-    </div>
-
-</div>
-
-        <div id="III-SixthParagraph">
-            <h2>DDoS-Angriffe - Überlastung von Systemen</h2>
-            <p>DDoS („Distributed Denial of Service“) bedeutet, dass ein Server mit extrem vielen Anfragen überflutet wird.</p>
-            <ul>
-                <li>Webseiten werden sehr langsam oder gar nicht erreichbar.</li>
-                <li>Netzwerke brechen zusammen.</li>
-                <li>Online-Dienste sind für Stunden oder Tage offline.</li>
-            </ul>
-            <p><strong>Ziel:</strong> Dienste lahmlegen oder schädigen.</p>
-        </div>
-
-        <div id="III-SeventhParagraph">
-            <h2>Man-in-the-Middle - Mitlauschen im Hintergrund</h2>
-            <p>Hier greift der Angreifer Daten ab, indem er sich zwischen zwei Geräte schaltet - ohne dass die Betroffenen es bemerken.</p>
-            <ul>
-                <li>Unsichere oder gefälschte WLAN-Hotspots</li>
-                <li>Abfangen von Passwörtern oder Nachrichten</li>
-                <li>Manipulation von Datenübertragungen</li>
-            </ul>
-            <p><strong>Ziel:</strong> Daten abfangen oder verändern.</p>
-        </div>
-
-        <div id="III-EighthParagraph">
-            <h2>Passwort-Angriffe - Angriff auf deine Zugangsdaten</h2>
-            <p>Cyberkriminelle versuchen, Passwörter zu erraten oder zu stehlen, um auf Konten zuzugreifen.</p>
-            <ul>
-                <li><strong>Brute Force:</strong> tausende Passwörter automatisch ausprobieren.</li>
-                <li><strong>Dictionary-Angriff:</strong> häufige Wörter testen.</li>
-                <li><strong>Geleakte Passwörter:</strong> bereits gestohlene Daten erneut nutzen.</li>
-            </ul>
-            <p><strong>Ziel:</strong> Kontrolle über Konten wie E-Mail, Social Media oder Online-Banking.</p>
-        </div>
-
-        <div id="III-NinthParagraph">
-            <h2>Zero-Day-Angriffe - Unbekannte Sicherheitslücken</h2>
-            <p>Zero-Day-Angriffe nutzen Schwachstellen, die noch niemand kennt - nicht einmal der Hersteller.</p>
-            <p><strong>Folge:</strong> Geräte können angegriffen werden, obwohl alle Updates installiert sind.</p>
-            <p><strong>Ziel:</strong> unbemerkter Zugriff oder Spionage.</p>
-        </div>
-
-        <div id="III-TenthParagraph">
-            <h2>Fazit</h2>
-            <p>Cyberangriffe sind vielfältig - doch je besser du ihre Formen kennst, desto einfacher kannst du sie erkennen und vermeiden. Auf den nächsten Seiten zeigt dir Cyra, wie du dich effektiv davor schützt.</p>
-        </div>
-                    <footer class="site-footer">
-      <div class="footer-container">
-
-        <div class="footer-brand">
-          <h3>Cyra</h3>
-          <p>Schutz in der digitalen Welt</p>
-        </div>
-
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4>Programmierer</h4>
-            <p>
-              Leon Jungmeier<br>
-              Jakob Bachl<br>
-              HTBLa Leonding<br>
-              2AHIF<br>
-              4060 Leonding
-            </p>
-          </div>
-
-          <div class="footer-column">
-            <h4>Kontakt</h4>
-            <p>
-              E-Mail<br>
-              l.jungmeier@students.htl-leonding.ac.at
-              j.bachl@students.htl-leonding.ac.at
-
-            </p>
-          </div>
-
-          <div class="footer-column">
-          <h4>Hinweise</h4>
-          <p>
-            Dies ist ein Schulprojekt.<br>
-            Inhalte dienen ausschließlich Lernzwecken.<br>
-          </p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>© 2026 Cyra. Schulprojekt.</p>
-        </div>
-      </div>
+    <footer>
+        <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>
     </footer>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -1,163 +1,114 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet">
-        <title>Schutzmaßnahmen</title>
-    </head>
-    <body>
-        <nav class="topbar">
-            <a href="Startseite.html">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-8h-1V7a5 5 0 00-10 0v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-2a3 3 0 016 0v2H10V7zm8 12H6v-8h12v8z"/>
-            </svg>
-            </a>
-            <a href="Was ist Cybersecurity.html">Was ist Cybersecurity?</a>
-            <a href="Arten von Cyberangriffen.html">Cyberangriffe</a>
-            <a href="Schutzmaßnahmen.html">Schutzmaßnahmen</a>
-            <a href="CyberSecurity im Alltag.html">Alltag & Tipps</a>
-            <a href="Statistiken und Fakten.html">Statistiken</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schutzmaßnahmen | Cybersecurity Hub</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Cyber<span>Shield</span></div>
+            <ul>
+                <li><a href="startseite.html">Startseite</a></li>
+                <li><a href="Was ist Cybersecurity.html">Definition</a></li>
+                <li><a href="Arten von Cyberangriffen.html">Angriffsarten</a></li>
+                <li><a href="Schutzmaßnahmen.html" class="active">Schutz</a></li>
+                <li><a href="Cybersecurity im Alltag.html">Alltag</a></li>
+                <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
+            </ul>
         </nav>
-        <div id="IV-Überschrift">
-            <h1>Schutzmaßnahmen</h1>
-        </div>
+    </header>
 
-        <div id="IV-FirstParagraph">
-            <h2>Warum Schutzmaßnahmen wichtig sind</h2>
-            <p>Cyberangriffe können jeden treffen - egal ob Anfänger oder Profi. Mit den richtigen Schutzmaßnahmen kannst du dich, deine Geräte und deine Daten zuverlässig vor den meisten Angriffen schützen. Schon einfache Schritte machen einen großen Unterschied.</p>
-        </div>
+    <main class="container">
+        <section class="content-header">
+            <h1>Ihr Masterplan für Sicherheit</h1>
+            <p class="subtitle">Vom passiven Ziel zum aktiven Verteidiger. So sichern Sie Ihre digitale Welt ab.</p>
+        </section>
 
-        <div id="IV-SecondParagraph">
-            <h2>1. Starke und sichere Passwörter</h2>
-            <p>Ein sicheres Passwort ist einer der wichtigsten Schutzmechanismen im Internet. Verwende Passwörter, die schwer zu erraten sind und regelmäßig aktualisiert werden.</p>
-            <ul>
-                <li>Lange Passwörter (mind. 12 Zeichen)</li>
-                <li>Kombination aus Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen</li>
-                <li>Keine Wiederverwendung desselben Passworts</li>
-                <li>Passwortmanager verwenden</li>
-            </ul>
-        </div>
+        <section class="text-block">
+            <h2>Die Schichten-Strategie</h2>
+            <p>Es gibt keine 100-prozentige Sicherheit, aber man kann die Hürden für Angreifer so hoch legen, dass ein Angriff unwirtschaftlich wird. Wir setzen dabei auf das Prinzip der <strong>Defense in Depth</strong> – mehrere Schutzschichten, die ineinandergreifen.</p>
+        </section>
 
-        <div id="IV-ThirdParagraph">
-            <h2>2. Zwei-Faktor-Authentifizierung (2FA)</h2>
-            <p>Mit der Zwei-Faktor-Authentifizierung schützt du deine Konten zusätzlich. Selbst wenn jemand dein Passwort kennt, kommt er ohne den zweiten Code nicht rein.</p>
-            <ul>
-                <li>Einmalcodes per App (z. B. Authenticator)</li>
-                <li>Sicherheits-Schlüssel für extra Schutz</li>
-                <li>SMS-Codes als Notlösung</li>
-            </ul>
-        </div>
+        <section class="checklist-section">
+            <h2>Die Essential Five</h2>
+            <p>Diese fünf Maßnahmen bilden das Fundament jeder Sicherheit:</p>
+            
+            <div class="protection-grid">
+                <div class="feature-card">
+                    <span class="step-num">01</span>
+                    <h3>Multi-Faktor (MFA)</h3>
+                    <p>Passwörter allein reichen nicht. Ein zweiter Faktor (App, SMS, Token) blockiert 99% aller automatisierten Konto-Übernahmen.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="step-num">02</span>
+                    <h3>Patch-Management</h3>
+                    <p>Updates sind keine Last, sondern Reparaturen. Software-Lücken sind die offenen Fenster für Hacker. Halten Sie alles aktuell.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="step-num">03</span>
+                    <h3>Passwort-Hygiene</h3>
+                    <p>Nutzen Sie einen Passwort-Manager. Einzigartige, 16-stellige Passwörter für jeden Dienst sind heute Pflicht.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="step-num">04</span>
+                    <h3>Zero Trust</h3>
+                    <p>Vertrauen Sie keiner E-Mail oder Datei blind, nur weil der Absender bekannt scheint. Verifizieren Sie ungewöhnliche Anfragen.</p>
+                </div>
+                <div class="feature-card">
+                    <span class="step-num">05</span>
+                    <h3>Backup-Strategie</h3>
+                    <p>Nutzen Sie die 3-2-1-Regel: 3 Kopien, 2 verschiedene Medien, 1 Kopie offline gelagert (Schutz vor Ransomware).</p>
+                </div>
+            </div>
+        </section>
 
-        <div id="IV-FourthParagraph">
-            <h2>3. Regelmäßige Updates</h2>
-            <p>Updates schließen Sicherheitslücken und schützen dein Gerät vor neu entdeckten Angriffen. Sie sind einer der einfachsten und effektivsten Schritte für mehr Sicherheit.</p>
-            <ul>
-                <li>Betriebssystem aktuell halten</li>
-                <li>Programme und Apps regelmäßig aktualisieren</li>
-                <li>Automatische Updates aktivieren</li>
-            </ul>
-        </div>
+        <section class="dark-section-inline">
+            <div class="flex-row">
+                <div class="text-side">
+                    <h2>Technische Schutzwälle</h2>
+                    <p>Moderne Firewalls und Endpoint Detection & Response (EDR) Systeme scannen den Datenverkehr in Echtzeit. Sie erkennen Verhaltensmuster, die auf Malware hindeuten, noch bevor eine Signatur bekannt ist.</p>
+                    
+                    
+                    
+                    <p><strong>Verschlüsselung:</strong> Stellen Sie sicher, dass Ihre Daten im Ruhezustand (At Rest) und bei der Übertragung (In Transit) verschlüsselt sind (AES-256 Standard).</p>
+                </div>
+            </div>
+        </section>
 
-        <div id="IV-FifthParagraph">
-            <h2>4. Vorsicht bei E-Mails und Nachrichten</h2>
-            <p>Phishing ist eine häufige Methode, um Menschen auszutricksen. Sei vorsichtig bei Links und Dateien - besonders, wenn eine Nachricht dringend klingt.</p>
-            <ul>
-                <li>Absender genau prüfen</li>
-                <li>Nicht auf verdächtige Links klicken</li>
-                <li>Keine unbekannten Anhänge öffnen</li>
-                <li>Misstrauen bei Drohungen oder Zeitdruck</li>
-            </ul>
-        </div>
+        <section id="passwort-info" class="tool-section">
+            <div class="card tool-card">
+                <h3>Live Passwort-Check</h3>
+                <p>Tippen Sie ein Passwort ein, um die Stärke zu testen:</p>
+        
+                <div class="input-group">
+                    <input type="password" id="pw-input" placeholder="Passwort eingeben...">
+                </div>
+        
+                <div class="strength-meter">
+                    <div id="strength-bar"></div>
+                </div>
+        
+                <p id="strength-text">Warte auf Eingabe...</p>
 
-        <div id="IV-SixthParagraph">
-            <h2>5. Antivirus- und Sicherheitssoftware</h2>
-            <p>Sicherheitsprogramme erkennen Malware, blockieren gefährliche Webseiten und schützen dein Gerät vor schädlichen Dateien.</p>
-            <ul>
-                <li>Viren- und Malware-Schutz installieren</li>
-                <li>Echtzeitschutz aktivieren</li>
-                <li>Regelmäßige Scans durchführen</li>
-            </ul>
-        </div>
+                <ul class="criteria-list">
+                    <li id="crit-length" class="invalid">○ Mindestens 8 Zeichen</li>
+                    <li id="crit-upper" class="invalid">○ Groß- & Kleinschreibung</li>
+                    <li id="crit-number" class="invalid">○ Mindestens eine Zahl</li>
+                    <li id="crit-special" class="invalid">○ Sonderzeichen</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
-        <div id="IV-SeventhParagraph">
-            <h2>6. Sicheres Verhalten im Internet</h2>
-            <p>Viele Angriffe lassen sich vermeiden, wenn man achtsam ist und grundlegende Regeln beachtet.</p>
-            <ul>
-                <li>Nur sichere Webseiten verwenden (https://)</li>
-                <li>Keine persönlichen Daten unnötig teilen</li>
-                <li>Keine Software aus unbekannten Quellen herunterladen</li>
-                <li>Bei öffentlichen WLANs vorsichtig sein</li>
-            </ul>
-        </div>
-
-        <div id="IV-EighthParagraph">
-            <h2>7. Backups erstellen</h2>
-            <p>Backups schützen dich vor Datenverlust - egal ob durch Ransomware, Geräteausfall oder Fehler. Mit einem Backup kannst du deine Daten jederzeit wiederherstellen.</p>
-            <ul>
-                <li>Regelmäßige automatische Backups</li>
-                <li>Externe Festplatte oder Cloud-Speicher</li>
-                <li>Wichtige Dateien doppelt sichern</li>
-            </ul>
-        </div>
-
-        <div id="IV-NinthParagraph">
-            <h2>8. Sicheres WLAN</h2>
-            <p>Auch dein Heimnetzwerk sollte geschützt sein. Ein unsicheres WLAN macht es Angreifern besonders leicht.</p>
-            <ul>
-                <li>Starkes WLAN-Passwort</li>
-                <li>Verschlüsselung (WPA3 oder WPA2)</li>
-                <li>Router regelmäßig aktualisieren</li>
-                <li>Gastnetzwerk für Besucher einrichten</li>
-            </ul>
-        </div>
-
-        <div id="IV-TenthParagraph">
-            <h2>Fazit</h2>
-            <p>Gute Cybersecurity besteht aus vielen kleinen Maßnahmen. Wenn du starke Passwörter nutzt, Updates installierst, vorsichtig im Internet bist und deine Daten sicherst, machst du es Angreifern sehr schwer. Schritt für Schritt wirst du sicherer im Umgang mit digitalen Geräten.</p>
-        </div>
-            <footer class="site-footer">
-      <div class="footer-container">
-
-        <div class="footer-brand">
-          <h3>Cyra</h3>
-          <p>Schutz in der digitalen Welt</p>
-        </div>
-
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4>Programmierer</h4>
-            <p>
-              Leon Jungmeier<br>
-              Jakob Bachl<br>
-              HTBLa Leonding<br>
-              2AHIF<br>
-              4060 Leonding
-            </p>
-          </div>
-
-          <div class="footer-column">
-            <h4>Kontakt</h4>
-            <p>
-              E-Mail<br>
-              l.jungmeier@students.htl-leonding.ac.at
-              j.bachl@students.htl-leonding.ac.at
-
-            </p>
-          </div>
-
-          <div class="footer-column">
-          <h4>Hinweise</h4>
-          <p>
-            Dies ist ein Schulprojekt.<br>
-            Inhalte dienen ausschließlich Lernzwecken.<br>
-          </p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>© 2026 Cyra. Schulprojekt.</p>
-        </div>
-      </div>
+    <footer>
+        <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>
     </footer>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>

@@ -1,163 +1,103 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet">
-        <title>Cyra - Cybersecurity im Alltag</title>
-    </head>
-    <body>
-        <nav class="topbar">
-            <a href="Startseite.html">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-8h-1V7a5 5 0 00-10 0v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-2a3 3 0 016 0v2H10V7zm8 12H6v-8h12v8z"/>
-            </svg>
-            </a>            <a href="Was ist Cybersecurity.html">Was ist Cybersecurity?</a>
-            <a href="Arten von Cyberangriffen.html">Cyberangriffe</a>
-            <a href="Schutzmaßnahmen.html">Schutzmaßnahmen</a>
-            <a href="CyberSecurity im Alltag.html">Alltag & Tipps</a>
-            <a href="Statistiken und Fakten.html">Statistiken</a>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity im Alltag | Sicher leben</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Cyber<span>Shield</span></div>
+            <ul>
+                <li><a href="startseite.html">Startseite</a></li>
+                <li><a href="Was ist Cybersecurity.html">Definition</a></li>
+                <li><a href="Arten von Cyberangriffen.html">Angriffsarten</a></li>
+                <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
+                <li><a href="Cybersecurity im Alltag.html" class="active">Alltag</a></li>
+                <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
+            </ul>
         </nav>
-        <div id="V-Überschrift">
-            <h1>Cybersecurity im Alltag - Tipps für mehr Sicherheit</h1>
-        </div>
+    </header>
 
-        <div id="V-FirstParagraph">
-            <h2>Warum Sicherheit im Alltag wichtig ist</h2>
-            <p>Cybersecurity betrifft nicht nur große Unternehmen - sie spielt auch im Alltag eine wichtige Rolle. Egal ob Smartphone, Social Media oder Online-Shopping: Jeden Tag treffen wir Entscheidungen, die unsere digitale Sicherheit beeinflussen. Mit ein paar einfachen Tipps kannst du dich besser schützen.</p>
-        </div>
+    <main class="container">
+        <section class="content-header">
+            <h1>Sicher durch den digitalen Tag</h1>
+            <p class="subtitle">Praktische Tipps für Ihr Smartphone, Ihr Zuhause und Ihre Identität.</p>
+        </section>
 
-        <div id="V-SecondParagraph">
-            <h2>1. Sicherer Umgang mit Passwörtern</h2>
-            <p>Passwörter sind dein erster Schutzwall im Internet. Je stärker sie sind, desto besser bist du geschützt.</p>
-            <ul>
-                <li>Verwende für jeden Account ein eigenes Passwort.</li>
-                <li>Nimm mindestens 12 Zeichen - je länger, desto besser.</li>
-                <li>Nutze Passwortmanager, um dir alles nicht merken zu müssen.</li>
-                <li>Passwörter regelmäßig ändern.</li>
-            </ul>
-        </div>
+        <section class="alltag-topics">
+            <div class="topic-row">
+                <div class="topic-text">
+                    <h2>Das Smartphone: Ihre digitale Zentrale</h2>
+                    <p>Ihr Smartphone ist oft der Schlüssel zu Ihrem Bankkonto, Ihren E-Mails und Ihren sozialen Netzwerken. Ein Verlust oder Hack kann verheerend sein.</p>
+                    <ul class="styled-list">
+                        <li><strong>Biometrie nutzen:</strong> Fingerabdruck oder Gesichtserkennung sind sicherer als einfache Muster.</li>
+                        <li><strong>App-Berechtigungen:</strong> Prüfen Sie, ob eine Taschenlampen-App wirklich Zugriff auf Ihre Kontakte benötigt.</li>
+                        <li><strong>Remote Wipe:</strong> Aktivieren Sie die Funktion "Mein Gerät finden", um Daten im Notfall aus der Ferne zu löschen.</li>
+                    </ul>
+                </div>
+                <div class="image-side">
+                    
+                </div>
+            </div>
 
-        <div id="V-ThirdParagraph">
-            <h2>2. Zwei-Faktor-Authentifizierung nutzen</h2>
-            <p>Mit 2FA brauchst du neben deinem Passwort noch einen zweiten Code. Das macht es für Angreifer extrem schwer, in deinen Account zu kommen.</p>
-            <ul>
-                <li>Authenticator-Apps statt SMS verwenden.</li>
-                <li>Wenn möglich: Sicherheitsschlüssel nutzen.</li>
-                <li>2FA für alle wichtigen Konten aktivieren (E-Mail, Social Media, Bank).</li>
-            </ul>
-        </div>
+            <div class="dark-section-inline">
+                <div class="topic-row reverse">
+                    <div class="topic-text">
+                        <h2>Sicher surfen in Cafés & Zügen</h2>
+                        <p>Öffentliches WLAN ist wie ein Gespräch im vollen Bus: Jeder kann theoretisch mithören. Ein <strong>VPN (Virtual Private Network)</strong> verschlüsselt Ihre Verbindung und macht Ihre Daten für Mitleser unbrauchbar.</p>
+                        
+                        
+                        
+                        <p><em>Experten-Tipp:</em> Nutzen Sie im Zweifel lieber das mobile Datennetz (LTE/5G) statt eines unbekannten Gratis-Hotspots.</p>
+                    </div>
+                </div>
+            </div>
 
-        <div id="V-FourthParagraph">
-            <h2>3. Social Media bewusst nutzen</h2>
-            <p>Im Internet hinterlässt jeder Spuren. Je weniger Informationen öffentlich sind, desto sicherer bist du.</p>
-            <ul>
-                <li>Privatsphäre-Einstellungen regelmäßig prüfen.</li>
-                <li>Keine persönlichen Daten öffentlich posten.</li>
-                <li>Unbekannte Personen nicht als „Freunde“ hinzufügen.</li>
-                <li>Aufpassen bei Links und Nachrichten von Fremden.</li>
-            </ul>
-        </div>
+            <div class="topic-row">
+                <div class="topic-text">
+                    <h2>Das "S" in IoT steht für Sicherheit</h2>
+                    <p>Smarte Kühlschränke, Kameras und Thermostate sind oft unzureichend gesichert. Sie bilden oft das schwächste Glied in Ihrem Heimnetzwerk.</p>
+                    <p>Trennen Sie Ihr Smart Home vom Rest Ihres Netzwerks durch ein "Gäste-WLAN". So haben Angreifer keinen Zugriff auf Ihren PC, selbst wenn sie die smarte Glühbirne hacken.</p>
+                </div>
+                <div class="image-side">
+                    
+                </div>
+            </div>
+        </section>
 
-        <div id="V-FifthParagraph">
-            <h2>4. Vorsicht bei unbekannten Links und Anhängen</h2>
-            <p>Phishing ist einer der häufigsten Angriffe im Alltag. Oft reicht ein einziger Klick aus, um in Gefahr zu geraten.</p>
-            <ul>
-                <li>Absender einer E-Mail immer prüfen.</li>
-                <li>Keine Anhänge öffnen, wenn du nicht sicher bist.</li>
-                <li>Links vorher „hovern“, um die echte Adresse zu sehen.</li>
-                <li>Nachrichten mit Druck („SOFORT HANDELN!“) misstrauen.</li>
-            </ul>
-        </div>
+        <section class="checklist-section">
+            <h2>Sicheres Online-Shopping</h2>
+            <div class="grid-three">
+                <div class="tip-card">
+                    <h3>Das Schloss-Symbol</h3>
+                    <p>Achten Sie auf <strong>HTTPS</strong> in der Adresszeile. Es garantiert eine verschlüsselte Übertragung Ihrer Zahlungsdaten.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Sichere Zahlungsmittel</h3>
+                    <p>Nutzen Sie Dienste mit Käuferschutz oder Kreditkarten statt Vorkasse bei unbekannten Shops.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Fake-Shops erkennen</h3>
+                    <p>Ein fehlendes Impressum oder extrem niedrige Preise sind Warnsignale. Checken Sie Bewertungen!</p>
+                </div>
+            </div>
+        </section>
 
-        <div id="V-SixthParagraph">
-            <h2>5. Smartphone sicher einrichten</h2>
-            <p>Das Smartphone ist für viele das wichtigste Gerät - gleichzeitig aber auch sehr anfällig für Angriffe.</p>
-            <ul>
-                <li>Bildschirmsperre aktivieren (PIN, Fingerabdruck, Face ID).</li>
-                <li>Apps nur aus offiziellen Stores herunterladen.</li>
-                <li>Berechtigungen von Apps regelmäßig überprüfen.</li>
-                <li>Betriebssystem und Apps aktuell halten.</li>
-            </ul>
-        </div>
+        <section class="warning-box">
+            <h3>Digitale Erziehung</h3>
+            <p>Sicherheit im Alltag bedeutet auch, Kinder für Gefahren zu sensibilisieren. Sprechen Sie über Privatsphäre und das Teilen von Fotos im Netz. Cybersecurity ist eine Familienaufgabe.</p>
+        </section>
+    </main>
 
-        <div id="V-SeventhParagraph">
-            <h2>6. Sicheres Online-Shopping</h2>
-            <p>Beim Einkaufen im Internet solltest du besonders vorsichtig sein, um Betrug zu vermeiden.</p>
-            <ul>
-                <li>Nur auf vertrauenswürdigen Webseiten kaufen.</li>
-                <li>Auf „https://“ und Schloss-Symbol achten.</li>
-                <li>Keine unnötigen Daten angeben.</li>
-                <li>Im Idealfall mit sicheren Zahlungsmethoden zahlen.</li>
-            </ul>
-        </div>
-
-        <div id="V-EighthParagraph">
-            <h2>7. Vorsicht bei öffentlichem WLAN</h2>
-            <p>Öffentliche Netzwerke sind oft unsicher. Angreifer können Daten leichter abfangen.</p>
-            <ul>
-                <li>In öffentlichem WLAN kein Online-Banking oder Einkaufen.</li>
-                <li>VPN verwenden, wenn möglich.</li>
-                <li>Hotspots nicht automatisch verbinden lassen.</li>
-            </ul>
-        </div>
-
-        <div id="V-NinthParagraph">
-            <h2>8. Regelmäßig Backups erstellen</h2>
-            <p>Backups schützen deine Daten vor Verlust - egal ob durch Angriffe oder technische Probleme.</p>
-            <ul>
-                <li>Automatische Backups aktivieren.</li>
-                <li>Wichtige Dateien zusätzlich extern speichern.</li>
-                <li>Regelmäßig prüfen, ob die Sicherung funktioniert.</li>
-            </ul>
-        </div>
-
-        <div id="V-TenthParagraph">
-            <h2>Fazit</h2>
-            <p>Mit ein paar einfachen Maßnahmen kannst du dich im Alltag wirksam schützen. Cybersecurity muss nicht kompliziert sein - wichtig ist vor allem, aufmerksam zu bleiben und gute Gewohnheiten zu entwickeln. So machst du es Angreifern schwer und schützt deine Daten zuverlässig.</p>
-        </div>
-            <footer class="site-footer">
-      <div class="footer-container">
-
-        <div class="footer-brand">
-          <h3>Cyra</h3>
-          <p>Schutz in der digitalen Welt</p>
-        </div>
-
-        <div class="footer-columns">
-          <div class="footer-column">
-            <h4>Programmierer</h4>
-            <p>
-              Leon Jungmeier<br>
-              Jakob Bachl<br>
-              HTBLa Leonding<br>
-              2AHIF<br>
-              4060 Leonding
-            </p>
-          </div>
-
-          <div class="footer-column">
-            <h4>Kontakt</h4>
-            <p>
-              E-Mail<br>
-              l.jungmeier@students.htl-leonding.ac.at
-              j.bachl@students.htl-leonding.ac.at
-
-            </p>
-          </div>
-
-          <div class="footer-column">
-          <h4>Hinweise</h4>
-          <p>
-            Dies ist ein Schulprojekt.<br>
-            Inhalte dienen ausschließlich Lernzwecken.<br>
-          </p>
-          </div>
-        </div>
-
-        <div class="footer-bottom">
-          <p>© 2026 Cyra. Schulprojekt.</p>
-        </div>
-      </div>
+    <footer>
+        <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>
     </footer>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>

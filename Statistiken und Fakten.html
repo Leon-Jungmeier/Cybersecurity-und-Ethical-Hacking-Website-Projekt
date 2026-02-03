@@ -1,172 +1,115 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <link href="style.css" rel="stylesheet">
-        <title>Statistiken und Fakten</title>
-    </head>
-    <body>
-    <nav class="topbar">
-            <a href="Startseite.html">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="black" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 17a2 2 0 100-4 2 2 0 000 4zm6-8h-1V7a5 5 0 00-10 0v2H6a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2v-8a2 2 0 00-2-2zm-8-2a3 3 0 016 0v2H10V7zm8 12H6v-8h12v8z"/>
-            </svg>
-            </a>        <a href="Was ist Cybersecurity.html">Was ist Cybersecurity?</a>
-        <a href="Arten von Cyberangriffen.html">Cyberangriffe</a>
-        <a href="Schutzmaßnahmen.html">Schutzmaßnahmen</a>
-        <a href="CyberSecurity im Alltag.html">Alltag & Tipps</a>
-        <a href="Statistiken und Fakten.html">Statistiken</a>
-    </nav>
-            <h1 class="section-title">Statistiken und Fakten zur Cybersecurity</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiken & Fakten | Cybersecurity Lagebericht</title>
+    <link rel="icon" type="image/png" href="favicon.png?v=2">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-        <div id="VI-FirstParagraph">
-            <h2>Warum Statistiken wichtig sind</h2>
-            <p>Zahlen und Fakten zeigen, wie groß die Bedeutung von Cybersecurity heute ist. Cyberangriffe nehmen jedes Jahr zu, werden komplexer und betreffen sowohl Privatpersonen als auch Unternehmen. Die folgenden Statistiken geben dir einen Überblick über die aktuelle Lage.</p>
-        </div>
+    <header>
+        <nav>
+            <div class="logo">Cyber<span>Shield</span></div>
+            <ul>
+                <li><a href="startseite.html">Startseite</a></li>
+                <li><a href="Was ist Cybersecurity.html">Definition</a></li>
+                <li><a href="Arten von Cyberangriffen.html">Angriffsarten</a></li>
+                <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
+                <li><a href="Cybersecurity im Alltag.html">Alltag</a></li>
+                <li><a href="Statistiken und Fakten.html" class="active">Statistiken</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <div id="VI-SecondParagraph">
-            <h2>Cybersecurity im Überblick</h2>
-            <p>Hier siehst du einige der wichtigsten Cybersecurity-Fakten der letzten Jahre, übersichtlich dargestellt:</p>
-        </div>
+    <main class="container">
+        <section class="content-header">
+            <h1>Cyber-Kriminalität in Zahlen</h1>
+            <p class="subtitle">Ein Blick hinter die Kulissen der globalen Bedrohungslage im Jahr 2026.</p>
+        </section>
 
-        <div id="VI-ThirdParagraph">
-            <h2>Wichtige Statistiken (Tabelle)</h2>
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-number">3,4 Mrd.</span>
+                <p>Tägliche Phishing-E-Mails weltweit. Trotz moderner Filter landet ein Bruchteil davon immer noch in Postfächern.</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">277 Tage</span>
+                <p>Die durchschnittliche Zeit, um eine Datenpanne zu identifizieren und einzudämmen.</p>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number">10 Bio. $</span>
+                <p>Die prognostizierten jährlichen Kosten durch Cyberkriminalität bis Ende 2025.</p>
+            </div>
+        </section>
 
-            <table id="VI-Table" border="1" cellspacing="0" cellpadding="10">
+        <section class="dark-section-inline">
+            <h2>Der Aufstieg der Ransomware</h2>
+            <p>Ransomware-Angriffe sind in den letzten Jahren nicht nur häufiger, sondern auch deutlich teurer geworden. Hier sehen Sie die Entwicklung der durchschnittlichen Lösegeldforderungen:</p>
+            
+            
+            
+            <p class="small-note">Quelle: Basierend auf aggregierten Sicherheitsberichten führender IT-Dienstleister.</p>
+        </section>
+
+        <section class="table-section">
+            <h2>Wer ist im Visier?</h2>
+            <p>Keine Branche ist sicher, aber einige sind aufgrund ihrer sensiblen Daten besonders lukrativ für Angreifer.</p>
+            
+            <table class="modern-table">
                 <thead>
                     <tr>
-                        <th>Kategorie</th>
-                        <th>Statistik / Wert</th>
-                        <th>Jahr</th>
+                        <th>Branche</th>
+                        <th>Häufigste Angriffsart</th>
+                        <th>Schadenssumme (Ø)</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Anzahl weltweiter Cyberangriffe</td>
-                        <td>+38% im Vergleich zum Vorjahr</td>
-                        <td>2023</td>
+                        <td>Gesundheitswesen</td>
+                        <td>Ransomware & Datendiebstahl</td>
+                        <td>Hoch (Lebensgefahr)</td>
                     </tr>
                     <tr>
-                        <td>Betroffene Unternehmen</td>
-                        <td>74% aller Firmen wurden mindestens einmal angegriffen</td>
-                        <td>2023</td>
+                        <td>Finanzwesen</td>
+                        <td>Phishing & MitM</td>
+                        <td>Sehr Hoch (Finanziell)</td>
                     </tr>
                     <tr>
-                        <td>Phishing-Anteil an allen Angriffen</td>
-                        <td>ca. 90% aller erfolgreichen Angriffe starten mit Phishing</td>
-                        <td>2024</td>
+                        <td>Energie & Versorger</td>
+                        <td>DDoS & Sabotage</td>
+                        <td>Kritisch (Infrastruktur)</td>
                     </tr>
                     <tr>
-                        <td>Durchschnittlicher Schaden pro Angriff</td>
-                        <td>4,45 Millionen USD</td>
-                        <td>2023</td>
-                    </tr>
-                    <tr>
-                        <td>Ransomware-Zunahme</td>
-                        <td>+70% gegenüber 2021</td>
-                        <td>2022</td>
-                    </tr>
-                    <tr>
-                        <td>Geleakte Passwörter weltweit</td>
-                        <td>Über 24 Milliarden Zugangsdaten</td>
-                        <td>2024</td>
+                        <td>Einzelhandel</td>
+                        <td>Kreditkarten-Skimming</td>
+                        <td>Mittel (Reputation)</td>
                     </tr>
                 </tbody>
             </table>
-            <ul>
-        </ul>
-    </div>
+        </section>
 
-</div>
-
-    <div id="VI-FifthParagraph">
-        <h2>Seriöse Quellen & Statistiken</h2>
-        <p>Die folgenden Webseiten liefern regelmäßig aktuelle und verlässliche Cybersecurity-Statistiken:</p>
-        <ul>
-            <li>
-                <a href="https://www.statista.com/topics/2154/cyber-crime/" target="_blank">
-                    Statista - Cybercrime Statistiken
-                </a>
-            </li>
-            <li>
-                <a href="https://www.ibm.com/reports/data-breach" target="_blank">
-                    IBM - Cost of a Data Breach Report
-                </a>
-            </li>
-                    <li>
-                <a href="https://www.verizon.com/business/resources/reports/dbir/" target="_blank">
-                    Verizon - Data Breach Investigations Report
-                </a>
-            </li>
-            <li>
-                <a href="https://www.av-test.org/de/statistiken/" target="_blank">
-                    AV-TEST - IT-Sicherheitsstatistiken
-                </a>
-            </li>
-        </ul>
-    </div>
-
-    <div id="VI-FourthParagraph">
-        <h2>Weitere spannende Fakten</h2>
-        <ul>
-            <li>Alle 39 Sekunden findet weltweit ein Cyberangriff statt.</li>
-            <li>Über 60% der Nutzer verwenden dasselbe Passwort für mehrere Konten.</li>
-            <li>Mehr als 50% aller Smartphone-Besitzer installieren Updates verspätet.</li>
-            <li>Jede dritte Person ist bereits Opfer eines Cyberangriffs geworden.</li>
-        </ul>
-    </div>
-
-    <div id="VI-FifthParagraph">
-        <h2>Warum diese Zahlen wichtig sind</h2>
-        <p>Die Statistiken zeigen klar: Cybersecurity ist heute wichtiger denn je. Die Angriffe werden häufiger, professioneller und betreffen sowohl private Nutzer als auch Unternehmen. Wer sich schützt, reduziert Risiken enorm und verhindert schweren Schaden.</p>
-    </div>
-
-    <div id="VI-SixthParagraph">
-        <h2>Fazit</h2>
-        <p>Cyberangriffe sind keine Seltenheit - sie gehören längst zum Alltag in der digitalen Welt. Doch mit Wissen, Vorsicht und den richtigen Schutzmaßnahmen lässt sich das Risiko deutlich reduzieren. Statistiken helfen uns zu verstehen, warum Cybersecurity so wichtig ist und welche Entwicklungen uns in Zukunft erwarten.</p>
-    </div>
-        <footer class="site-footer">
-            <div class="footer-container">
-                <div class="footer-brand">
-                <h3>Cyra</h3>
-                <p>Schutz in der digitalen Welt</p>
+        <section class="text-block">
+            <h2>Der Faktor Mensch</h2>
+            <p>Trotz Milliarden-Investitionen in Firewalls bleibt der Mensch die größte Schwachstelle. Statistiken zeigen, dass <strong>über 90%</strong> aller erfolgreichen Sicherheitsverletzungen durch menschliches Versagen (z. B. schwache Passwörter oder das Klicken auf Links) eingeleitet werden.</p>
+            
+            <div class="info-strip">
+                <strong>Wichtig:</strong> Schulungen und Bewusstsein (Awareness) senken das Risiko eines erfolgreichen Angriffs um bis zu 70%.
             </div>
+        </section>
 
-            <div class="footer-columns">
-            <div class="footer-column">
-                <h4>Programmierer</h4>
-                <p>
-                Leon Jungmeier<br>
-                Jakob Bachl<br>
-                HTBLa Leonding<br>
-                2AHIF<br>
-                4060 Leonding
-                </p>
-            </div>
+        <section class="info-note">
+            <blockquote>
+                "Die Frage ist nicht, ob man angegriffen wird, sondern wann man es bemerkt und wie man darauf reagiert." 
+            </blockquote>
+        </section>
+    </main>
 
-            <div class="footer-column">
-                <h4>Kontakt</h4>
-                <p>
-                E-Mail<br>
-                l.jungmeier@students.htl-leonding.ac.at
-                j.bachl@students.htl-leonding.ac.at
-
-                </p>
-            </div>
-
-            <div class="footer-column">
-            <h4>Hinweise</h4>
-            <p>
-                Dies ist ein Schulprojekt.<br>
-                Inhalte dienen ausschließlich Lernzwecken.<br>
-            </p>
-            </div>
-            </div>
-
-                <div class="footer-bottom">
-                <p>© 2026 Cyra. Schulprojekt.</p>
-                </div>
-            </div>
-        </footer>
-    </body>
-</html>   
+    <footer>
+        <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
