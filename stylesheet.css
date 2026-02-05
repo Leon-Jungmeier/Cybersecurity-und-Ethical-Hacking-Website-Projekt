@@ -761,3 +761,269 @@ blockquote {
     .resilience-flow { flex-direction: column; }
     .kritis-grid { grid-template-columns: 1fr; }
 }
+.accordion {
+    margin: 2rem 0;
+    max-width: 100%;
+}
+
+details {
+    background: #161b22;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+details[open] {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.1);
+}
+
+summary {
+    padding: 1.5rem;
+    cursor: pointer;
+    list-style: none; /* Entfernt den Standard-Pfeil */
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+summary::-webkit-details-marker {
+    display: none; /* Entfernt Pfeil in Chrome/Safari */
+}
+
+.icon {
+    margin-right: 15px;
+    font-size: 1.5rem;
+}
+
+.arrow {
+    margin-left: auto;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+details[open] .arrow {
+    transform: rotate(180deg);
+}
+
+.details-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    line-height: 1.6;
+    color: #ccc;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+/* --- CYBER UPGRADE START --- */
+
+/* Das Haupt-Akkordeon */
+.cyber-accordion {
+    margin: 3rem 0;
+}
+
+.cyber-accordion details {
+    background: rgba(10, 14, 20, 0.8);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cyber-accordion details[open] {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.2), inset 0 0 10px rgba(0, 242, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.cyber-accordion summary {
+    list-style: none;
+    padding: 1.5rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.cyber-accordion summary::-webkit-details-marker { display: none; }
+
+.summary-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cyber-number {
+    font-family: 'Courier New', monospace;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+.cyber-label {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.scan-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--accent-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+details[open] .scan-line {
+    transform: scaleX(1);
+    animation: pulseScan 2s infinite;
+}
+
+@keyframes pulseScan {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+}
+
+.details-content {
+    padding: 1rem 1.5rem 2rem 4rem;
+    color: #a0aab4;
+    border-top: 1px solid rgba(0, 242, 255, 0.1);
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cyber-list {
+    margin-top: 15px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.cyber-list li {
+    margin-bottom: 8px;
+}
+
+.cyber-list li::before {
+    content: "> ";
+    color: var(--accent-color);
+    font-family: monospace;
+    font-weight: bold;
+}
+
+/* Glitch-Effekt für die Überschrift */
+.glitch-title {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
+}
+
+.glitch-title::before, .glitch-title::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+
+.glitch-title:hover::before {
+    animation: glitch-anim 0.3s infinite linear alternate-reverse;
+    color: var(--accent-color);
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+}
+
+.glitch-title:hover::after {
+    animation: glitch-anim 0.3s infinite linear alternate;
+    color: #ff00c1;
+    left: -2px;
+    text-shadow: 2px 0 var(--accent-color);
+}
+
+@keyframes glitch-anim {
+    0% { clip-path: inset(10% 0 30% 0); }
+    20% { clip-path: inset(40% 0 10% 0); }
+    40% { clip-path: inset(80% 0 5% 0); }
+    60% { clip-path: inset(15% 0 60% 0); }
+    80% { clip-path: inset(50% 0 20% 0); }
+    100% { clip-path: inset(5% 0 85% 0); }
+}
+/* Hover-Effekt: Zeigt, dass die Box interaktiv ist */
+.cyber-accordion details:hover {
+    background: rgba(0, 242, 255, 0.05);
+    border-color: rgba(0, 242, 255, 0.4);
+    cursor: pointer;
+}
+
+/* Behälter für das Plus/Minus */
+.interaction-hint {
+    margin-left: auto;
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.icon-plus {
+    color: var(--accent-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.4s ease;
+}
+
+/* Animation wenn die Box offen ist */
+details[open] .interaction-hint {
+    background: var(--accent-color);
+}
+
+details[open] .icon-plus {
+    transform: rotate(45deg); /* Das Plus wird zum 'x' oder Minus-Style */
+    color: #000;
+}
+
+/* Kleiner pulsierender Punkt als zusätzlicher Hinweis */
+.interaction-hint::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 1px solid var(--accent-color);
+    animation: ripple 2s infinite;
+    opacity: 0;
+}
+
+@keyframes ripple {
+    0% { transform: scale(1); opacity: 0.5; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+/* --- CYBER UPGRADE END --- */
