@@ -593,3 +593,171 @@ blockquote {
     text-align: left;
     margin-top: 1rem;
 }
+.concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 2rem 0;
+}
+
+.concept-card {
+    background: rgba(0, 242, 255, 0.05);
+    border-left: 4px solid var(--accent-color);
+    padding: 1.5rem;
+    border-radius: 0 10px 10px 0;
+}
+
+.concept-card h4 {
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.quote-box {
+    background: #0a0e14;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px dashed var(--accent-color);
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.quote-box blockquote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.styled-list {
+    line-height: 1.8;
+    margin-left: 1.5rem;
+}
+
+.styled-list li strong {
+    color: var(--accent-color);
+}
+/* Strategie Sektion */
+.strategy-flex {
+    display: flex;
+    gap: 30px;
+    margin: 2rem 0;
+}
+
+.strategy-item {
+    flex: 1;
+    background: #161b22;
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.strategy-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Hacker Tabelle */
+.hacker-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background: #0d1117;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.hacker-table th, .hacker-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hacker-table th {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* AI Sektion */
+.future-box {
+    background: linear-gradient(145deg, #0d1117, #161b22);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--accent-color);
+    margin-top: 4rem;
+}
+
+.ai-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 2rem;
+}
+
+.ai-bad { border-left: 3px solid #ff4b2b; padding-left: 20px; }
+.ai-good { border-left: 3px solid #00f2ff; padding-left: 20px; }
+
+@media (max-width: 768px) {
+    .strategy-flex, .ai-split { grid-template-columns: 1fr; flex-direction: column; }
+}
+/* Zero Trust Box */
+.zero-trust-box {
+    background: rgba(0, 242, 255, 0.03);
+    border: 1px solid var(--accent-color);
+    padding: 2rem;
+    border-radius: 15px;
+    margin: 2rem 0;
+}
+
+.zero-trust-box em {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+/* KRITIS Grid */
+.kritis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 1.5rem;
+}
+
+.kritis-item {
+    background: #161b22;
+    padding: 1.2rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-color);
+}
+
+/* Resilience Flow */
+.resilience-flow {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 2rem;
+}
+
+.flow-step {
+    background: #0d1117;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1;
+    font-size: 0.9rem;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.flow-step span {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .resilience-flow { flex-direction: column; }
+    .kritis-grid { grid-template-columns: 1fr; }
+}
