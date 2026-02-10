@@ -25,90 +25,150 @@
     </header>
 
     <main class="container">
-        <section class="content-header">
-            <h1>Ihr Masterplan für Sicherheit</h1>
-            <p class="subtitle">Vom passiven Ziel zum aktiven Verteidiger. So sichern Sie Ihre digitale Welt ab.</p>
-        </section>
+    <section class="content-header">
+        <h1 class="glitch-title" data-text="Defensiv-Protokolle">Defensiv-Protokolle</h1>
+        <p class="subtitle">Ein systematischer Leitfaden zur Errichtung einer digitalen Verteidigungsarchitektur.</p>
+    </section>
 
-        <section class="text-block">
-            <h2>Die Schichten-Strategie</h2>
-            <p>Es gibt keine 100-prozentige Sicherheit, aber man kann die Hürden für Angreifer so hoch legen, dass ein Angriff unwirtschaftlich wird. Wir setzen dabei auf das Prinzip der <strong>Defense in Depth</strong> – mehrere Schutzschichten, die ineinandergreifen.</p>
-        </section>
-        <br>
-        <section class="checklist-section">
-            <h2>Die Essential Five</h2>
-            <p>Diese fünf Maßnahmen bilden das Fundament jeder Sicherheit:</p>
-            <br>
-            <div class="protection-grid">
-                <div class="feature-card">
-                    <span class="step-num">01</span>
-                    <h3>Multi-Faktor (MFA)</h3>
-                    <p>Passwörter allein reichen nicht. Ein zweiter Faktor (App, SMS, Token) blockiert 99% aller automatisierten Konto-Übernahmen.</p>
-                </div>
-                <br>
-                <div class="feature-card">
-                    <span class="step-num">02</span>
-                    <h3>Patch-Management</h3>
-                    <p>Updates sind keine Last, sondern Reparaturen. Software-Lücken sind die offenen Fenster für Hacker. Halten Sie alles aktuell.</p>
-                </div>
-                <br>
-                <div class="feature-card">
-                    <span class="step-num">03</span>
-                    <h3>Passwort-Hygiene</h3>
-                    <p>Nutzen Sie einen Passwort-Manager. Einzigartige, 16-stellige Passwörter für jeden Dienst sind heute Pflicht.</p>
-                </div>
-                <br>
-                <div class="feature-card">
-                    <span class="step-num">04</span>
-                    <h3>Zero Trust</h3>
-                    <p>Vertrauen Sie keiner E-Mail oder Datei blind, nur weil der Absender bekannt scheint. Verifizieren Sie ungewöhnliche Anfragen.</p>
-                </div>
-                <br>
-                <div class="feature-card">
-                    <span class="step-num">05</span>
-                    <h3>Backup-Strategie</h3>
-                    <p>Nutzen Sie die 3-2-1-Regel: 3 Kopien, 2 verschiedene Medien, 1 Kopie offline gelagert (Schutz vor Ransomware).</p>
-                </div>
+    <section class="deep-dive-section">
+        <div class="blueprint-header">
+            <span class="system-status">Level 01: Strategische Architektur</span>
+            <h2>Das Defense in Depth Modell</h2>
+        </div>
+        <div class="content-grid">
+            <div class="text-main">
+                <p>In der modernen IT-Sicherheit hat sich das Konzept der <strong>"Defense in Depth"</strong> als Goldstandard etabliert. Es basiert auf der Erkenntnis, dass kein einzelnes Sicherheitsprodukt – egal wie teuer oder fortschrittlich – einen absoluten Schutz garantieren kann. Stattdessen werden mehrere, voneinander unabhängige Schutzwälle errichtet.</p>
+                <p>Diese Schichten umfassen nicht nur technische Lösungen wie Firewalls, sondern auch administrative Kontrollen (wie Sicherheitsrichtlinien für Mitarbeiter) und physische Barrieren (wie gesicherte Serverräume). Das Ziel ist es, die <strong>"Attacker Cost"</strong> so weit in die Höhe zu treiben, dass der Aufwand für einen Einbruch den potenziellen Gewinn übersteigt. Versagt eine Schicht, zum Beispiel durch eine Zero-Day-Lücke im Browser, fängt die nächste Schicht – etwa eine Sandbox oder ein EDR-System – den Schadcode ab.</p>
             </div>
-        </section>
-
-        <section class="dark-section-inline">
-            <div class="flex-row">
-                <div class="text-side">
-                    <h2>Technische Schutzwälle</h2>
-                    <p>Moderne Firewalls und Endpoint Detection & Response (EDR) Systeme scannen den Datenverkehr in Echtzeit. Sie erkennen Verhaltensmuster, die auf Malware hindeuten, noch bevor eine Signatur bekannt ist.</p>
-                    
-                    
-                    
-                    <p><strong>Verschlüsselung:</strong> Stellen Sie sicher, dass Ihre Daten im Ruhezustand (At Rest) und bei der Übertragung (In Transit) verschlüsselt sind (AES-256 Standard).</p>
-                </div>
+            <div class="info-sidebar">
+                <h4>Die Kernpfeiler:</h4>
+                <p><strong>Redundanz:</strong> Mehrfache Absicherung kritischer Pfade.</p>
+                <p><strong>Verzögerung:</strong> Zeit gewinnen, um Angriffe zu erkennen, bevor sie Schaden anrichten.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="passwort-info" class="tool-section">
-            <div class="card tool-card">
-                <h3>Live Passwort-Check</h3>
-                <p>Tippen Sie ein Passwort ein, um die Stärke zu testen:</p>
-        
-                <div class="input-group">
-                    <input type="password" id="pw-input" placeholder="Passwort eingeben...">
-                </div>
-        
-                <div class="strength-meter">
-                    <div id="strength-bar"></div>
-                </div>
-        
-                <p id="strength-text">Warte auf Eingabe...</p>
+    
 
-                <ul class="criteria-list">
-                    <li id="crit-length" class="invalid">○ Mindestens 8 Zeichen</li>
-                    <li id="crit-upper" class="invalid">○ Groß- & Kleinschreibung</li>
-                    <li id="crit-number" class="invalid">○ Mindestens eine Zahl</li>
-                    <li id="crit-special" class="invalid">○ Sonderzeichen</li>
+    <section class="deep-dive-section dark-bg">
+        <div class="blueprint-header">
+            <span class="system-status">Level 02: Identitäts-Management</span>
+            <h2>Authentifizierung & Kryptografie</h2>
+        </div>
+        <div class="technical-details">
+            <div class="tech-column">
+                <h3>Multi-Faktor-Authentifizierung (MFA)</h3>
+                <p>Die Zeit der einfachen Passwörter ist vorbei. Moderne Angriffe wie <strong>Credential Stuffing</strong> nutzen Datenbank-Leaks aus, um Millionen von Konten automatisch zu testen. MFA ist hier der entscheidende Riegel. Ein moderner MFA-Prozess basiert auf der Kombination von mindestens zwei der drei Faktoren: Wissen (Passwort), Besitz (ein physischer Security-Token wie ein YubiKey) und Inhärenz (biometrische Merkmale wie Gesichtsscan oder Fingerabdruck).</p>
+                <p>Besonders die Nutzung von <strong>FIDO2-Standards</strong> eliminiert das Risiko von Phishing fast vollständig, da der Login direkt an die Domain der Webseite gebunden ist und nicht durch eine gefälschte Seite abgefangen werden kann.</p>
+            </div>
+            <div class="tech-column">
+                <h3>Verschlüsselung im Ruhezustand & Transport</h3>
+                <p>Daten müssen in zwei Zuständen geschützt werden: <strong>Data-at-Rest</strong> (auf der Festplatte) und <strong>Data-in-Transit</strong> (während der Übertragung). Für die Übertragung ist TLS 1.3 (Transport Layer Security) heute Pflicht. Bei der Speicherung kommt oft die AES-256 (Advanced Encryption Standard) Verschlüsselung zum Einsatz, die selbst mit Supercomputern nach heutigem Stand der Wissenschaft nicht in absehbarer Zeit geknackt werden kann.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="deep-dive-section">
+        <div class="blueprint-header">
+            <span class="system-status">Level 03: Daten-Resilienz</span>
+            <h2>Backup-Architektur & Disaster Recovery</h2>
+        </div>
+        <div class="content-flex">
+            <div class="text-block-large">
+                <p>Ein Backup ist keine Option, sondern die letzte Verteidigungslinie gegen Ransomware. Wenn Schadsoftware Ihre Daten verschlüsselt, ist die einzige zuverlässige Rettung ein sauberes Backup. Viele machen jedoch den Fehler, Backups auf Laufwerken zu speichern, die permanent mit dem Netzwerk verbunden sind. Moderne Ransomware scannt das Netzwerk und verschlüsselt Backups als Erstes.</p>
+                <div class="rule-box">
+                    <div class="rule-item"><strong>3 Kopien:</strong> Originaldaten + 2 Sicherungen.</div>
+                    <div class="rule-item"><strong>2 Medien:</strong> Z.B. NAS und eine Cloud-Lösung.</div>
+                    <div class="rule-item"><strong>1 Offline:</strong> Ein physisch getrenntes Medium (Air-Gap).</div>
+                </div>
+                <p>Ein oft vergessener Aspekt ist das <strong>Restore-Testing</strong>. Ein Backup ist nur so viel wert wie die Gewissheit, dass man es auch erfolgreich wieder einspielen kann. In professionellen Umgebungen werden Wiederherstellungs-Szenarien monatlich geübt, um im Ernstfall die <strong>RTO (Recovery Time Objective)</strong> – also die Zeit bis zur Wiederaufnahme des Betriebs – so kurz wie möglich zu halten.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section class="deep-dive-section dark-bg">
+        <div class="blueprint-header">
+            <span class="system-status">Level 04: Infrastruktur</span>
+            <h2>Zero Trust: Das Ende des Vertrauens</h2>
+        </div>
+        <div class="content-grid">
+            <div class="text-main">
+                <p>Das klassische Netzwerk-Modell ("Burggraben-Prinzip") ging davon aus, dass alles innerhalb der eigenen Firewall sicher ist. In einer Welt von Cloud-Computing und Home-Office ist dieses Modell gescheitert. Der <strong>Zero Trust Ansatz</strong> folgt dem Credo: "Never trust, always verify". Jeder Zugriff, egal ob von innen oder außen, muss explizit authentifiziert, autorisiert und kontinuierlich validiert werden.</p>
+                <p>Durch <strong>Mikrosegmentierung</strong> wird das Netzwerk in winzige, isolierte Zellen unterteilt. Sollte ein Gerät kompromittiert werden, kann der Angreifer sich nicht lateral (seitlich) durch das gesamte Netzwerk bewegen. Er bleibt in seinem kleinen Segment gefangen.</p>
+            </div>
+        </div>
+    </section>
+    <section class="deep-dive-section">
+        <div class="blueprint-header">
+            <span class="system-status">Level 05: Perimeter-Erweiterung</span>
+            <h2>Remote Work: Sicherheit außerhalb des Büros</h2>
+        </div>
+        <div class="content-grid">
+            <div class="text-main">
+                <p>Durch die Dezentralisierung der Arbeitsplätze hat sich die Angriffsfläche für Unternehmen massiv vergrößert. Das heimische WLAN ist oft der schwächste Punkt in der Sicherheitskette. Angreifer nutzen ungeschützte Router oder Smart-Home-Geräte als Sprungbrett, um in Firmennetzwerke einzudringen.</p>
+                <p>Eine sichere Remote-Anbindung erfordert zwingend den Einsatz von <strong>Managed VPNs</strong> und die strikte Trennung von privaten und geschäftlichen Geräten. Es sollte niemals erlaubt sein, dass Familienmitglieder den Arbeitslaptop für private Zwecke nutzen, da eine einzige infizierte Website ausreicht, um das gesamte Gerät zu kompromittieren.</p>
+            </div>
+            <div class="info-sidebar">
+                <h4>Home-Office Essentials:</h4>
+                <ul class="cyber-list">
+                    <li>Router-Firmware aktuell halten.</li>
+                    <li>WPA3-Verschlüsselung aktivieren.</li>
+                    <li>Arbeitsgeräte physisch sichern.</li>
                 </ul>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
+
+    <section class="deep-dive-section dark-bg">
+        <div class="blueprint-header">
+            <span class="system-status">Level 06: Endpunkt-Mobilität</span>
+            <h2>Mobile Security: Das Rechenzentrum in der Hosentasche</h2>
+        </div>
+        <div class="content-flex">
+            <div class="text-block-large">
+                <p>Smartphones sind heute primäre Angriffsziele, da sie oft alle Faktoren für die MFA (Multi-Faktor-Authentifizierung) in sich vereinen. Ein kompromittiertes Smartphone bedeutet oft den Zugriff auf E-Mails, Bankdaten und Firmen-Logins. Die größte Gefahr geht hierbei von <strong>Sideloading</strong> (Installation von Apps aus unbekannten Quellen) und ungesicherten öffentlichen WLAN-Netzwerken aus.</p>
+                
+                <p>Nutzen Sie Funktionen wie <strong>Remote Wipe</strong> (Fernlöschung), um Daten bei Verlust sofort zu vernichten. Aktivieren Sie zudem die biometrische Sperre für sensible Apps separat, um eine zweite Verteidigungsebene innerhalb des Geräts zu schaffen.</p>
+            </div>
+        </div>
+    </section>
+    <section class="password-audit-area">
+    <div class="audit-frame">
+        <div class="audit-header">
+            <div class="terminal-dots"><span></span><span></span><span></span></div>
+            <h2>SICHERHEITS-ANALYSE</h2>
+        </div>
+        
+        <div class="audit-main-grid">
+            <div class="input-container">
+                <label for="pw-input">EINGABE_VALIDIERUNG</label>
+                <input type="password" id="pw-input" placeholder="PASSWORT EINGEBEN" spellcheck="false">
+                
+                <div class="strength-visualizer">
+                    <div id="strength-bar-glow"></div>
+                    <div id="strength-bar"></div>
+                </div>
+                
+                <div class="security-status-text">
+                    ANALYSE-STATUS: <span id="status-indicator"></span> <span id="status-val">BEREIT</span>
+                </div>
+            </div>
+
+            <div class="criteria-display">
+                <div class="crit-item" id="crit-length"><span class="status-box"></span> MIN. 12 ZEICHEN</div>
+                <div class="crit-item" id="crit-upper"><span class="status-box"></span> VARIATION (A/a)</div>
+                <div class="crit-item" id="crit-number"><span class="status-box"></span> ZIFFERN (0-9)</div>
+                <div class="crit-item" id="crit-special"><span class="status-box"></span> SONDERZEICHEN</div>
+            </div>
+        </div>
+    </div>
+</section>
+            </div>
+        </div>
+    </section>
+</main>
 
     <footer>
         <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>

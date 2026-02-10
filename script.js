@@ -1,21 +1,22 @@
 const passwordInput = document.getElementById('pw-input');
 const strengthBar = document.getElementById('strength-bar');
-const strengthText = document.getElementById('strength-text');
+const strengthGlow = document.getElementById('strength-bar-glow');
+const statusVal = document.getElementById('status-val');
+const statusIndicator = document.getElementById('status-indicator');
 
-// Falls das Element auf der aktuellen Seite nicht existiert, bricht das Script nicht ab
 if (passwordInput) {
     passwordInput.addEventListener('input', () => {
         const val = passwordInput.value;
         let score = 0;
 
         const criteria = {
-            length: val.length >= 8,
+            length: val.length >= 12,
             upper: /[A-Z]/.test(val) && /[a-z]/.test(val),
             number: /[0-9]/.test(val),
             special: /[^A-Za-z0-9]/.test(val)
         };
 
-        // UI Updates für die Liste
+        // UI Updates für die Kriterien-Liste
         updateCriterion('crit-length', criteria.length);
         updateCriterion('crit-upper', criteria.upper);
         updateCriterion('crit-number', criteria.number);
@@ -27,32 +28,47 @@ if (passwordInput) {
         if (criteria.number) score += 25;
         if (criteria.special) score += 25;
 
-        // Balken und Text anpassen
-        strengthBar.style.width = score + "%";
-        
-        if (score <= 25) {
-            strengthBar.style.backgroundColor = "#ff4b2b";
-            strengthText.innerText = "Sehr unsicher ❌";
-        } else if (score <= 75) {
-            strengthBar.style.backgroundColor = "#ffa500";
-            strengthText.innerText = "Mittelmäßig ⚠️";
-        } else {
-            strengthBar.style.backgroundColor = "#00f2ff";
-            strengthText.innerText = "Sicherer Schutz! ✅";
-        }
+        // Balken-Breite aktualisieren
+        if (strengthBar) strengthBar.style.width = score + "%";
+        if (strengthGlow) strengthGlow.style.width = score + "%";
 
-        if(val === "") {
-            strengthText.innerText = "Warte auf Eingabe...";
-            strengthBar.style.width = "0%";
+        // Status-Logik mit edlen, gedeckten Farben
+        if (val === "") {
+            statusVal.innerText = "BEREIT";
+            statusIndicator.style.background = "rgba(255, 255, 255, 0.1)";
+            statusIndicator.style.boxShadow = "none";
+            if (strengthBar) strengthBar.style.background = "rgba(255, 255, 255, 0.05)";
+        } else if (score <= 25) {
+            statusVal.innerText = "DEFIZITÄR";
+            const color = "#e63946"; // Das edle Rubinrot
+            statusIndicator.style.background = color;
+            statusIndicator.style.boxShadow = `0 0 10px ${color}44`; // Dezenter Glow
+            if (strengthBar) strengthBar.style.background = color;
+        } else if (score <= 75) {
+            statusVal.innerText = "VALIDIERT";
+            const color = "#ffb703"; // Bernstein / Amber
+            statusIndicator.style.background = color;
+            statusIndicator.style.boxShadow = `0 0 10px ${color}44`;
+            if (strengthBar) strengthBar.style.background = color;
+        } else {
+            statusVal.innerText = "RESILLIENT";
+            const color = "#00d4ff"; // Eisiges Blau
+            statusIndicator.style.background = color;
+            statusIndicator.style.boxShadow = `0 0 15px ${color}66`;
+            if (strengthBar) strengthBar.style.background = color;
         }
     });
 }
 
-// Hilfsfunktion um Code-Wiederholung zu vermeiden
 function updateCriterion(id, isValid) {
     const el = document.getElementById(id);
     if (el) {
-        el.className = isValid ? 'valid' : 'invalid';
-        el.innerText = (isValid ? '✔ ' : '○ ') + el.innerText.substring(2);
+        if (isValid) {
+            el.classList.add('valid');
+            el.classList.remove('invalid');
+        } else {
+            el.classList.add('invalid');
+            el.classList.remove('valid');
+        }
     }
 }
