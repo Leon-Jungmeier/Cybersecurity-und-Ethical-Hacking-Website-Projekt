@@ -1,4 +1,4 @@
-/* 1. GRUNDLAGEN & FARBEN */
+/* 1. GRUNDLAGEN & THEMES */
 :root {
     /* Dark Theme (Default) */
     --bg-color: #0a0e14;
@@ -7,76 +7,136 @@
     --text-color: #e6edf3;
     --text-dim: #8b949e;
     --nav-bg: rgba(10, 14, 20, 0.95);
-    --border-color: rgba(0, 242, 255, 0.2);
-    --footer-bg: #070a0f;
+    --border-color: rgba(0, 242, 255, 0.1);
+    --transition: all 0.3s ease;
 }
 
-/* Vollständiger Light Mode */
 body.light-mode {
-    --bg-color: #f5f7fa;
-    --card-bg: #ffffff;
-    --accent-color: #0055ff; /* Etwas tieferes Blau für Lesbarkeit */
-    --text-color: #1a202c;
+    --bg-color: #ffffff;
+    --card-bg: #f5f7fa;
+    --accent-color: #0066cc;
+    --text-color: #1a1a1a;
     --text-dim: #4a5568;
-    --nav-bg: rgba(255, 255, 255, 0.95);
-    --border-color: rgba(0, 0, 0, 0.1);
-    --footer-bg: #e2e8f0;
+    --nav-bg: rgba(255, 255, 255, 0.98);
+    --border-color: #d1d5db;
 }
 
-/* Cyber-Toggle Schalter Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+}
+
+/* 2. NAVIGATION & LAYOUT FIX */
+header {
+    background-color: var(--nav-bg);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Logo links, Button rechts */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin-left: auto; /* Schiebt die Links nach rechts */
+    margin-right: 30px; /* Abstand zum Button */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-dim);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--accent-color);
+}
+
+/* THEME SWITCHER (KEIN GLOW) */
 .theme-switch-wrapper {
     display: flex;
     align-items: center;
-    margin-left: 20px;
 }
 
 .theme-btn {
-    width: 50px;
-    height: 26px;
-    background: var(--card-bg);
-    border: 2px solid var(--accent-color);
+    width: 44px;
+    height: 22px;
+    background: #333;
+    border: none;
     border-radius: 50px;
     position: relative;
     cursor: pointer;
-    transition: var(--transition);
-    box-shadow: 0 0 10px var(--accent-color);
+    transition: background 0.3s ease;
 }
 
 .theme-btn .circle {
-    width: 18px;
-    height: 18px;
-    background: var(--accent-color);
+    width: 16px;
+    height: 16px;
+    background: white;
     border-radius: 50%;
     position: absolute;
-    top: 2px;
-    left: 2px;
+    top: 3px;
+    left: 4px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Wenn Lightmode aktiv ist, bewegt sich der Kreis */
-body.light-mode .theme-btn .circle {
-    transform: translateX(24px);
+body.light-mode .theme-btn {
+    background: #cbd5e0;
 }
 
-/* Sicherstellen, dass alle Boxen die Variablen nutzen */
-.info-box, .card, .faq-item, .audit-frame, .glossary-item, .tip-card {
+body.light-mode .theme-btn .circle {
+    transform: translateX(20px);
+    background: #0066cc;
+}
+
+/* FIX FÜR DUNKELE BOXEN IN ALLEN DOKUMENTEN */
+body.light-mode .info-box, 
+body.light-mode .glossary-item, 
+body.light-mode .faq-item, 
+body.light-mode .ai-bad, 
+body.light-mode .ai-good,
+body.light-mode .flow-step,
+body.light-mode .audit-frame,
+body.light-mode .step-card,
+body.light-mode .info-strip,
+body.light-mode .tip-card {
     background-color: var(--card-bg) !important;
     color: var(--text-color) !important;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--border-color) !important;
+    box-shadow: none !important;
 }
 
-footer {
-    background-color: var(--footer-bg);
+/* Glitch Effekt im Lightmode neutralisieren */
+body.light-mode .glitch-title {
+    color: var(--text-color) !important;
+    text-shadow: none !important;
 }
-
-/* Light Theme Klassen-Überschreibung */
-body.light-mode {
-    --bg-color: #f0f4f8;
-    --card-bg: #ffffff;
-    --accent-color: #0077ff; /* Ein kräftigeres Blau für hellen Hintergrund */
-    --text-color: #1a1a1a;
-    --text-dim: #4a5568;
-    --nav-bg: rgba(240, 244, 248, 0.95);
+body.light-mode .glitch-title::before,
+body.light-mode .glitch-title::after {
+    display: none !important;
 }
 
 * {

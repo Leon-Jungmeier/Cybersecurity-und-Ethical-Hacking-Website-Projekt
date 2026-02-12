@@ -72,6 +72,22 @@ function updateCriterion(id, isValid) {
         }
     }
 }
+function initTheme() {
+    const themeBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme === 'light') {
+        body.classList.add('light-mode');
+    }
+
+    if (themeBtn) {
+        themeBtn.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        });
+    }
+}
 const themeBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
