@@ -72,3 +72,23 @@ function updateCriterion(id, isValid) {
         }
     }
 }
+const themeBtn = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Beim Laden prüfen
+if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+}
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        // Speichern
+        if (body.classList.contains('light-mode')) {
+            localStorage.setItem('theme', 'light');
+        } else {
+            localStorage.setItem('theme', 'dark');
+        }
+    });
+}

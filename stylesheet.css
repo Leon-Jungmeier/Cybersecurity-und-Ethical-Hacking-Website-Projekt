@@ -1,12 +1,82 @@
 /* 1. GRUNDLAGEN & FARBEN */
 :root {
+    /* Dark Theme (Default) */
     --bg-color: #0a0e14;
     --card-bg: #151b23;
-    --accent-color: #00f2ff; /* Cyber-Cyan */
+    --accent-color: #00f2ff;
     --text-color: #e6edf3;
     --text-dim: #8b949e;
     --nav-bg: rgba(10, 14, 20, 0.95);
-    --transition: all 0.3s ease;
+    --border-color: rgba(0, 242, 255, 0.2);
+    --footer-bg: #070a0f;
+}
+
+/* Vollständiger Light Mode */
+body.light-mode {
+    --bg-color: #f5f7fa;
+    --card-bg: #ffffff;
+    --accent-color: #0055ff; /* Etwas tieferes Blau für Lesbarkeit */
+    --text-color: #1a202c;
+    --text-dim: #4a5568;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --border-color: rgba(0, 0, 0, 0.1);
+    --footer-bg: #e2e8f0;
+}
+
+/* Cyber-Toggle Schalter Styling */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.theme-btn {
+    width: 50px;
+    height: 26px;
+    background: var(--card-bg);
+    border: 2px solid var(--accent-color);
+    border-radius: 50px;
+    position: relative;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 0 10px var(--accent-color);
+}
+
+.theme-btn .circle {
+    width: 18px;
+    height: 18px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Wenn Lightmode aktiv ist, bewegt sich der Kreis */
+body.light-mode .theme-btn .circle {
+    transform: translateX(24px);
+}
+
+/* Sicherstellen, dass alle Boxen die Variablen nutzen */
+.info-box, .card, .faq-item, .audit-frame, .glossary-item, .tip-card {
+    background-color: var(--card-bg) !important;
+    color: var(--text-color) !important;
+    border: 1px solid var(--border-color);
+}
+
+footer {
+    background-color: var(--footer-bg);
+}
+
+/* Light Theme Klassen-Überschreibung */
+body.light-mode {
+    --bg-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --accent-color: #0077ff; /* Ein kräftigeres Blau für hellen Hintergrund */
+    --text-color: #1a1a1a;
+    --text-dim: #4a5568;
+    --nav-bg: rgba(240, 244, 248, 0.95);
 }
 
 * {
@@ -1427,4 +1497,25 @@ details[open] .icon-plus {
     border-radius: 0; /* Eckig wirkt technischer */
     color: #cbd5e0;
     letter-spacing: 2px;
+}
+/* Theme Toggle Button Style */
+.theme-btn {
+    background: transparent;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 5px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 15px var(--accent-color);
 }
