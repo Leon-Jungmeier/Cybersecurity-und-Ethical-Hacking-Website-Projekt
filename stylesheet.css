@@ -1579,3 +1579,241 @@ details[open] .icon-plus {
     color: var(--bg-color);
     box-shadow: 0 0 15px var(--accent-color);
 }
+/* */
+/* */
+/* --- Startseite Light-Mode Fixes --- */
+
+body.light-mode .dark-section {
+    background-color: #ffffff; /* Weißer Hintergrund statt Schwarz */
+    color: #1a1a1a;            /* Dunkler Text */
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+body.light-mode .hero.hero-bg {
+    background-color: #f0f4f8; /* Sehr helles Grau/Blau für den Hero-Bereich */
+    color: #1a1a1a;
+}
+
+body.light-mode .hero-content h1 {
+    color: #003366; /* Tiefblau für die große Überschrift */
+}
+
+body.light-mode .hero-content p {
+    color: #444;
+}
+
+/* Karten auf der Startseite anpassen */
+body.light-mode .card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+body.light-mode .card h3 {
+    color: #0056b3;
+}
+
+body.light-mode .card p {
+    color: #555;
+}
+
+/* Info-Strip (Ticker) Korrektur */
+body.light-mode .info-strip {
+    background: #e7f3ff; /* Zartes Blau */
+    color: #004085;      /* Dunkelblau für den Text */
+    border: 1px solid #b3d7ff;
+}
+
+/* FAQ Items */
+body.light-mode .faq-item {
+    border-bottom: 1px solid #ddd;
+}
+
+body.light-mode .faq-item h4 {
+    color: #003366;
+}
+body.light-mode .badge {
+    background: rgba(0, 86, 179, 0.1); /* Transparentes Blau */
+    color: #0056b3;                   /* Blaue Schrift */
+}
+
+body.light-mode .styled-list li {
+    color: #333;
+}
+
+body.light-mode .styled-list li::before {
+    color: #00d4ff; /* Deine Akzentfarbe für die Aufzählungspunkte */
+}
+/* --- Definition Page Light-Mode Fixes --- */
+
+/* 1. Allgemeine Container & Karten */
+body.light-mode .concept-card, 
+body.light-mode .strategy-item,
+body.light-mode .kritis-item {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    color: #1a1a1a;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+body.light-mode .concept-card h4,
+body.light-mode .strategy-item h3 {
+    color: #0056b3;
+}
+
+/* 2. Zero Trust & Quote Box (Hervorhebungen) */
+body.light-mode .zero-trust-box,
+body.light-mode .quote-box {
+    background: #f8f9fa;
+    border-left: 4px solid #00d4ff;
+    color: #333;
+}
+
+body.light-mode .quote-box blockquote {
+    color: #1a1a1a;
+}
+
+/* 3. Die Hacker-Tabelle (Sehr wichtig für Lesbarkeit) */
+body.light-mode .hacker-table {
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #ddd;
+}
+
+body.light-mode .hacker-table thead {
+    background: #f1f3f5;
+    color: #003366;
+}
+
+body.light-mode .hacker-table th, 
+body.light-mode .hacker-table td {
+    border-bottom: 1px solid #eee;
+}
+
+body.light-mode .hacker-table tr:hover {
+    background: #f8f9fa;
+}
+
+/* 4. Resilien-Flow (Die Schritte 1-5) */
+body.light-mode .flow-step {
+    background: #ffffff;
+    color: #1a1a1a;
+    border: 1px solid #e0e0e0;
+}
+
+body.light-mode .flow-step span {
+    background: #00d4ff;
+    color: #ffffff; /* Die Zahlen im Kreis bleiben weiß auf blau */
+}
+
+/* 5. KI-Split (Gefahr / Chance) */
+body.light-mode .ai-bad {
+    background: rgba(230, 57, 70, 0.1); /* Zartes Rot */
+    color: #a01a1a;
+    border: 1px solid rgba(230, 57, 70, 0.2);
+}
+
+body.light-mode .ai-good {
+    background: rgba(0, 212, 255, 0.1); /* Zartes Blau */
+    color: #0056b3;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* 6. Dark-Section-Alt (Falls diese Sektion noch schwarz ist) */
+body.light-mode .dark-section-alt {
+    background-color: #f0f4f8;
+    color: #1a1a1a;
+}
+body.light-mode .cyber-accordion details {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+}
+
+body.light-mode .cyber-accordion summary {
+    color: #1a1a1a;
+    border-bottom: 1px solid #eee;
+}
+
+body.light-mode .cyber-label {
+    color: #0056b3;
+}
+/* --- Fix für die KI-Sektion im Light Mode --- */
+
+body.light-mode .future-box {
+    background-color: #ffffff; /* Weißer Hintergrund */
+    color: #1a1a1a;            /* Dunkler Text */
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+body.light-mode .future-box h3 {
+    color: #003366; /* Tiefblau für die Überschrift */
+}
+
+/* Die zwei Spalten (Gefahr und Chance) */
+body.light-mode .ai-bad {
+    background-color: #fff5f5; /* Ganz zartes Rot */
+    border-left: 4px solid #e63946;
+    color: #1a1a1a;
+}
+
+body.light-mode .ai-bad strong {
+    color: #c53030; /* Dunkleres Rot für das Wort 'Gefahr' */
+}
+
+body.light-mode .ai-good {
+    background-color: #f0faff; /* Ganz zartes Blau */
+    border-left: 4px solid #00d4ff;
+    color: #1a1a1a;
+}
+
+body.light-mode .ai-good strong {
+    color: #007791; /* Dunkleres Blau für das Wort 'Chance' */
+}
+/* Erzwingt hellen Hintergrund für alle Sektionen auf allen Seiten */
+body.light-mode main,
+body.light-mode .layers-section,
+body.light-mode .kritis-section,
+body.light-mode .future-box,
+body.light-mode .dark-section-alt,
+body.light-mode .highlight-section {
+    background-color: #ffffff !important; /* Weißer Hintergrund */
+    background-image: none !important;    /* Falls du Hintergrundbilder/Muster hast */
+    color: #1a1a1a !important;            /* Schwarzer Text */
+}
+
+/* Falls du Container innerhalb der Sektionen hast */
+body.light-mode .container {
+    background-color: transparent !important;
+}
+/* --- Startseiten Überschriften Light-Mode Fix --- */
+
+/* 1. Die große Hero-Überschrift */
+body.light-mode .hero-content h1 {
+    color: #003366 !important; /* Ein tiefes, professionelles Blau */
+    text-shadow: none;         /* Falls du im Dark Mode einen Glow-Effekt hattest */
+}
+
+/* 2. Die Titel der Sektionen (z.B. Warum Cybersecurity...) */
+body.light-mode .section-title,
+body.light-mode h2.section-title {
+    color: #003366 !important;
+}
+
+/* 3. Überschriften in den Karten (Wissen schützt, Prävention, etc.) */
+body.light-mode .card h3 {
+    color: #0056b3 !important; /* Etwas helleres Blau für Karten-Titel */
+}
+
+/* 4. Die Überschrift in der dunklen Sektion (Anatomie eines Angriffs) */
+body.light-mode .dark-section h2,
+body.light-mode .text-side h2 {
+    color: #003366 !important;
+}
+
+/* 5. FAQ Überschriften */
+body.light-mode .faq-preview h2,
+body.light-mode .faq-item h4 {
+    color: #003366 !important;
+}
