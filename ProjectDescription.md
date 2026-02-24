@@ -1,13 +1,12 @@
-CyberShield / CyberShield
-Teammitglieder: Leon Jungmeryer und Jakob Bachl
+# Projekt - CyberShield / CyberShield
 
-Name: CyberShield.
+- Teammitglieder: Leon Jungmeryer und Jakob Bachl
 
-Ausgangssituation / Problemstellung / Vorgeschichte
+## Ausgangssituation / Problemstellung / Vorgeschichte
 
 Mit der steigenden Digitalisierung wächst die Gefahr durch Cyberkriminalität. Viele Nutzer sind durch technische Fachbegriffe überfordert und vernachlässigen grundlegende Schutzmaßnahmen. Es fehlt an einer modernen, leicht zugänglichen Plattform, die Theorie (Wissen) und Praxis (interaktive Tools) im Bereich Cybersecurity vereint.
 
-Projektziele / Nicht-Ziele
+## Projektziele / Nicht-Ziele
 
 Projektziele: * Entwicklung einer responsiven Website mit sechs Themenbereichen.
 
