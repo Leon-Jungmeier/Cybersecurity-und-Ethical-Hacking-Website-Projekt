@@ -34,25 +34,25 @@ if (passwordInput) {
 
         // Status-Logik mit edlen, gedeckten Farben
         if (val === "") {
-            statusVal.innerText = "BEREIT";
+            statusVal.innerText = "UNSICHER";
             statusIndicator.style.background = "rgba(255, 255, 255, 0.1)";
             statusIndicator.style.boxShadow = "none";
             if (strengthBar) strengthBar.style.background = "rgba(255, 255, 255, 0.05)";
         } else if (score <= 25) {
-            statusVal.innerText = "DEFIZITÄR";
+            statusVal.innerText = "WENIG SICHER";
             const color = "#e63946"; // Das edle Rubinrot
             statusIndicator.style.background = color;
             statusIndicator.style.boxShadow = `0 0 10px ${color}44`; // Dezenter Glow
             if (strengthBar) strengthBar.style.background = color;
         } else if (score <= 75) {
-            statusVal.innerText = "VALIDIERT";
-            const color = "#ffb703"; // Bernstein / Amber
+            statusVal.innerText = "SICHER";
+            const color = "#ffb703";
             statusIndicator.style.background = color;
             statusIndicator.style.boxShadow = `0 0 10px ${color}44`;
             if (strengthBar) strengthBar.style.background = color;
         } else {
-            statusVal.innerText = "RESILLIENT";
-            const color = "#00d4ff"; // Eisiges Blau
+            statusVal.innerText = "SEHR SICHER";
+            const color = "#00d4ff";
             statusIndicator.style.background = color;
             statusIndicator.style.boxShadow = `0 0 15px ${color}66`;
             if (strengthBar) strengthBar.style.background = color;

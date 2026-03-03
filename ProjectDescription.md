@@ -1,34 +1,50 @@
-# Projekt - CyberShield / CyberShield
+CyberShield / CyberShield
+Teammitglieder: Leon Jungmeryer und Jakob Bachl
 
-- Teammitglieder: Leon Jungmeryer und Jakob Bachl
+Name: CyberShield.
 
-## Ausgangssituation / Problemstellung / Vorgeschichte
+Ausgangssituation / Problemstellung / Vorgeschichte
 
-Mit der steigenden Digitalisierung wächst die Gefahr durch Cyberkriminalität. Viele Nutzer sind durch technische Fachbegriffe überfordert und vernachlässigen grundlegende Schutzmaßnahmen. Es fehlt an einer modernen, leicht zugänglichen Plattform, die Theorie (Wissen) und Praxis (interaktive Tools) im Bereich Cybersecurity vereint.
+Mit der steigenden Digitalisierung wächst die Gefahr durch Cyberkriminalität. Viele Nutzer sind durch technische Fachbegriffe überfordert und vernachlässigen grundlegende Schutzmaßnahmen.  
 
-## Projektziele / Nicht-Ziele
+Es fehlt an einer modernen, leicht zugänglichen Plattform, die Theorie (Wissen) und Praxis (interaktive Tools) im Bereich Cybersecurity vereint.
 
-Projektziele: * Entwicklung einer responsiven Website mit sechs Themenbereichen.
+Projektziele / Nicht-Ziele
 
-Implementierung eines funktionsfähigen Passwort-Analyzers mit Echtzeit-Feedback.
+### Projektziele
+- Entwicklung einer responsiven Website mit sechs Themenbereichen  
+- Implementierung eines funktionsfähigen Passwort-Analyzers mit Echtzeit-Feedback  
+- Schaffung eines immersiven „Cyber-Designs“ mittels moderner CSS-Effekte  
 
-Schaffung eines immersiven „Cyber-Designs“ mittels moderner CSS-Effekte. Nicht-Ziele: * Keine Bereitstellung von aktiven Virenschutz-Services oder Firewalls.
+### Nicht-Ziele
+- Keine Bereitstellung von aktiven Virenschutz-Services oder Firewalls  
+- Keine Speicherung von sensiblen Nutzerdaten in einer Datenbank  
 
-Keine Speicherung von sensiblen Nutzerdaten in einer Datenbank.
+---
 
-Projektinhalte / Project Contents
+## Projektinhalte / Project Contents
 
-Das Projekt umfasst die Erstellung strukturierter HTML-Inhaltsseiten zu Definitionen, Angriffsarten und Statistiken. Kernkomponenten sind ein zentrales Stylesheet für das visuelle Design sowie JavaScript-Logiken zur Validierung der Passwortstärke und Steuerung interaktiver UI-Elemente.
+Das Projekt umfasst die Erstellung strukturierter HTML-Inhaltsseiten zu:
+- Definitionen  
+- Angriffsarten  
+- Statistiken  
 
-Kritische Erfolgsfaktoren / Critical Success Factors
+Kernkomponenten:
+- Zentrales Stylesheet für das visuelle Design  
+- JavaScript-Logiken zur Validierung der Passwortstärke  
+- Steuerung interaktiver UI-Elemente  
 
-Intuitive Navigation: Nutzer müssen sich trotz hoher Informationsdichte schnell zurechtfinden.
+---
 
-Visuelle Qualität: Das „Hacker-Look-and-Feel“ muss professionell und nicht überladen wirken.
+## Kritische Erfolgsfaktoren / Critical Success Factors
 
-Fehlerfreier Code: Die Validierungsskripte müssen zuverlässige Ergebnisse liefern.
+- **Intuitive Navigation:** Nutzer müssen sich trotz hoher Informationsdichte schnell zurechtfinden.  
+- **Visuelle Qualität:** Das „Hacker-Look-and-Feel“ muss professionell und nicht überladen wirken.  
+- **Fehlerfreier Code:** Die Validierungsskripte müssen zuverlässige Ergebnisse liefern.  
 
-Termine / Meilensteine
+---
+
+## Termine / Meilensteine
 
 Projektstart: - Ereignis: Konzeption und Erstellung der Dateistruktur.
 
