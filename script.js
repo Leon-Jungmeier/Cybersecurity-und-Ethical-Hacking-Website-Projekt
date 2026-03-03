@@ -99,7 +99,7 @@ if (localStorage.getItem('theme') === 'light') {
 if (themeBtn) {
     themeBtn.addEventListener('click', () => {
         body.classList.toggle('light-mode');
-        
+            
         // Speichern
         if (body.classList.contains('light-mode')) {
             localStorage.setItem('theme', 'light');
