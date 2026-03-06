@@ -1,15 +1,25 @@
-CyberShield / CyberShield
-Teammitglieder: Leon Jungmeryer und Jakob Bachl
+# CyberShield
 
-Name: CyberShield.
+**Teammitglieder:**  
+Leon Jungmeryer  
+Jakob Bachl  
 
-Ausgangssituation / Problemstellung / Vorgeschichte
+---
+
+## Name
+**CyberShield**
+
+---
+
+## Ausgangssituation / Problemstellung / Vorgeschichte
 
 Mit der steigenden Digitalisierung wächst die Gefahr durch Cyberkriminalität. Viele Nutzer sind durch technische Fachbegriffe überfordert und vernachlässigen grundlegende Schutzmaßnahmen.  
 
 Es fehlt an einer modernen, leicht zugänglichen Plattform, die Theorie (Wissen) und Praxis (interaktive Tools) im Bereich Cybersecurity vereint.
 
-Projektziele / Nicht-Ziele
+---
+
+## Projektziele / Nicht-Ziele
 
 ### Projektziele
 - Entwicklung einer responsiven Website mit sechs Themenbereichen  
@@ -46,12 +56,17 @@ Kernkomponenten:
 
 ## Termine / Meilensteine
 
-Projektstart: - Ereignis: Konzeption und Erstellung der Dateistruktur.
+### Projektstart
+- **Ereignis:** Konzeption und Erstellung der Dateistruktur  
+- **Termin:** 01.02.2026  
 
-Termin: 01.02.2026 Projektende: - Ereignis: Finales Deployment und Code-Review.
+### Projektende
+- **Ereignis:** Finales Deployment und Code-Review  
+- **Termin:** *[Dein Enddatum]*  
 
-Termin: [Dein Enddatum] Meilensteine: 1. Content-Check: Alle Texte und HTML-Strukturen sind finalisiert.
+### Meilensteine
+1. **Content-Check:** Alle Texte und HTML-Strukturen sind finalisiert.  
+2. **Design-Check:** Das CSS-Styling inklusive Animationen ist abgeschlossen.  
+3. **Logic-Check:** Der Passwort-Analyzer und alle Skripte funktionieren fehlerfrei.  
 
-Design-Check: Das CSS-Styling inklusive Animationen ist abgeschlossen.
-
-Logic-Check: Der Passwort-Analyzer und alle Skripte funktionieren fehlerfrei.
+---

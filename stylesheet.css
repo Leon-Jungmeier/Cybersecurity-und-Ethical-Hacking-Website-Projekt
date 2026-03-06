@@ -1561,7 +1561,7 @@ details[open] .icon-plus {
 /* Theme Toggle Button Style */
 .theme-btn {
     background: transparent;
-    border: 1px solid var(--accent-color);
+    border: 1px solid white;
     color: var(--accent-color);
     padding: 5px 10px;
     border-radius: 8px;
