@@ -77,22 +77,7 @@ function init() {
     // ------------------------------------------------
     createStars();
 
-    // ------------------------------------------------
-    // Städte
-    // ------------------------------------------------
-    const cities = [
-        [48.2, 16.3],   // Wien
-        [52.5, 13.4],   // Berlin
-        [40.7, -74],    // New York
-        [35.6, 139.6],  // Tokyo
-        [51.5, -0.1],   // London
-        [55.7, 37.6],   // Moscow
-        [28.6, 77.2],   // Delhi
-        [-33.8, 151.2], // Sydney
-        [34.0, -118.2], // Los Angeles
-        [1.3, 103.8]    // Singapore
-    ];
-    cities.forEach(c => createCityNode(c[0], c[1]));
+
 
     window.addEventListener("resize", onWindowResize, false);
 
