@@ -167,7 +167,7 @@ function updateLog(type, src) {
 function createStars() {
     const starGeometry = new THREE.BufferGeometry();
     const starVertices = [];
-    for (let i = 0; i < 5000; i++) {
+    for (let i = 0; i < 30000; i++) {
         starVertices.push(
             (Math.random() - 0.5) * 1000,
             (Math.random() - 0.5) * 1000,
