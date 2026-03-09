@@ -131,21 +131,7 @@ function fadeOutLine(line) {
     animateFade();
 }
 
-/* ------------------------------------------------ */
-/* Städte */
-/* ------------------------------------------------ */
-function createCityNode(lat, lon) {
-    const geometry = new THREE.SphereGeometry(0.15, 16, 16);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff41 });
-    const node = new THREE.Mesh(geometry, material);
 
-    const phi = (90 - lat) * (Math.PI / 180);
-    const theta = (lon + 180) * (Math.PI / 180);
-
-    node.position.setFromSphericalCoords(5, phi, theta);
-
-    scene.add(node);
-}
 
 /* ------------------------------------------------ */
 /* Log */
@@ -191,8 +177,8 @@ function animate() {
     requestAnimationFrame(animate);
 
     if (globe) {
-        globe.rotation.y += 0.001;
-        globe.rotation.x += 0.0005;
+        globe.rotation.y += 0.004;
+        globe.rotation.x += 0.004;
     }
 
     renderer.render(scene, camera);
