@@ -9,8 +9,8 @@
 </head>
 <body>
     <header>
-    <nav>
-    <div class="logo">Cyber<span>Shield</span></div>
+        <nav>
+            <div class="logo">Cyber<span>Shield</span></div>
             <ul>
                 <li><a href="startseite.html">Startseite</a></li>
                 <li><a href="Was ist Cybersecurity.html">Definition</a></li>
@@ -21,10 +21,40 @@
                 <li><a href="Hackerangriffe.html" class="active">Hackerangriffe</a></li>
             </ul>
             <div class="theme-switch-wrapper">
-                <button id="theme-toggle" class="theme-btn">
-                    <div class="circle"></div>
-                </button>
+                <button id="theme-toggle" class="theme-btn"><div class="circle"></div></button>
             </div>
         </nav>
     </header>
-</body>
+
+    <main class="dashboard-3d">
+        <aside class="side-panel left">
+            <div class="glass-card">
+                <h3>ÖSTERREICH</h3>
+                <p class="rank">#43 HÄUFIGST ANGEGRIFFEN</p>
+                <div class="stat-list">
+                    <div class="stat-item"><span class="label">OAS</span> <span class="val">4880</span></div>
+                    <div class="stat-item"><span class="label">ODS</span> <span class="val">5943</span></div>
+                </div>
+                <hr>
+                <h4>DEFENDER MODE</h4>
+                <div id="game-stats">
+                    <p>Abgewehrt: <span id="score">0</span></p>
+                    <div class="health-bar"><div id="health" style="width: 100%"></div></div>
+                </div>
+                <button class="cyber-btn" onclick="startDefenseGame()">START DEFENSE</button>
+            </div>
+        </aside>
+
+        <div id="globe-container"></div>
+
+        <aside class="side-panel right">
+            <div class="glass-card">
+                <h3>LIVE INTRUSION FEED</h3>
+                <div id="log-content" class="log-stream"></div>
+            </div>
+        </aside>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="dashboard-3d.js"></script>
+</body>>
