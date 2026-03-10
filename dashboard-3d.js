@@ -178,7 +178,7 @@ function animate() {
 
     if (globe) {
         globe.rotation.y += 0.004;
-        globe.rotation.x += 0.004;
+        globe.rotation.x += 0.004 ;
     }
 
     renderer.render(scene, camera);
