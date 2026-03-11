@@ -20,7 +20,7 @@ function init() {
     // OrbitControls
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
-    controls.autoRotate = true;
+    controls.autoRotate = false;
     controls.autoRotateSpeed = 0.5;
 
     // Licht
@@ -53,19 +53,36 @@ function init() {
 }
 
 function createAttackLine() {
-    const start = new THREE.Vector3().setFromSphericalCoords(5, Math.random() * Math.PI, Math.random() * Math.PI * 2);
-    const end = new THREE.Vector3().setFromSphericalCoords(5, Math.random() * Math.PI, Math.random() * Math.PI * 2);
+    // Wähle zufällige Start- und End-Städte aus unserem Array
+    if (cityNodes.length < 2) return; // Nichts tun, wenn zu wenige Städte da sind
+
+    const startNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
+    let endNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
     
-    const mid = start.clone().lerp(end, 0.5).multiplyScalar(1.4);
+    // Stelle sicher, dass Start- und Endpunkt nicht gleich sind
+    while (startNode === endNode) {
+        endNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
+    }
+
+    // Die tatsächlichen 3D-Positionen der Punkte verwenden
+    const start = startNode.position.clone();
+    const end = endNode.position.clone();
+    
+    // Kurve nach außen wölben
+    // Ein höherer Multiplikator (z.B. 1.25 bis 1.5) lässt die Kurve stärker ansteigen
+    const mid = start.clone().lerp(end, 0.5).multiplyScalar(1.3); // Etwas weniger Wölbung
     const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
-    const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(40));
+    const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(60)); // Mehr Punkte für glattere Linie
 
     const color = Math.random() > 0.5 ? 0xff0055 : 0x00d4ff;
-    const material = new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 1 });
+    const material = new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 1, linewidth: 2 }); // Linien etwas dicker
     const line = new THREE.Line(geometry, material);
 
     scene.add(line);
-    updateLog(color === 0xff0055 ? "CRITICAL INTRUSION" : "DATA PACKET", "UNKNOWN");
+    
+    // Log-Eintrag mit echten Städtenamen
+    updateLog(color === 0xff0055 ? "CRITICAL INTRUSION" : "DATA PACKET", `${startNode.userData.name} to ${endNode.userData.name}`);
+    
     fadeOutLine(line);
 }
 
@@ -109,8 +126,7 @@ function createStars() {
 
 function animate() {
     requestAnimationFrame(animate);
-    if (globe) globe.rotation.y += 0.002;
-    if (glow) glow.rotation.y += 0.002;
+    
     if (controls) controls.update();
     renderer.render(scene, camera);
 }
@@ -122,3 +138,51 @@ function onWindowResize() {
 }
 
 init();
+
+
+
+
+
+
+
+
+// Füge diese Zeile ganz oben bei deinen globalen Variablen hinzu:
+let cityNodes = []; // Array, um die Stadt-Punkte zu speichern
+
+// Füge diese Funktion hinzu:
+function createCityNode(lat, lon, name = "City") {
+    const geometry = new THREE.SphereGeometry(0.08, 16, 16);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff41 });
+    const node = new THREE.Mesh(geometry, material);
+
+    // 1. Konvertierung von Grad in Radiant
+    const phi = (90 - lat) * (Math.PI / 180);
+    const theta = (lon + 180) * (Math.PI / 180);
+
+    // 2. Umrechnung in kartesische Koordinaten (x, y, z)
+    // WICHTIG: Die Formel für eine Kugel mit Radius 5
+    const x = -5 * Math.sin(phi) * Math.cos(theta);
+    const z = 5 * Math.sin(phi) * Math.sin(theta);
+    const y = 5 * Math.cos(phi);
+
+    node.position.set(x, y, z);
+    
+    node.userData = { name: name };
+    
+    // Füge den Node direkt zur Szene hinzu, NICHT zum Globe, 
+    // damit die Rotation nicht die Punkte "verschluckt"
+    scene.add(node);
+    cityNodes.push(node);
+}
+
+// Rufe createCityNode in deiner init() Funktion auf, nachdem globe erstellt wurde:
+// Beispielstädte:
+// (Nachdem globe = new THREE.Mesh(...) erstellt wurde)
+createCityNode(48.2, 16.3, "Wien");      // Wien
+createCityNode(34.05, -118.25, "Los Angeles"); // Los Angeles
+createCityNode(35.68, 139.69, "Tokio");   // Tokio
+createCityNode(51.5, 0.12, "London");    // London
+createCityNode(-33.86, 151.2, "Sydney"); // Sydney
+createCityNode(40.71, -74.0, "New York"); // New York
+createCityNode(52.52, 13.4, "Berlin"); // Berlin
+createCityNode(39.9, 116.39, "Peking"); // Peking
