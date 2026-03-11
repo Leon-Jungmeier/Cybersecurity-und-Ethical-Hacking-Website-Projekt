@@ -35,38 +35,28 @@ function init() {
     sunLight.position.set(5, 3, 5);
     scene.add(sunLight);
 
+// ------------------------------------------------
+    // Globus (Realistische Erde)
     // ------------------------------------------------
-    // Globus (Cyber Kugel)
-    // ------------------------------------------------
-    const globeGeom = new THREE.SphereGeometry(5, 40, 40);
-    const globeMat = new THREE.MeshPhongMaterial({
-        color: 0x001a24, // dunkelblau
-        wireframe: true, 
-        transparent: true,
-        opacity: 0.5
+    const textureLoader = new THREE.TextureLoader();
+    
+    // Hochauflösende Erd-Textur
+    const earthMap = textureLoader.load(
+        "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg"
+    );
+
+    const globeGeom = new THREE.SphereGeometry(5, 64, 64);
+    const globeMat = new THREE.MeshStandardMaterial({
+        map: earthMap,
+        roughness: 0.6,
+        metalness: 0.1
     });
+    
     globe = new THREE.Mesh(globeGeom, globeMat);
     scene.add(globe);
 
     // ------------------------------------------------
-    // Kontinent-Umrisse (Neon-Linien)
-    // ------------------------------------------------
-    const textureLoader = new THREE.TextureLoader();
-    const bordersTexture = textureLoader.load(
-        "https://raw.githubusercontent.com/creativetimofficial/public-assets/master/argon-dashboard-pro/assets/img/earthmap1k.jpg"
-    );
-
-    const bordersGeom = new THREE.SphereGeometry(5.02, 40, 40);
-    const bordersMat = new THREE.MeshBasicMaterial({
-        map: bordersTexture,
-        transparent: true,
-        opacity: 0.6
-    });
-    const borders = new THREE.Mesh(bordersGeom, bordersMat);
-    scene.add(borders);
-
-    // ------------------------------------------------
-    // Glow
+    // Glow (Beibehalten für den Cyber-Look)
     // ------------------------------------------------
     const glowGeom = new THREE.SphereGeometry(5.3, 40, 40);
     const glowMat = new THREE.MeshBasicMaterial({
@@ -75,14 +65,13 @@ function init() {
         opacity: 0.12
     });
     const glow = new THREE.Mesh(glowGeom, glowMat);
+
     scene.add(glow);
 
     // ------------------------------------------------
     // Sterne
     // ------------------------------------------------
     createStars();
-
-
 
     window.addEventListener("resize", onWindowResize, false);
 
