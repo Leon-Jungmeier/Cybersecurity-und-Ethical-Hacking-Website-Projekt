@@ -19,7 +19,7 @@ function init() {
     );
     camera.position.z = 15;
 
-    // Renderer
+     // Renderer
     renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true
@@ -28,7 +28,12 @@ function init() {
     document.getElementById("globe-container").appendChild(renderer.domElement);
 
     // Licht
-    scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+    scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+    
+    // Eine Lichtquelle (Sonne), die von schräg vorne scheint, für echten 3D-Effekt
+    const sunLight = new THREE.DirectionalLight(0xffffff, 1.5);
+    sunLight.position.set(5, 3, 5);
+    scene.add(sunLight);
 
     // ------------------------------------------------
     // Globus (Cyber Kugel)
