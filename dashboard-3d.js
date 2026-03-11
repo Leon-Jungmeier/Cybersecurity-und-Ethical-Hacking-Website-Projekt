@@ -19,7 +19,7 @@ function init() {
     );
     camera.position.z = 15;
 
-     // Renderer
+    // Renderer
     renderer = new THREE.WebGLRenderer({
         antialias: true,
         alpha: true
@@ -27,20 +27,21 @@ function init() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("globe-container").appendChild(renderer.domElement);
 
+    // ------------------------------------------------
     // Licht
-    scene.add(new THREE.AmbientLight(0xffffff, 0.2));
+    // ------------------------------------------------
+    scene.add(new THREE.AmbientLight(0xffffff, 0.3)); // Grundhelligkeit
     
-    // Eine Lichtquelle (Sonne), die von schräg vorne scheint, für echten 3D-Effekt
-    const sunLight = new THREE.DirectionalLight(0xffffff, 1.5);
+    const sunLight = new THREE.DirectionalLight(0xffffff, 1.2);
     sunLight.position.set(5, 3, 5);
     scene.add(sunLight);
 
-// ------------------------------------------------
+    // ------------------------------------------------
     // Globus (Realistische Erde)
     // ------------------------------------------------
     const textureLoader = new THREE.TextureLoader();
     
-    // Hochauflösende Erd-Textur
+    // Die Textur wird hier geladen
     const earthMap = textureLoader.load(
         "https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg"
     );
@@ -48,42 +49,34 @@ function init() {
     const globeGeom = new THREE.SphereGeometry(5, 64, 64);
     const globeMat = new THREE.MeshStandardMaterial({
         map: earthMap,
-        roughness: 0.6,
+        roughness: 0.7,
         metalness: 0.1
     });
     
     globe = new THREE.Mesh(globeGeom, globeMat);
     scene.add(globe);
 
+    // HINWEIS: Den Teil mit "borders" habe ich entfernt, 
+    // da die Erde jetzt ein echtes Bild ist und keine Neon-Linien mehr braucht.
+
     // ------------------------------------------------
-    // Glow (Beibehalten für den Cyber-Look)
+    // Glow (Atmosphären-Effekt)
     // ------------------------------------------------
-    const glowGeom = new THREE.SphereGeometry(5.3, 40, 40);
+    const glowGeom = new THREE.SphereGeometry(5.2, 40, 40);
     const glowMat = new THREE.MeshBasicMaterial({
         color: 0x00d4ff,
         transparent: true,
-        opacity: 0.12
+        opacity: 0.15
     });
     const glow = new THREE.Mesh(glowGeom, glowMat);
-
     scene.add(glow);
 
-    
-    const bordersGeom = new THREE.SphereGeometry(5.02, 40, 40);
-    const bordersMat = new THREE.MeshBasicMaterial({
-        map: bordersTexture,
-        transparent: true,
-        opacity: 0.6
-    });
-    const borders = new THREE.Mesh(bordersGeom, bordersMat);
-    scene.add(borders);
     // ------------------------------------------------
     // Sterne
     // ------------------------------------------------
     createStars();
 
     window.addEventListener("resize", onWindowResize, false);
-
     animate();
 
     // Angriffslinien erzeugen
@@ -94,12 +87,15 @@ function init() {
 /* Angriffslinien */
 /* ------------------------------------------------ */
 function createAttackLine() {
+    // Start- und Endpunkt auf der Kugeloberfläche (Radius 5)
     const start = new THREE.Vector3().setFromSphericalCoords(
         5, Math.random() * Math.PI, Math.random() * Math.PI * 2
     );
     const end = new THREE.Vector3().setFromSphericalCoords(
         5, Math.random() * Math.PI, Math.random() * Math.PI * 2
     );
+    
+    // Kurve nach außen wölben
     const mid = start.clone().lerp(end, 0.5).multiplyScalar(1.4);
     const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
     const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(40));
@@ -109,15 +105,10 @@ function createAttackLine() {
     const line = new THREE.Line(geometry, material);
 
     scene.add(line);
-
     updateLog(color === 0xff0055 ? "CRITICAL INTRUSION" : "DATA PACKET", "UNKNOWN");
-
     fadeOutLine(line);
 }
 
-/* ------------------------------------------------ */
-/* Linien Fade */
-/* ------------------------------------------------ */
 function fadeOutLine(line) {
     let opacity = 1;
     function animateFade() {
@@ -134,11 +125,6 @@ function fadeOutLine(line) {
     animateFade();
 }
 
-
-
-/* ------------------------------------------------ */
-/* Log */
-/* ------------------------------------------------ */
 function updateLog(type, src) {
     const log = document.getElementById("log-content");
     if (log) {
@@ -150,13 +136,10 @@ function updateLog(type, src) {
     }
 }
 
-/* ------------------------------------------------ */
-/* Sterne */
-/* ------------------------------------------------ */
 function createStars() {
     const starGeometry = new THREE.BufferGeometry();
     const starVertices = [];
-    for (let i = 0; i < 30000; i++) {
+    for (let i = 0; i < 15000; i++) { // Etwas weniger Sterne für bessere Performance
         starVertices.push(
             (Math.random() - 0.5) * 1000,
             (Math.random() - 0.5) * 1000,
@@ -167,36 +150,23 @@ function createStars() {
 
     stars = new THREE.Points(
         starGeometry,
-        new THREE.PointsMaterial({ color: 0xffffff, size: 0.05 })
+        new THREE.PointsMaterial({ color: 0xffffff, size: 0.1 })
     );
-
     scene.add(stars);
 }
 
-/* ------------------------------------------------ */
-/* Animation */
-/* ------------------------------------------------ */
 function animate() {
     requestAnimationFrame(animate);
-
     if (globe) {
-        globe.rotation.y += 0.004;
-        globe.rotation.x += 0.004 ;
+        globe.rotation.y += 0.002; // Rotation etwas langsamer für Realismus
     }
-
     renderer.render(scene, camera);
 }
 
-/* ------------------------------------------------ */
-/* Resize */
-/* ------------------------------------------------ */
 function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-/* ------------------------------------------------ */
-/* Start */
-/* ------------------------------------------------ */
 init();
