@@ -68,6 +68,15 @@ function init() {
 
     scene.add(glow);
 
+    
+    const bordersGeom = new THREE.SphereGeometry(5.02, 40, 40);
+    const bordersMat = new THREE.MeshBasicMaterial({
+        map: bordersTexture,
+        transparent: true,
+        opacity: 0.6
+    });
+    const borders = new THREE.Mesh(bordersGeom, bordersMat);
+    scene.add(borders);
     // ------------------------------------------------
     // Sterne
     // ------------------------------------------------
