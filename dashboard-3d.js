@@ -5,13 +5,16 @@
 let scene, camera, renderer, globe, stars, controls, glow;
 
 function init() {
-    // Scene & Camera
+
+    // 1. Szene erstellen
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x05080a);
-
-    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    
+    // 2. Kamera direkt erstellen (OHNE das fehlerhafte IF)
+    camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
     camera.position.z = 15;
 
+    
     // Renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -22,6 +25,7 @@ function init() {
     controls.enableDamping = true;
     controls.autoRotate = false;
     controls.autoRotateSpeed = 0.5;
+    
 
     // Licht
     scene.add(new THREE.AmbientLight(0xffffff, 0.3));
@@ -138,13 +142,6 @@ function onWindowResize() {
 }
 
 init();
-
-
-
-
-
-
-
 
 // Füge diese Zeile ganz oben bei deinen globalen Variablen hinzu:
 let cityNodes = []; // Array, um die Stadt-Punkte zu speichern
