@@ -15,14 +15,19 @@ function init() {
     camera.position.z = 15;
 
     
-    // Renderer
+// 3. Renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("globe-container").appendChild(renderer.domElement);
 
-    // OrbitControls
+// 4. OrbitControls mit Begrenzung
     controls = new THREE.OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
+    
+    // ZOOM-LIMITS HIER EINSTELLEN:
+    controls.minDistance = 7;    // Verhindert das Hineinfahren in die Erde (Radius ist 5)
+    controls.maxDistance = 200;  // Verhindert das Verlassen des Sternenfelds
+    
     controls.autoRotate = false;
     controls.autoRotateSpeed = 0.5;
     
