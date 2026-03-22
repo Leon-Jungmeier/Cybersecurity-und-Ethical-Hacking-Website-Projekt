@@ -1901,3 +1901,21 @@ body.light-mode .faq-item h4 {
     text-transform: uppercase;
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+.city-label {
+    padding: 2px 5px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+    white-space: nowrap;
+    transform: translate(-50%, -150%); /* Zentriert den Text über dem Punkt */
+    transition: opacity 0.3s;
+    z-index: 10;
+}

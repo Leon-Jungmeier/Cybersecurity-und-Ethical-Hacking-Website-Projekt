@@ -172,7 +172,25 @@ function createStars() {
 function animate() {
     requestAnimationFrame(animate);
     if (controls) controls.update(); // Nötig für das sanfte Damping der Kamera
-    renderer.render(scene, camera); // Zeichnet das Bild neu
+    cityNodes.forEach(node => {
+        const vector = node.position.clone();
+        vector.project(camera); // Projiziert die 3D-Position auf 2D-Bildschirmkoordinaten
+
+        // Umrechnung in Pixel-Werte
+        const x = (vector.x * .5 + .5) * window.innerWidth;
+        const y = (-(vector.y * .5) + .5) * window.innerHeight;
+
+        const label = node.userData.label;
+        label.style.left = `${x}px`;
+        label.style.top = `${y}px`;
+
+        // Optional: Label ausblenden, wenn es sich auf der Rückseite der Erdkugel befindet
+        const meshDistance = camera.position.distanceTo(node.position);
+        const globeDistance = camera.position.distanceTo(globe.position);
+        label.style.display = meshDistance < globeDistance ? 'block' : 'none';
+    });
+
+    renderer.render(scene, camera);
 }
 
 /**
@@ -210,3 +228,39 @@ function createCityNode(lat, lon, name = "City") {
 
 // Startet die Engine
 init();
+
+/**
+ * Erstellt einen kleinen Punkt auf der Weltkugel UND ein Text-Label
+ */
+function createCityNode(lat, lon, name = "City") {
+    const geometry = new THREE.SphereGeometry(0.08, 16, 16);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ff41 });
+    const node = new THREE.Mesh(geometry, material);
+
+    // Umrechnung Koordinaten
+    const phi = (90 - lat) * (Math.PI / 180);
+    const theta = (lon + 180) * (Math.PI / 180);
+    const x = -5 * Math.sin(phi) * Math.cos(theta);
+    const z = 5 * Math.sin(phi) * Math.sin(theta);
+    const y = 5 * Math.cos(phi);
+
+    node.position.set(x, y, z);
+    
+    // --- NEU: HTML Label erstellen ---
+    const label = document.createElement('div');
+    label.className = 'city-label';
+    label.textContent = name;
+    label.style.position = 'absolute';
+    label.style.color = '#00ff41';
+    label.style.fontSize = '12px';
+    label.style.fontFamily = 'Inter, sans-serif';
+    label.style.pointerEvents = 'none'; // Damit man durch den Text klicken kann
+    label.style.textShadow = '0 0 5px #000';
+    document.getElementById("globe-container").appendChild(label);
+    
+    // Speichere das Label im node-Objekt, damit wir es in animate() bewegen können
+    node.userData = { name: name, label: label }; 
+    
+    scene.add(node);
+    cityNodes.push(node);
+}
