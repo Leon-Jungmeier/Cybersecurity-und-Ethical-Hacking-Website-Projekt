@@ -73,7 +73,7 @@ function init() {
     createCityNode(40.71, -74.0, "New York");
     createCityNode(52.52, 13.4, "Berlin");
     createCityNode(39.9, 116.39, "Peking");
-createCityNode(48.85, 2.35, "Paris");
+    createCityNode(48.85, 2.35, "Paris");
     createCityNode(41.90, 12.49, "Rom");
     createCityNode(40.41, -3.70, "Madrid");
     createCityNode(55.75, 37.61, "Moskau");
@@ -100,7 +100,7 @@ createCityNode(48.85, 2.35, "Paris");
     createCityNode(-33.86, 151.20, "Sydney");
     createCityNode(37.56, 126.97, "Seoul");
     createCityNode(52.36, 4.90, "Amsterdam");
-    createCityNode(35.67, 51.38, "Teheran");
+    createCityNode(35.67, 51.38, "Teheran");    
     // Startet das automatische Generieren von "Angriffslinien" alle 800ms
     setInterval(createAttackLine, 800);
 }
