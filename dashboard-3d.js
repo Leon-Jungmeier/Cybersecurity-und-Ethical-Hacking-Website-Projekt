@@ -136,8 +136,6 @@ function createAttackLine() {
 
     scene.add(line);
     
-    // Log-Eintrag im UI aktualisieren
-    updateLog(color === 0xff0055 ? "CRITICAL INTRUSION" : "DATA PACKET", `${startNode.userData.name} to ${endNode.userData.name}`);
     
     // Startet das Ausfaden der Linie
     fadeOutLine(line);
@@ -161,21 +159,6 @@ function fadeOutLine(line) {
         }
     }
     animateFade();
-}
-
-/**
- * Schreibt Ereignisse in die HTML-Log-Konsole
- */
-function updateLog(type, src) {
-    const log = document.getElementById("log-content");
-    if (log) {
-        const entry = document.createElement("div");
-        entry.style.color = type === "CRITICAL INTRUSION" ? "#ff0055" : "#00d4ff";
-        entry.innerHTML = `[${new Date().toLocaleTimeString()}] ${type} FROM ${src}`;
-        log.prepend(entry); // Neueste Meldung nach oben
-        // Limitiert die Anzahl der Log-Einträge auf 15
-        if (log.children.length > 15) log.removeChild(log.lastChild);
-    }
 }
 
 /**
