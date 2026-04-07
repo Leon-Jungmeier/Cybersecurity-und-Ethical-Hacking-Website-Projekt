@@ -42,6 +42,8 @@ function init() {
     sunLight.position.set(5, 3, 5);
     scene.add(sunLight);
 
+
+    createSun();
     // 6. Der Globus: Erstellung der Erdkugel
     const textureLoader = new THREE.TextureLoader();
     const earthMap = textureLoader.load("https://raw.githubusercontent.com/mrdoob/three.js/master/examples/textures/planets/earth_atmos_2048.jpg");
@@ -273,4 +275,40 @@ function createCityNode(lat, lon, name = "City") {
     
     scene.add(node);
     cityNodes.push(node);
+}
+
+function createSun() {
+    // 1. Die Sonne als Gruppe erstellen, um Kern und Glow zusammen zu verschieben
+    const sunGroup = new THREE.Group();
+
+    // 2. Der Kern (Größer, aber weißer für den "Gleiß-Effekt")
+    const sunGeometry = new THREE.SphereGeometry(4, 32, 32); // Radius von 1.2 auf 4 erhöht
+    const sunMaterial = new THREE.MeshBasicMaterial({ 
+        color: 0xffffff // Reinweiß für den heißesten Teil des Sterns
+    });
+    const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+    sunGroup.add(sun);
+
+    // 3. Die Korona (Hauchzarter, weiß-bläulicher Glow statt Gelb)
+    const glowGeometry = new THREE.SphereGeometry(6, 32, 32); 
+    const glowMaterial = new THREE.MeshBasicMaterial({
+        color: 0xeeeeff, // Ganz leichtes Hellblau/Weiß
+        transparent: true,
+        opacity: 0.2,
+        blending: THREE.AdditiveBlending,
+        side: THREE.BackSide
+    });
+    const sunGlow = new THREE.Mesh(glowGeometry, glowMaterial);
+    sunGroup.add(sunGlow);
+
+    // 4. Das Licht (Sehr intensiv, um die Entfernung auszugleichen)
+    // Farbe fast Weiß (ffffeb), hohe Intensität
+    const sunLight = new THREE.PointLight(0xffffeb, 3, 500);
+    sunGroup.add(sunLight);
+
+    // 5. Weite Entfernung
+    // X = 100 (weit rechts), Y = 50 (weit oben), Z = -150 (tief im Hintergrund)
+    sunGroup.position.set(100, 50, -150);
+
+    scene.add(sunGroup);
 }
