@@ -1956,3 +1956,24 @@ body.light-mode .faq-item h4 {
     color: #00d4ff;
     font-family: 'Courier New', monospace;
 }
+
+:root {
+    --bg-color: #05080a;
+    --text-color: #ffffff;
+    --accent-color: #00d4ff;
+    --card-bg: rgba(255, 255, 255, 0.05);
+}
+
+body.white-mode {
+    --bg-color: #f0f2f5;
+    --text-color: #1a1a1a;
+    --accent-color: #0055ff; /* Etwas dunkleres Blau für Kontrast */
+    --card-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* Nutze diese Variablen in deinen Klassen */
+.glass-card {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--accent-color);
+}

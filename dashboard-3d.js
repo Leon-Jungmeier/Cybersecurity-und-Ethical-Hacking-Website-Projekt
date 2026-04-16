@@ -2,6 +2,12 @@
  * CYBERSHIELD COMMAND CENTER - 3D ENGINE
  */
 
+
+let isWhiteMode = false;
+
+
+
+
 let scene, camera, renderer, globe, stars, controls, glow;
 let cityNodes = []; 
 let attackCounter = 0;
@@ -219,3 +225,43 @@ function onWindowResize() {
 }
 
 init();
+
+
+
+
+
+
+// Theme Toggle
+
+
+
+document.getElementById('theme-toggle').addEventListener('click', () => {
+    isWhiteMode = !isWhiteMode;
+    document.body.classList.toggle('white-mode');
+    updateThreeJSTheme();
+});
+
+function updateThreeJSTheme() {
+    if (isWhiteMode) {
+        scene.background = new THREE.Color(0xf0f2f5); // Helles Grau
+        glow.material.color.setHex(0x0055ff);
+        glow.material.opacity = 0.05; // Weniger Glow im Hellen
+        stars.visible = false; // Sterne im White-Mode ausblenden
+        
+        // City Labels anpassen
+        cityNodes.forEach(node => {
+            node.userData.label.style.color = '#1a1a1a';
+            node.userData.label.style.textShadow = 'none';
+        });
+    } else {
+        scene.background = new THREE.Color(0x05080a);
+        glow.material.color.setHex(0x00d4ff);
+        glow.material.opacity = 0.15;
+        stars.visible = true;
+        
+        cityNodes.forEach(node => {
+            node.userData.label.style.color = '#00ff41';
+            node.userData.label.style.textShadow = '0 0 5px #000';
+        });
+    }
+}
