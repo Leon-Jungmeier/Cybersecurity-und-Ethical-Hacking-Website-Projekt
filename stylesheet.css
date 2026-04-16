@@ -1957,23 +1957,163 @@ body.light-mode .faq-item h4 {
     font-family: 'Courier New', monospace;
 }
 
+/* Grundlegende Variablen */
 :root {
-    --bg-color: #05080a;
-    --text-color: #ffffff;
-    --accent-color: #00d4ff;
-    --card-bg: rgba(255, 255, 255, 0.05);
+    --bg-nav: rgba(5, 8, 10, 0.8); /* Dunkel */
+    --text-nav: #ffffff;
+    --logo-span: #00d4ff;
+    --nav-hover: #00d4ff;
 }
 
+/* White Mode Überschreibungen */
 body.white-mode {
-    --bg-color: #f0f2f5;
-    --text-color: #1a1a1a;
-    --accent-color: #0055ff; /* Etwas dunkleres Blau für Kontrast */
-    --card-bg: rgba(0, 0, 0, 0.05);
+    --bg-nav: rgba(255, 255, 255, 0.9); /* Weiß, leicht transparent */
+    --text-nav: #1a1a1a;
+    --logo-span: #0055ff;
+    --nav-hover: #0055ff;
 }
 
-/* Nutze diese Variablen in deinen Klassen */
-.glass-card {
-    background: var(--card-bg);
-    color: var(--text-color);
-    border: 1px solid var(--accent-color);
+/* White Mode Überschreibungen */
+body.white-mode {
+    --bg-nav: rgba(255, 255, 255, 0.9); /* Weiß, leicht transparent */
+    --text-nav: #1a1a1a;
+    --logo-span: #0055ff;
+    --nav-hover: #0055ff;
+}
+
+/* Die Menubar (Header/Nav) anpassen */
+header {
+    width: 100%;
+    background: var(--bg-nav);
+    backdrop-filter: blur(10px); /* Glas-Effekt */
+    border-bottom: 1px solid var(--logo-span);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s ease, border 0.3s ease;
+}
+
+nav .logo {
+    color: var(--text-nav);
+    font-weight: 700;
+    font-size: 24px;
+}
+
+nav .logo span {
+    color: var(--logo-span);
+}
+
+nav ul li a {
+    color: var(--text-nav);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover, nav ul li a.active {
+    color: var(--nav-hover);
+}
+
+/* Der Theme-Button selbst */
+.theme-btn {
+    background: var(--text-nav);
+    border: 1px solid var(--logo-span);
+    cursor: pointer;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    border-radius: 25px;
+}
+
+.theme-btn .circle {
+    background: var(--bg-nav);
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+}
+
+/* Wenn der Button im White Mode ist, schiebe den Kreis */
+body.white-mode .theme-btn .circle {
+    transform: translateX(25px);
+}
+
+header {
+    height: 70px; /* Definierte Höhe für Vorhersehbarkeit */
+    display: flex;
+    align-items: center;
+}
+
+.dashboard-3d {
+    margin-top: 70px; /* Schiebt den Globus unter den Header */
+    height: calc(100vh - 70px); /* Damit keine unnötigen Scrollbalken entstehen */
+    position: relative;
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+nav {
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; /* Verteilt Logo, Liste und Toggle */
+    align-items: center;
+    height: 100%;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px; /* Abstand zwischen den Links */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    z-index: 1000; /* Immer oben */
+}
+
+#globe-container {
+    z-index: 1; /* Dahinter */
+}
+body.white-mode .side-panel {
+    background: rgba(255, 255, 255, 0.7);
+    border-left: 1px solid #ddd;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.05);
+
+}
+
+body.white-mode .stat-box {
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.glass-card h3 {
+    color: var(--text-main);
+}
+
+.stat-box .label {
+    color: var(--text-muted); /* "ANGRIFFE GESAMT" etc. */
+}
+
+.stat-box .val {
+    color: var(--text-main); /* Die Zahlen (Counter) */
+}
+
+/* Speziell für die dynamischen Log-Einträge */
+.log-stream {
+    color: var(--text-main);
 }
