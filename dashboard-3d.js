@@ -2,16 +2,9 @@
  * CYBERSHIELD COMMAND CENTER - 3D ENGINE
  */
 
-
 let isWhiteMode = false;
-
-
-
-
 let scene, camera, renderer, globe, stars, controls, glow;
 let cityNodes = []; 
-let attackCounter = 0;
-let criticalCounter = 0;
 
 function init() {
     // 1. Scene & Camera
@@ -63,32 +56,6 @@ function init() {
     setInterval(createAttackLine, 800);
 }
 
-// --- NEUE FUNKTION FÜR STATS & LOG ---
-function updateStatsAndLog(isCritical, from, to) {
-    const totalEl = document.getElementById("total-attacks");
-    const critEl = document.getElementById("critical-attacks");
-    const log = document.getElementById("log-content");
-
-    // Zähler hochzählen
-    attackCounter++;
-    if (totalEl) totalEl.innerText = attackCounter;
-
-    if (isCritical) {
-        criticalCounter++;
-        if (critEl) critEl.innerText = criticalCounter;
-    }
-
-    // Log-Eintrag schreiben
-    if (log) {
-        const entry = document.createElement("div");
-        entry.style.color = isCritical ? "#ff0055" : "#00d4ff";
-        entry.style.marginBottom = "5px";
-        entry.innerHTML = `> ${isCritical ? 'CRITICAL' : 'DATA'}: ${from} -> ${to}`;
-        log.prepend(entry);
-        if (log.children.length > 10) log.removeChild(log.lastChild);
-    }
-}
-
 function createAttackLine() {
     if (cityNodes.length < 2) return;
 
@@ -111,9 +78,6 @@ function createAttackLine() {
     const line = new THREE.Line(geometry, material);
 
     scene.add(line);
-    
-    // Stats & Log aufrufen
-    updateStatsAndLog(isCritical, startNode.userData.name, endNode.userData.name);
     
     fadeOutLine(line);
 }
@@ -147,7 +111,6 @@ function createCityNode(lat, lon, name) {
 
     node.position.set(x, y, z);
     
-    // HTML Label
     const label = document.createElement('div');
     label.className = 'city-label';
     label.textContent = name;
@@ -226,15 +189,7 @@ function onWindowResize() {
 
 init();
 
-
-
-
-
-
 // Theme Toggle
-
-
-
 document.getElementById('theme-toggle').addEventListener('click', () => {
     isWhiteMode = !isWhiteMode;
     document.body.classList.toggle('white-mode');
@@ -243,12 +198,11 @@ document.getElementById('theme-toggle').addEventListener('click', () => {
 
 function updateThreeJSTheme() {
     if (isWhiteMode) {
-        scene.background = new THREE.Color(0xf0f2f5); // Helles Grau
+        scene.background = new THREE.Color(0xf0f2f5);
         glow.material.color.setHex(0x0055ff);
-        glow.material.opacity = 0.05; // Weniger Glow im Hellen
-        stars.visible = false; // Sterne im White-Mode ausblenden
+        glow.material.opacity = 0.05;
+        stars.visible = false;
         
-        // City Labels anpassen
         cityNodes.forEach(node => {
             node.userData.label.style.color = '#1a1a1a';
             node.userData.label.style.textShadow = 'none';
