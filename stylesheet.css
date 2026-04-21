@@ -2117,3 +2117,31 @@ body.white-mode .stat-box {
 .log-stream {
     color: var(--text-main);
 }
+
+
+/* --- WHITE MODE ANPASSUNGEN FÜR DAS PANEL --- */
+body.white-mode .glass-card {
+    background: rgba(255, 255, 255, 0.85); /* Heller, milchiger Hintergrund */
+    border: 1px solid rgba(0, 85, 255, 0.3);
+    color: #1a1a1a; /* Dunkler Text für Lesbarkeit */
+}
+
+body.white-mode .stat-box {
+    border-left: 2px solid #0055ff; /* Dunkleres Blau für den Rand */
+}
+
+body.white-mode .stat-box .label {
+    color: #555;
+}
+
+body.white-mode .stat-box .val {
+    color: #0055ff; /* Dunkleres Blau für die Zahlen */
+}
+
+body.white-mode .stat-box .val.alert {
+    color: #cc0044; /* Etwas dunkleres Rot für kritische Zahlen im hellen Modus */
+}
+
+body.white-mode .log-stream {
+    color: #0055ff; /* Blaue Log-Schriftart */
+}
