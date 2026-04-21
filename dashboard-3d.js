@@ -56,31 +56,6 @@ function init() {
     setInterval(createAttackLine, 800);
 }
 
-function createAttackLine() {
-    if (cityNodes.length < 2) return;
-
-    const startNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
-    let endNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
-    while (startNode === endNode) {
-        endNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
-    }
-
-    const start = startNode.position.clone();
-    const end = endNode.position.clone();
-    const mid = start.clone().lerp(end, 0.5).multiplyScalar(1.3); 
-    
-    const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
-    const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(60)); 
-
-    const isCritical = Math.random() > 0.8; 
-    const color = isCritical ? 0xff0055 : 0x00d4ff;
-    const material = new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 1 });
-    const line = new THREE.Line(geometry, material);
-
-    scene.add(line);
-    
-    fadeOutLine(line);
-}
 
 function fadeOutLine(line) {
     let opacity = 1;
@@ -218,4 +193,63 @@ function updateThreeJSTheme() {
             node.userData.label.style.textShadow = '0 0 5px #000';
         });
     }
+}
+
+// Neue Funktion zum Updaten der HTML-Elemente
+function updateStatsAndLog(isCritical, from, to) {
+    const totalEl = document.getElementById("total-attacks");
+    const critEl = document.getElementById("critical-attacks");
+    const log = document.getElementById("log-content");
+
+    // Zähler erhöhen
+    attackCounter++;
+    if (totalEl) totalEl.innerText = attackCounter;
+
+    if (isCritical) {
+        criticalCounter++;
+        if (critEl) critEl.innerText = criticalCounter;
+    }
+
+    // Log-Eintrag hinzufügen
+    if (log) {
+        const entry = document.createElement("div");
+        entry.style.color = isCritical ? "#ff0055" : "#00d4ff";
+        entry.style.fontSize = "11px";
+        entry.style.marginBottom = "4px";
+        entry.innerHTML = `> ${isCritical ? 'CRITICAL' : 'DATA'}: ${from} -> ${to}`;
+        log.prepend(entry); // Neueste oben
+
+        // Damit das Log nicht unendlich lang wird
+        if (log.children.length > 10) log.removeChild(log.lastChild);
+    }
+}
+
+// Ändere deine createAttackLine Funktion ab, damit sie die Stats aufruft:
+function createAttackLine() {
+    if (cityNodes.length < 2) return;
+
+    const startNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
+    let endNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
+    while (startNode === endNode) {
+        endNode = cityNodes[Math.floor(Math.random() * cityNodes.length)];
+    }
+
+    const start = startNode.position.clone();
+    const end = endNode.position.clone();
+    const mid = start.clone().lerp(end, 0.5).multiplyScalar(1.3); 
+    
+    const curve = new THREE.QuadraticBezierCurve3(start, mid, end);
+    const geometry = new THREE.BufferGeometry().setFromPoints(curve.getPoints(60)); 
+
+    const isCritical = Math.random() > 0.8; 
+    const color = isCritical ? 0xff0055 : 0x00d4ff;
+    const material = new THREE.LineBasicMaterial({ color: color, transparent: true, opacity: 1 });
+    const line = new THREE.Line(geometry, material);
+
+    scene.add(line);
+    
+    // HIER: Das Update für das HTML-Panel aufrufen!
+    updateStatsAndLog(isCritical, startNode.userData.name, endNode.userData.name);
+    
+    fadeOutLine(line);
 }
