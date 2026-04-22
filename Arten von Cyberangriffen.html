@@ -4,39 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arten von Cyberangriffen | Bedrohungstypen</title>
+
     <link rel="icon" type="image/png" href="favicon.png?v=2">
     <link rel="stylesheet" href="stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <header>
-        <nav>
+<header>
+    <nav>
         <div class="logo">Cyber<span>Shield</span></div>
-                <ul>
-                    <li><a href="startseite.html">Startseite</a></li>
-                    <li><a href="Was ist Cybersecurity.html">Definition</a></li>
-                    <li><a href="Arten von Cyberangriffen.html" class="active">Angriffsarten</a></li>
-                    <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
-                    <li><a href="Cybersecurity im Alltag.html">Alltag</a></li>
-                    <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
-                    <li><a href="Hackerangriffe.html">Hackerangriffe</a></li>
-                </ul>
-                <div class="theme-switch-wrapper">
-                    <button id="theme-toggle" class="theme-btn">
-                        <div class="circle"></div>
-                    </button>
-                </div>
-            </nav>
-        </header>
 
-    <main class="container">
+        <ul>
+            <li><a href="startseite.html">Startseite</a></li>
+            <li><a href="Was ist Cybersecurity.html">Definition</a></li>
+            <li><a href="Arten von Cyberangriffen.html" class="active">Angriffsarten</a></li>
+            <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
+            <li><a href="Cybersecurity im Alltag.html">Alltag</a></li>
+            <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
+            <li><a href="Hackerangriffe.html">Hackerangriffe</a></li>
+        </ul>
+
+        <div class="theme-switch-wrapper">
+            <button id="theme-toggle" class="theme-btn">
+                <div class="circle"></div>
+            </button>
+        </div>
+    </nav>
+</header>
+
+<main class="container">
+
     <section class="content-header">
         <h1 class="glitch-title" data-text="Angriffs-Vektoren">Angriffs-Vektoren</h1>
         <p class="subtitle">Ein detaillierter Einblick in die Taktiken und Werkzeuge moderner Cyber-Krimineller.</p>
     </section>
 
     <div class="cyber-accordion">
+
         <details>
             <summary>
                 <div class="summary-content">
@@ -45,18 +51,22 @@
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Malware (Schadsoftware) ist der Überbegriff für jegliche Software, die darauf programmiert wurde, unbefugte Aktionen auf einem System auszuführen. Die gefährlichste Form ist derzeit die <strong>Ransomware</strong>.</p>
+                <p>Malware (Schadsoftware) ist der Überbegriff für Software, die unbefugte Aktionen ausführt. Besonders gefährlich ist <strong>Ransomware</strong>.</p>
+
                 <div class="sub-detail">
                     <h4>Wie Ransomware funktioniert</h4>
-                    <p>Sobald der Code ausgeführt wird, nutzt er starke Verschlüsselungsalgorithmen (oft AES-256), um Nutzerdaten unbrauchbar zu machen. Ohne den privaten Schlüssel des Angreifers ist eine Wiederherstellung mathematisch unmöglich.</p>
+                    <p>Sie verschlüsselt Daten (z. B. mit AES-256), sodass sie ohne Schlüssel nicht mehr zugänglich sind.</p>
+
                     <ul class="cyber-list">
-                        <li><strong>Trojaner:</strong> Sie tarnen sich als nützliche Tools (z.B. ein PDF-Reader), schleusen aber im Hintergrund einen "Backdoor" ein, über den Hacker vollen Zugriff erhalten.</li>
-                        <li><strong>Spyware & Keylogger:</strong> Diese Programme arbeiten lautlos. Sie zeichnen jeden Tastaturanschlag auf, um Passwörter und Kreditkartendaten direkt bei der Eingabe abzugreifen.</li>
-                        <li><strong>Rootkits:</strong> Die gefährlichste Tarnung. Sie nisten sich tief im Betriebssystemkern ein und sind für herkömmliche Antiviren-Programme unsichtbar.</li>
+                        <li><strong>Trojaner:</strong> Tarnen sich als harmlose Programme.</li>
+                        <li><strong>Spyware & Keylogger:</strong> Zeichnen Eingaben und Daten auf.</li>
+                        <li><strong>Rootkits:</strong> Tief im System versteckt und schwer erkennbar.</li>
                     </ul>
+
                     <div class="example-box">
-                        <strong>Prävention:</strong> Regelmäßige Offline-Backups sind die einzige Garantie. Wenn die Daten verschlüsselt werden, spielt man einfach das Backup vom Vortag ein.
+                        <strong>Prävention:</strong> Regelmäßige Offline-Backups sind entscheidend.
                     </div>
                 </div>
             </div>
@@ -70,17 +80,21 @@
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Social Engineering nutzt die "Schwachstelle Mensch". Anstatt Software-Lücken zu suchen, werden psychologische Tricks angewandt, um Vertrauen zu erschleichen oder Angst zu erzeugen.</p>
+                <p>Hier werden Menschen durch psychologische Tricks manipuliert statt Systeme gehackt.</p>
+
                 <div class="sub-detail">
-                    <h4>Die Psychologie des Angriffs</h4>
-                    <p>Angreifer erzeugen oft künstlichen Zeitdruck ("Ihr Konto wird in 2 Stunden gelöscht") oder nutzen Autorität aus ("Ich bin der IT-Leiter, ich brauche sofort Ihr Passwort für ein Sicherheitsupdate").</p>
+                    <h4>Psychologische Methoden</h4>
+                    <p>Typisch sind Zeitdruck oder vorgetäuschte Autorität.</p>
+
                     <ul class="cyber-list">
-                        <li><strong>Spear-Phishing:</strong> Der Angreifer recherchiert Wochen im Voraus auf LinkedIn oder Facebook, um eine E-Mail so persönlich zu gestalten, dass sie absolut echt wirkt.</li>
-                        <li><strong>Business Email Compromise (BEC):</strong> Hacker übernehmen das Konto eines Geschäftsführers und weisen die Buchhaltung an, Millionen auf ein Offshore-Konto zu überweisen.</li>
+                        <li><strong>Spear-Phishing:</strong> Personalisierte Fake-E-Mails.</li>
+                        <li><strong>Business Email Compromise:</strong> Betrug im Unternehmensumfeld.</li>
                     </ul>
+
                     <div class="example-box">
-                        <strong>Checkliste:</strong> Achten Sie auf die E-Mail-Adresse (nicht nur den Namen!), prüfen Sie Links durch "Hovern" (Drüberfahren ohne Klicken) und rufen Sie im Zweifel kurz beim Absender an.
+                        <strong>Tipp:</strong> E-Mail-Adressen und Links immer genau prüfen.
                     </div>
                 </div>
             </div>
@@ -94,17 +108,14 @@
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Bei einem MitM-Angriff fängt der Hacker die Kommunikation zwischen zwei Teilnehmern (z. B. Ihnen und Ihrer Bank) ab, ohne dass beide Seiten es bemerken.</p>
-                <div class="sub-detail">
-                    <h4>Gefahren in öffentlichen Netzwerken</h4>
-                    <p>In unverschlüsselten WLANs (Flughafen, Café) kann ein Angreifer mit einfacher Software den gesamten Datenverkehr mitlesen. Er sieht Ihre Login-Daten im Klartext, wenn die Seite nicht perfekt verschlüsselt ist.</p>
-                    
-                    <ul class="cyber-list">
-                        <li><strong>DNS Spoofing:</strong> Der Hacker leitet Ihre Anfrage an "google.com" auf eine von ihm kontrollierte IP-Adresse um, die genau wie Google aussieht.</li>
-                        <li><strong>Wi-Fi Pineapple:</strong> Ein Gerät, das ein bekanntes WLAN (z.B. "Telekom_ICE") vortäuscht, damit sich Geräte automatisch damit verbinden.</li>
-                    </ul>
-                </div>
+                <p>Angriffe, bei denen Kommunikation heimlich abgefangen wird.</p>
+
+                <ul class="cyber-list">
+                    <li><strong>DNS Spoofing:</strong> Umleitung auf Fake-Webseiten.</li>
+                    <li><strong>Wi-Fi Pineapple:</strong> Gefälschte WLAN-Hotspots.</li>
+                </ul>
             </div>
         </details>
 
@@ -116,16 +127,14 @@
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Diese Angriffe nutzen Fehler in der Programmierung von Webseiten aus, um direkt auf die dahinterliegenden Datenbanken zuzugreifen.</p>
-                <div class="sub-detail">
-                    <h4>Datenbank-Manipulation</h4>
-                    <p>Durch die Eingabe von speziellem SQL-Code in ein normales Login-Feld kann ein Angreifer die Passwort-Abfrage umgehen oder die gesamte Kundendatenbank herunterladen.</p>
-                    <ul class="cyber-list">
-                        <li><strong>Cross-Site Scripting (XSS):</strong> Der Angreifer schleust bösartigen Code in eine Webseite ein, der dann im Browser des Opfers ausgeführt wird, um Session-Cookies zu stehlen.</li>
-                        <li><strong>Insecure Deserialization:</strong> Ein technischer Fehler, bei dem manipulierte Datenobjekte vom Server falsch interpretiert werden, was zur vollständigen Übernahme führen kann.</li>
-                    </ul>
-                </div>
+                <p>Ausnutzung von Sicherheitslücken in Webseiten und Datenbanken.</p>
+
+                <ul class="cyber-list">
+                    <li><strong>XSS:</strong> Einschleusen von Schadcode in Webseiten.</li>
+                    <li><strong>Insecure Deserialization:</strong> Manipulierte Datenstrukturen.</li>
+                </ul>
             </div>
         </details>
 
@@ -133,20 +142,18 @@
             <summary>
                 <div class="summary-content">
                     <span class="cyber-number">05</span>
-                    <span class="cyber-label">DDoS (Distributed Denial of Service)</span>
+                    <span class="cyber-label">DDoS-Angriffe</span>
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Ein DDoS-Angriff ist kein Einbruch, sondern eine digitale Belagerung. Ziel ist es, einen Dienst durch massive Überlastung lahmzulegen.</p>
-                <div class="sub-detail">
-                    <h4>Die Macht der Botnetze</h4>
-                    <p>Angreifer nutzen "Botnetze" – Millionen von infizierten IoT-Geräten (Kameras, Kühlschränke, Router), die gleichzeitig Anfragen an einen einzigen Server senden.</p>
-                    <ul class="cyber-list">
-                        <li><strong>Volumetrische Angriffe:</strong> Die Bandbreite wird komplett verstopft.</li>
-                        <li><strong>Protocol Attacks:</strong> Nutzen Schwachstellen in Netzwerkprotokollen (wie TCP), um Server-Ressourcen zu binden.</li>
-                    </ul>
-                </div>
+                <p>Überlastung von Servern durch massenhafte Anfragen.</p>
+
+                <ul class="cyber-list">
+                    <li><strong>Volumetrisch:</strong> Bandbreite wird blockiert.</li>
+                    <li><strong>Protocol Attacks:</strong> Netzwerkressourcen werden überlastet.</li>
+                </ul>
             </div>
         </details>
 
@@ -158,14 +165,12 @@
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Ein APT ist kein schneller Raubüberfall, sondern eine jahrelange Infiltration. Diese Angriffe werden oft von Nationalstaaten finanziert, um politische oder wirtschaftliche Spionage zu betreiben.</p>
-                <div class="apt-info">
-                    <h4>Der "Low and Slow"-Ansatz</h4>
-                    <p>Im Gegensatz zu Cyberkriminellen wollen APT-Gruppen nicht sofort auffallen. Sie nisten sich im System ein, beobachten die Kommunikation und stehlen Daten häppchenweise über Jahre hinweg.</p>
-                    <div class="example-box">
-                        <strong>Berühmte Beispiele:</strong> Der Stuxnet-Wurm, der gezielt Zentrifugen in Atomanlagen manipulierte, gilt als einer der ersten dokumentierten APT-Angriffe.
-                    </div>
+                <p>Langfristige, verdeckte Angriffe oft durch staatliche Akteure.</p>
+
+                <div class="example-box">
+                    Beispiel: Stuxnet als gezielter Industrieangriff.
                 </div>
             </div>
         </details>
@@ -178,68 +183,80 @@
                 </div>
                 <div class="interaction-hint"><span class="icon-plus">+</span></div>
             </summary>
+
             <div class="details-content">
-                <p>Ein Zero-Day ist eine Sicherheitslücke, die bisher nur den Angreifern bekannt ist. Es gibt zum Zeitpunkt des Angriffs keine Verteidigung dagegen.</p>
+                <p>Unbekannte Sicherheitslücken ohne vorhandenen Schutz.</p>
+
                 <div class="warning-box">
-                    <strong>Das Risiko:</strong> Da kein Antiviren-Programm die Signatur kennt, fliegen diese Angriffe oft unter dem Radar. Erst wenn der Angriff analysiert wird, können Hersteller einen "Patch" (Reparatur-Software) entwickeln.
+                    Kein Patch verfügbar → besonders gefährlich.
                 </div>
             </div>
         </details>
+
     </div>
 
     <section class="text-block simulation-section">
         <h2>Gedankenexperiment: Ein Angriff in Echtzeit</h2>
+
         <div class="sim-timeline">
-             <div class="sim-event">
-                <span class="time">Tag 1 - Initial Access</span>
-                <p>Ein Spear-Phishing-Link wird geklickt. Der Angreifer erhält einen ersten Fuß in der Tür (User-Level Zugriff).</p>
-            </div>
             <div class="sim-event">
-                <span class="time">Tag 14 - Privilege Escalation</span>
-                <p>Der Hacker findet eine Lücke im lokalen Server und erlangt Administrator-Rechte. Er hat nun die volle Kontrolle über das Netzwerk.</p>
+                <span class="time">Tag 1</span>
+                <p>Phishing-E-Mail wird geöffnet.</p>
             </div>
+
+            <div class="sim-event">
+                <span class="time">Tag 14</span>
+                <p>Admin-Zugriff wird erlangt.</p>
+            </div>
+
             <div class="sim-event highlight-event">
-                <span class="time">Tag 30 - Impact</span>
-                <p>Nachdem alle Backups heimlich gelöscht wurden, wird die Ransomware auf 500 Servern gleichzeitig aktiviert. Das Unternehmen steht still.</p>
+                <span class="time">Tag 30</span>
+                <p>Ransomware aktiviert sich.</p>
             </div>
         </div>
     </section>
+
     <section class="text-block glossary-section">
         <h2>Lexikon der Schattenwelt</h2>
-        <p>In der Cybersecurity-Community gibt es Begriffe, die man kennen sollte, um die Nachrichten von morgen zu verstehen:</p>
-        
+
         <div class="glossary-grid">
             <div class="glossary-item">
                 <span class="term">White Hat</span>
-                <p>Die "Guten". Hacker, die ihre Fähigkeiten nutzen, um Systeme sicherer zu machen.</p>
+                <p>Ethische Hacker</p>
             </div>
+
             <div class="glossary-item">
                 <span class="term">Black Hat</span>
-                <p>Kriminelle Hacker, die mit böser Absicht und für persönlichen Profit handeln.</p>
+                <p>Kriminelle Hacker</p>
             </div>
+
             <div class="glossary-item">
                 <span class="term">Darknet</span>
-                <p>Ein verborgener Teil des Internets, der nur mit spezieller Software (Tor) erreichbar ist und oft als Marktplatz für gestohlene Daten dient.</p>
+                <p>Versteckter Teil des Internets</p>
             </div>
+
             <div class="glossary-item">
                 <span class="term">Exploit</span>
-                <p>Ein konkretes Werkzeug oder eine Methode, um eine spezifische Sicherheitslücke auszunutzen.</p>
+                <p>Ausnutzung einer Sicherheitslücke</p>
             </div>
         </div>
     </section>
 
     <section class="next-step-box">
         <div class="next-step-content">
-            <h3>Genug von der dunklen Seite?</h3>
-            <p>Jetzt, wo Sie wissen, wie Angriffe funktionieren, ist es Zeit zu lernen, wie Sie sich und Ihre Daten effektiv verteidigen.</p>
+            <h3>Weiter zur Verteidigung</h3>
+            <p>Lerne jetzt, wie du dich schützen kannst.</p>
             <a href="Schutzmaßnahmen.html" class="cyber-button">Zu den Schutzmaßnahmen →</a>
         </div>
     </section>
+
 </main>
 
-    <footer>
-        <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>
-    </footer>
-    <script src="script.js"></script>
+<footer>
+    <p>&copy; 2026 Cybersecurity Projekt | Modern & Sicher</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
