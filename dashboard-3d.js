@@ -6,6 +6,13 @@ let isWhiteMode = false;
 let scene, camera, renderer, globe, stars, controls, glow;
 let cityNodes = []; 
 
+// Zähler für die Live-Analyse
+let attackCounter = 0;
+let criticalCounter = 0;
+
+/**
+ * Initialisiert die gesamte 3D-Umgebung
+ */
 function init() {
     // 1. Scene & Camera
     scene = new THREE.Scene();
@@ -16,7 +23,10 @@ function init() {
     // 2. Renderer
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById("globe-container").appendChild(renderer.domElement);
+    const container = document.getElementById("globe-container");
+    if (container) {
+        container.appendChild(renderer.domElement);
+    }
 
     // 3. OrbitControls
     controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -24,7 +34,7 @@ function init() {
     controls.minDistance = 7;
     controls.maxDistance = 200;
 
-    // 4. Licht & Sonne
+    // 4. Licht
     scene.add(new THREE.AmbientLight(0xffffff, 0.3));
     createSun();
 
@@ -45,17 +55,20 @@ function init() {
     );
     scene.add(glow);
 
-    // 7. Städte erstellen
+    // 7. Initialisierung
     createCityNodes();
-
     createStars();
+    
     window.addEventListener("resize", onWindowResize, false);
     animate();
     
-    // Angriffsschleife
+    // Startet die Angriffssimulation
     setInterval(createAttackLine, 800);
 }
 
+/**
+ * Erstellt eine animierte Fluglinie zwischen zwei Städten
+ */
 function createAttackLine() {
     if (cityNodes.length < 2) return;
 
@@ -79,7 +92,39 @@ function createAttackLine() {
 
     scene.add(line);
     
+    // Update der HTML-Analyse-Elemente
+    updateStatsAndLog(isCritical, startNode.userData.name, endNode.userData.name);
+    
     fadeOutLine(line);
+}
+
+/**
+ * Aktualisiert die Zähler und das Log im HTML
+ */
+function updateStatsAndLog(isCritical, from, to) {
+    const totalEl = document.getElementById("total-attacks");
+    const critEl = document.getElementById("critical-attacks");
+    const log = document.getElementById("log-content");
+
+    attackCounter++;
+    if (totalEl) totalEl.innerText = attackCounter;
+
+    if (isCritical) {
+        criticalCounter++;
+        if (critEl) critEl.innerText = criticalCounter;
+    }
+
+    if (log) {
+        const entry = document.createElement("div");
+        entry.style.color = isCritical ? "#ff0055" : (isWhiteMode ? "#0055ff" : "#00d4ff");
+        entry.style.fontSize = "11px";
+        entry.style.marginBottom = "4px";
+        entry.style.fontFamily = "monospace";
+        entry.innerHTML = `> ${isCritical ? 'CRITICAL' : 'DATA'}: ${from} -> ${to}`;
+        log.prepend(entry);
+
+        if (log.children.length > 10) log.removeChild(log.lastChild);
+    }
 }
 
 function fadeOutLine(line) {
@@ -187,13 +232,16 @@ function onWindowResize() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 
-init();
-
-// Theme Toggle
-document.getElementById('theme-toggle').addEventListener('click', () => {
-    isWhiteMode = !isWhiteMode;
-    document.body.classList.toggle('white-mode');
-    updateThreeJSTheme();
+// Event Listener für Theme Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('theme-toggle');
+    if (toggleBtn) {
+        toggleBtn.addEventListener('click', () => {
+            isWhiteMode = !isWhiteMode;
+            document.body.classList.toggle('white-mode');
+            updateThreeJSTheme();
+        });
+    }
 });
 
 function updateThreeJSTheme() {
@@ -219,3 +267,5 @@ function updateThreeJSTheme() {
         });
     }
 }
+
+init();
