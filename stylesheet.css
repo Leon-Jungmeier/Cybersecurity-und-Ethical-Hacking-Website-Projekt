@@ -2179,7 +2179,7 @@ body.white-mode .stat-box .label {
 }
 
 body.white-mode .stat-box .val {
-    color: #000; /* Die Zahlen in Schwarz */
+    color: #000000; /* Die Zahlen in Schwarz */
 }
 
 body.white-mode h3 {
