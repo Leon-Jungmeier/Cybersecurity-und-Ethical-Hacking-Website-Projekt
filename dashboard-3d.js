@@ -245,25 +245,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function updateThreeJSTheme() {
+    // Wir lassen den Hintergrund IMMER dunkel
+    scene.background = new THREE.Color(0x05080a);
+    stars.visible = true; 
+
     if (isWhiteMode) {
-        scene.background = new THREE.Color(0xf0f2f5);
-        glow.material.color.setHex(0x0055ff);
-        glow.material.opacity = 0.05;
-        stars.visible = false;
+        // Der Glow der Erde kann im White Mode etwas dezenter sein
+        glow.material.opacity = 0.1;
         
+        // Die Labels der Städte: 
+        // Da das Weltall schwarz bleibt, lassen wir die Schrift HELL (grün oder weiß)
         cityNodes.forEach(node => {
-            node.userData.label.style.color = '#1a1a1a';
-            node.userData.label.style.textShadow = 'none';
+            node.userData.label.style.color = '#00ff41'; 
+            node.userData.label.style.textShadow = '0 0 5px #000';
         });
     } else {
-        scene.background = new THREE.Color(0x05080a);
-        glow.material.color.setHex(0x00d4ff);
+        // Dark Mode (Standard)
         glow.material.opacity = 0.15;
-        stars.visible = true;
-        
         cityNodes.forEach(node => {
             node.userData.label.style.color = '#00ff41';
-            node.userData.label.style.textShadow = '0 0 5px #000';
         });
     }
 }
