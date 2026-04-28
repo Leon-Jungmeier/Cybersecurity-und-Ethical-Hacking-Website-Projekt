@@ -2189,3 +2189,11 @@ body.white-mode h3 {
 body.white-mode hr {
     border-color: #fffafa;
 }
+
+
+/* 4. Der Log-Stream (die kleinen Zeilen unten rechts) */
+body.white-mode #log-content {
+    background: rgba(0, 0, 0, 0.05); /* Leicht abgesetzter Hintergrund für das Log */
+    border-radius: 4px;
+    padding: 5px;
+}
