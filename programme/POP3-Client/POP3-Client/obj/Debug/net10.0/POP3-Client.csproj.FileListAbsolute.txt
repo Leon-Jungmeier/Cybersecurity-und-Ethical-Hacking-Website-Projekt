@@ -1,0 +1,14 @@
+C:\NSCS\programme\POP3-Client\POP3-Client\bin\Debug\net10.0\POP3-Client.exe
+C:\NSCS\programme\POP3-Client\POP3-Client\bin\Debug\net10.0\POP3-Client.deps.json
+C:\NSCS\programme\POP3-Client\POP3-Client\bin\Debug\net10.0\POP3-Client.runtimeconfig.json
+C:\NSCS\programme\POP3-Client\POP3-Client\bin\Debug\net10.0\POP3-Client.dll
+C:\NSCS\programme\POP3-Client\POP3-Client\bin\Debug\net10.0\POP3-Client.pdb
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.AssemblyInfoInputs.cache
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.AssemblyInfo.cs
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.csproj.CoreCompileInputs.cache
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.dll
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\refint\POP3-Client.dll
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.pdb
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\POP3-Client.genruntimeconfig.cache
+C:\NSCS\programme\POP3-Client\POP3-Client\obj\Debug\net10.0\ref\POP3-Client.dll
