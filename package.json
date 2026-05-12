@@ -1,5 +1,48 @@
 {
   "devDependencies": {
     "json-server": "^1.0.0-beta.15"
-  }
+  },
+  "name": "cybersecurity-und-ethical-hacking-website-projekt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dashboard-3d.js",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "chokidar": "^5.0.0",
+    "colorette": "^2.0.20",
+    "dayjs": "^1.11.20",
+    "dot-prop": "^10.1.0",
+    "eta": "^4.6.0",
+    "header-range-parser": "^1.1.5",
+    "http-status-emojis": "^2.2.0",
+    "inflection": "^3.0.2",
+    "json5": "^2.2.3",
+    "lowdb": "^7.0.1",
+    "milliparsec": "^5.1.1",
+    "mime": "^4.1.0",
+    "mrmime": "^2.0.1",
+    "readdirp": "^5.0.0",
+    "regexparam": "^2.0.2",
+    "sirv": "^3.0.2",
+    "sort-on": "^7.0.0",
+    "steno": "^4.0.2",
+    "tagged-tag": "^1.0.0",
+    "totalist": "^3.0.1",
+    "type-fest": "^5.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Leon-Jungmeier/Cybersecurity-und-Ethical-Hacking-Website-Projekt.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Leon-Jungmeier/Cybersecurity-und-Ethical-Hacking-Website-Projekt/issues"
+  },
+  "homepage": "https://github.com/Leon-Jungmeier/Cybersecurity-und-Ethical-Hacking-Website-Projekt#readme"
 }
