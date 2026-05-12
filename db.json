@@ -1,5 +1,10 @@
 {
-  "products": [
-    { "id": 1, "name": "Produkt 1", "price": 9.99 }
+  "topics": [
+    { "id": 1, "title": "SQL Injection", "category": "Angriffe", "difficulty": "mittel" },
+    { "id": 2, "title": "XSS", "category": "Angriffe", "difficulty": "leicht" }
+  ],
+  "tools": [
+    { "id": 1, "name": "Nmap", "description": "Netzwerk-Scanner" },
+    { "id": 2, "name": "Metasploit", "description": "Penetration Testing Framework" }
   ]
 }
