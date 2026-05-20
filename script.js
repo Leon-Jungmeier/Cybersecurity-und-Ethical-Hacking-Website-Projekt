@@ -20,7 +20,32 @@ function calcBruteForceTime(password) {
 
     return formatTime(secondsMax);
 }
+unction updateBruteForceDisplay(password) {
+    let display = document.getElementById('brute-force-display');
 
+    if (!display) {
+        display = document.createElement('div');
+        display.id = 'brute-force-display';
+        display.style.cssText = `
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.6);
+            letter-spacing: 0.05em;
+        `;
+        // Nach dem criteria-display einfügen
+        const auditGrid = document.querySelector('.audit-main-grid');
+        if (auditGrid) auditGrid.appendChild(display);
+    }
+
+    if (!password) {
+        display.innerHTML = '';
+        return;
+    }
 if (passwordInput) {
     passwordInput.addEventListener('input', () => {
         const val = passwordInput.value;
