@@ -11,16 +11,40 @@ function calcBruteForceTime(password) {
     if (/[a-z]/.test(password)) charset += 26;
     if (/[A-Z]/.test(password)) charset += 26;
     if (/[0-9]/.test(password)) charset += 10;
-    if (/[^A-Za-z0-9]/.test(password)) charset += 32;
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/.test(password)) charset += 32;
+    if (/[äöüÄÖÜß€£¥©®™°µ¶]/.test(password)) charset += 20; // Sondergewichtung
 
-    // Modernes Brute-Force: ~100 Milliarden Versuche/Sekunde (High-End GPU Cluster)
     const attemptsPerSecond = 1e11;
     const combinations = Math.pow(charset, password.length);
     const secondsMax = combinations / attemptsPerSecond;
 
-    return formatTime(secondsMax);
+    return { time: formatTime(secondsMax), charset, combinations };
 }
-unction updateBruteForceDisplay(password) {
+
+function formatTime(seconds) {
+    if (seconds < 1) return "< 1 Sekunde";
+    if (seconds < 60) return `${Math.round(seconds)} Sekunden`;
+    if (seconds < 3600) return `${Math.round(seconds / 60)} Minuten`;
+    if (seconds < 86400) return `${Math.round(seconds / 3600)} Stunden`;
+    if (seconds < 2592000) return `${Math.round(seconds / 86400)} Tage`;
+    if (seconds < 31536000) return `${Math.round(seconds / 2592000)} Monate`;
+
+    const years = seconds / 31536000;
+    if (years < 1e3) return `${Math.round(years)} Jahre`;
+    if (years < 1e6) return `${(years / 1e3).toFixed(1)} Tausend Jahre`;
+    if (years < 1e9) return `${(years / 1e6).toFixed(1)} Millionen Jahre`;
+    if (years < 1e12) return `${(years / 1e9).toFixed(1)} Milliarden Jahre`;
+    if (years < 1e15) return `${(years / 1e12).toFixed(1)} Billionen Jahre`;
+    return `${years.toExponential(2)} Jahre`;
+}
+
+function getTimeColor(timeStr) {
+    if (timeStr.includes("Sekunde") || timeStr.includes("Minuten")) return "#e63946";
+    if (timeStr.includes("Stunden") || timeStr.includes("Tage") || timeStr.includes("Monate")) return "#ffb703";
+    return "#00d4ff";
+}
+
+function updateBruteForceDisplay(password) {
     let display = document.getElementById('brute-force-display');
 
     if (!display) {
@@ -37,15 +61,48 @@ unction updateBruteForceDisplay(password) {
             color: rgba(255,255,255,0.6);
             letter-spacing: 0.05em;
         `;
-        // Nach dem criteria-display einfügen
-        const auditGrid = document.querySelector('.audit-main-grid');
-        if (auditGrid) auditGrid.appendChild(display);
+        const inputContainer = document.querySelector('.input-container');
+        if (inputContainer) inputContainer.appendChild(display);
     }
 
     if (!password) {
         display.innerHTML = '';
         return;
     }
+
+    const result = calcBruteForceTime(password);
+    if (!result) return;
+
+    const { time, charset, combinations } = result;
+    const color = getTimeColor(time);
+
+    // Zeige welche Zeichenklassen aktiv sind
+    const activeClasses = [];
+    if (/[a-z]/.test(password)) activeClasses.push('<span style="color:#aaa">a–z</span> <span style="color:rgba(255,255,255,0.3)">(+26)</span>');
+    if (/[A-Z]/.test(password)) activeClasses.push('<span style="color:#fff">A–Z</span> <span style="color:rgba(255,255,255,0.3)">(+26)</span>');
+    if (/[0-9]/.test(password)) activeClasses.push('<span style="color:#ffb703">0–9</span> <span style="color:rgba(255,255,255,0.3)">(+10)</span>');
+    if (/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?`~]/.test(password)) activeClasses.push('<span style="color:#00d4ff">!@#…</span> <span style="color:rgba(255,255,255,0.3)">(+32)</span>');
+    if (/[äöüÄÖÜß€£¥©®™°µ¶]/.test(password)) activeClasses.push('<span style="color:#c77dff">äöü€…</span> <span style="color:rgba(255,255,255,0.3)">(+20)</span>');
+
+    display.innerHTML = `
+        <div style="color:rgba(0,212,255,0.5);margin-bottom:8px;font-size:0.7rem;letter-spacing:0.1em;">
+            ⚡ BRUTE-FORCE KNACKZEIT
+        </div>
+        <div style="margin-bottom:8px;line-height:1.8;">
+            ${activeClasses.join(' &nbsp;·&nbsp; ')}
+        </div>
+        <div style="margin-bottom:4px;">
+            ZEICHENSATZ: <span style="color:#00d4ff">${charset} mögliche Zeichen</span>
+        </div>
+        <div style="margin-bottom:10px;">
+            KOMBINATIONEN: <span style="color:#00d4ff">${combinations.toExponential(2)}</span>
+        </div>
+        <div style="padding-top:8px;border-top:1px solid rgba(255,255,255,0.1);font-size:0.95rem;">
+            KNACKZEIT: <span style="color:${color};font-weight:bold;font-size:1.05rem;">${time}</span>
+        </div>
+    `;
+}
+
 if (passwordInput) {
     passwordInput.addEventListener('input', () => {
         const val = passwordInput.value;
@@ -58,23 +115,19 @@ if (passwordInput) {
             special: /[^A-Za-z0-9]/.test(val)
         };
 
-        // UI Updates für die Kriterien-Liste
         updateCriterion('crit-length', criteria.length);
         updateCriterion('crit-upper', criteria.upper);
         updateCriterion('crit-number', criteria.number);
         updateCriterion('crit-special', criteria.special);
 
-        // Score berechnen
         if (criteria.length) score += 25;
         if (criteria.upper) score += 25;
         if (criteria.number) score += 25;
         if (criteria.special) score += 25;
 
-        // Balken-Breite aktualisieren
         if (strengthBar) strengthBar.style.width = score + "%";
         if (strengthGlow) strengthGlow.style.width = score + "%";
 
-        // Status-Logik mit edlen, gedeckten Farben
         if (val === "") {
             statusVal.innerText = "UNSICHER";
             statusIndicator.style.background = "rgba(255, 255, 255, 0.1)";
@@ -82,9 +135,9 @@ if (passwordInput) {
             if (strengthBar) strengthBar.style.background = "rgba(255, 255, 255, 0.05)";
         } else if (score <= 25) {
             statusVal.innerText = "WENIG SICHER";
-            const color = "#e63946"; // Das edle Rubinrot
+            const color = "#e63946";
             statusIndicator.style.background = color;
-            statusIndicator.style.boxShadow = `0 0 10px ${color}44`; // Dezenter Glow
+            statusIndicator.style.boxShadow = `0 0 10px ${color}44`;
             if (strengthBar) strengthBar.style.background = color;
         } else if (score <= 75) {
             statusVal.innerText = "SICHER";
@@ -99,6 +152,8 @@ if (passwordInput) {
             statusIndicator.style.boxShadow = `0 0 15px ${color}66`;
             if (strengthBar) strengthBar.style.background = color;
         }
+
+        updateBruteForceDisplay(val);
     });
 }
 
@@ -114,26 +169,11 @@ function updateCriterion(id, isValid) {
         }
     }
 }
-function initTheme() {
-    const themeBtn = document.getElementById('theme-toggle');
-    const body = document.body;
-    const currentTheme = localStorage.getItem('theme');
 
-    if (currentTheme === 'light') {
-        body.classList.add('light-mode');
-    }
-
-    if (themeBtn) {
-        themeBtn.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-        });
-    }
-}
+// Theme
 const themeBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
-// Beim Laden prüfen
 if (localStorage.getItem('theme') === 'light') {
     body.classList.add('light-mode');
 }
@@ -141,12 +181,6 @@ if (localStorage.getItem('theme') === 'light') {
 if (themeBtn) {
     themeBtn.addEventListener('click', () => {
         body.classList.toggle('light-mode');
-            
-        // Speichern
-        if (body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-        } else {
-            localStorage.setItem('theme', 'dark');
-        }
+        localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
     });
 }
