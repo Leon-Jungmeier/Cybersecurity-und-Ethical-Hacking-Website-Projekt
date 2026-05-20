@@ -4,6 +4,23 @@ const strengthGlow = document.getElementById('strength-bar-glow');
 const statusVal = document.getElementById('status-val');
 const statusIndicator = document.getElementById('status-indicator');
 
+function calcBruteForceTime(password) {
+    if (!password || password.length === 0) return null;
+
+    let charset = 0;
+    if (/[a-z]/.test(password)) charset += 26;
+    if (/[A-Z]/.test(password)) charset += 26;
+    if (/[0-9]/.test(password)) charset += 10;
+    if (/[^A-Za-z0-9]/.test(password)) charset += 32;
+
+    // Modernes Brute-Force: ~100 Milliarden Versuche/Sekunde (High-End GPU Cluster)
+    const attemptsPerSecond = 1e11;
+    const combinations = Math.pow(charset, password.length);
+    const secondsMax = combinations / attemptsPerSecond;
+
+    return formatTime(secondsMax);
+}
+
 if (passwordInput) {
     passwordInput.addEventListener('input', () => {
         const val = passwordInput.value;
