@@ -1,66 +1,98 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackerangriffe</title>
-
-    <link rel="stylesheet" href="stylesheet.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hackerangriffe</title>
+  <link rel="stylesheet" href="stylesheet.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="logo">Cyber<span>Shield</span></div>
 
-            <ul>
-                <li><a href="startseite.html">Startseite</a></li>
-                <li><a href="Was ist Cybersecurity.html">Definition</a></li>
-                <li><a href="Arten von Cyberangriffen.html">Angriffsarten</a></li>
-                <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
-                <li><a href="Cybersecurity im Alltag.html">Alltag</a></li>
-                <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
-                <li><a href="Hackerangriffe.html" class="active">Hackerangriffe</a></li>
-            </ul>
+  <header>
+    <nav>
+      <div class="logo">Cyber<span>Shield</span></div>
+      <ul>
+        <li><a href="Startseite.html">Startseite</a></li>
+        <li><a href="Was ist Cybersecurity.html">Definition</a></li>
+        <li><a href="Arten von Cyberangriffen.html">Angriffsarten</a></li>
+        <li><a href="Schutzmaßnahmen.html">Schutz</a></li>
+        <li><a href="CyberSecurity im Alltag.html">Alltag</a></li>
+        <li><a href="Statistiken und Fakten.html">Statistiken</a></li>
+        <li><a href="Hackerangriffe.html" class="active">Hackerangriffe</a></li>
+      </ul>
+      <div class="theme-switch-wrapper">
+        <button id="theme-toggle" class="theme-btn">
+          <div class="circle"></div>
+        </button>
+      </div>
+    </nav>
+  </header>
 
-            <div class="theme-switch-wrapper">
-                <button id="theme-toggle" class="theme-btn">
-                    <div class="circle"></div>
-                </button>
-            </div>
-        </nav>
-    </header>
+  <main class="dashboard-3d">
 
-    <main class="dashboard-3d">
-        <div id="globe-container"></div>
+    <!-- Globus -->
+    <div id="globe-container">
+      <div id="live-badge">LIVE THREAT MAP</div>
+    </div>
 
-        <aside class="side-panel right">
-            <div class="glass-card">
-                <h3>LIVE ANALYSE</h3>
+    <!-- Rechtes Panel -->
+    <aside class="side-panel">
 
-                <div class="stat-container">
-                    <div class="stat-box">
-                        <span class="label">ANGRIFFE GESAMT</span>
-                        <span id="total-attacks" class="val">0</span>
-                    </div>
+      <div class="glass-card">
+        <h3>LIVE ANALYSE</h3>
+        <div class="stat-container">
+          <div class="stat-box">
+            <span class="label">GESAMT</span>
+            <span id="total-attacks" class="val">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="label">KRITISCH</span>
+            <span id="critical-attacks" class="val alert">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="label">DDOS</span>
+            <span id="ddos-count" class="val">0</span>
+          </div>
+          <div class="stat-box">
+            <span class="label">PHISHING</span>
+            <span id="phish-count" class="val">0</span>
+          </div>
+        </div>
+      </div>
 
-                    <div class="stat-box">
-                        <span class="label">KRITISCHE BEDROHUNGEN</span>
-                        <span id="critical-attacks" class="val alert">0</span>
-                    </div>
-                </div>
+      <div class="glass-card">
+        <h3>FILTER &amp; TEMPO</h3>
+        <div class="filter-row">
+          <button class="filter-btn active" data-type="all">Alle</button>
+          <button class="filter-btn" data-type="DDoS">DDoS</button>
+          <button class="filter-btn" data-type="Phishing">Phishing</button>
+          <button class="filter-btn" data-type="Malware">Malware</button>
+          <button class="filter-btn" data-type="Ransomware">Ransomware</button>
+        </div>
+        <div class="speed-row">
+          <span>Tempo</span>
+          <input type="range" id="speed-slider" min="1" max="5" value="2" step="1">
+          <span class="val" id="speed-label">×2</span>
+        </div>
+      </div>
 
-                <hr>
+      <div class="glass-card">
+        <h3>TOP QUELLEN</h3>
+        <div id="top-sources"></div>
+      </div>
 
-                <h3>SYSTEM LOG</h3>
-                <div id="log-content" class="log-stream"></div>
-            </div>
-        </aside>
-    </main>
+      <div class="glass-card">
+        <h3>SYSTEM LOG</h3>
+        <div id="log-content" class="log-stream"></div>
+      </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    <script src="dashboard-3d.js"></script>
+    </aside>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="dashboard-3d.js"></script>
+
 </body>
 </html>
