@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+    <style>
+  html, body { overflow: hidden; height: 100%; }
+</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hackerangriffe</title>
   <link rel="stylesheet" href="stylesheet.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* kein globales Scrollen */
+    html, body { overflow: hidden; height: 100%; }
+  </style>
 </head>
 <body>
 
@@ -31,12 +38,10 @@
 
   <main class="dashboard-3d">
 
-    <!-- Globus -->
     <div id="globe-container">
       <div id="live-badge">LIVE THREAT MAP</div>
     </div>
 
-    <!-- Rechtes Panel -->
     <aside class="side-panel">
 
       <div class="glass-card">
@@ -82,16 +87,27 @@
         <div id="top-sources"></div>
       </div>
 
-      <div class="glass-card">
-        <h3>SYSTEM LOG</h3>
-        <div id="log-content" class="log-stream"></div>
-      </div>
+
+<!-- NEU: -->
+<div class="glass-card log-card" id="log-card">
+  <!-- Ausgeklapptes Panel (erscheint über dem Dashboard) -->
+  <div class="log-expanded" id="log-expanded">
+    <div class="log-expanded-title">SYSTEM LOG</div>
+    <div id="log-content-expanded" class="log-stream"></div>
+  </div>
+
+  <!-- Immer sichtbare Kopfzeile -->
+  <div class="log-card-header">
+    <h3>SYSTEM LOG</h3>
+    <span class="log-toggle-icon">▲</span>
+  </div>
+  <!-- Vorschau letzte Zeile -->
+  <div id="log-content" class="log-stream"></div>
+</div>
 
     </aside>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
   <script src="dashboard-3d.js"></script>
 
 </body>
