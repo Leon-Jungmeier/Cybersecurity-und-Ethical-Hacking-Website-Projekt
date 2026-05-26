@@ -1,4 +1,3 @@
-/* ---------- Konfiguration ---------- */
 const ATTACK_TYPES = ['DDoS', 'Phishing', 'Malware', 'Ransomware', 'MITM'];
 
 const COLORS = {
@@ -32,7 +31,6 @@ const CITIES = [
   { n: 'Kairo',        lat:  30.1, lng:  31.2 },
 ];
 
-/* ---------- Canvas ---------- */
 const globeWrap = document.getElementById('globe-container');
 const canvas    = document.createElement('canvas');
 globeWrap.appendChild(canvas);
@@ -46,7 +44,6 @@ function resize() {
 resize();
 new ResizeObserver(resize).observe(globeWrap);
 
-/* ---------- Projektion ---------- */
 function project(lat, lng) {
   return {
     x: ((lng + 180) / 360) * W,
@@ -54,7 +51,6 @@ function project(lat, lng) {
   };
 }
 
-/* ---------- GeoJSON laden & zeichnen ---------- */
 let geoReady = false;
 let geoData  = null;
 
@@ -66,7 +62,6 @@ fetch('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json')
     geoReady = true;
   });
 
-/* ---- Minimaler TopoJSON-Decoder ---- */
 function topoToFeatures(topo) {
   const land = topo.objects.countries;
   const arcs = topo.arcs;
@@ -113,14 +108,12 @@ function topoToFeatures(topo) {
 function drawMap() {
   ctx.clearRect(0, 0, W, H);
 
-  // Ozean
   const ocean = ctx.createLinearGradient(0, 0, 0, H);
   ocean.addColorStop(0, '#060e1f');
   ocean.addColorStop(1, '#050a14');
   ctx.fillStyle = ocean;
   ctx.fillRect(0, 0, W, H);
 
-  // Gitter
   ctx.strokeStyle = 'rgba(55,138,221,0.06)';
   ctx.lineWidth   = 0.5;
   for (let lat = -60; lat <= 60; lat += 30) {
@@ -139,7 +132,6 @@ function drawMap() {
     return;
   }
 
-  // Länder
   ctx.fillStyle   = 'rgba(25, 52, 95, 0.75)';
   ctx.strokeStyle = 'rgba(55, 138, 221, 0.35)';
   ctx.lineWidth   = 0.5;
@@ -161,7 +153,6 @@ function drawMap() {
     }
   }
 
-  // Stadtpunkte + Labels
   CITIES.forEach(c => {
     const p = project(c.lat, c.lng);
     ctx.fillStyle = 'rgba(120,190,255,0.7)';
@@ -174,7 +165,6 @@ function drawMap() {
   });
 }
 
-/* ---------- Bögen ---------- */
 function drawArcs() {
   arcs.forEach(a => {
     if (activeFilter !== 'all' && a.type !== activeFilter) return;
@@ -211,14 +201,12 @@ function drawArcs() {
   });
 }
 
-/* ---------- Zustand ---------- */
 let arcs         = [];
 let activeFilter = 'all';
 let speed        = 2;
 let stats        = { total: 0, crit: 0, ddos: 0, phish: 0 };
 let sourceCount  = {};
 
-/* ---------- Angriff spawnen ---------- */
 function spawnAttack() {
   const from = CITIES[Math.floor(Math.random() * CITIES.length)];
   let to;
@@ -282,7 +270,6 @@ function addLog(type, from, to, isCrit) {
       <span class="log-text">${l.from} → ${l.to}</span>
     </div>`).join('');
 
-  // Vorschau (nur letzte Zeile)
   const preview = document.getElementById('log-content');
   if (preview) preview.innerHTML = logs.slice(0, 1).map(l => `
     <div class="log-entry" style="opacity:1">
@@ -296,7 +283,6 @@ function addLog(type, from, to, isCrit) {
   if (expanded) expanded.innerHTML = html;
 }
 
-/* ---------- Events ---------- */
 document.querySelectorAll('.filter-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
@@ -314,7 +300,6 @@ if (speedSlider) {
   });
 }
 
-/* ---------- Loop ---------- */
 let lastSpawn = 0;
 function loop(ts) {
   if (ts - lastSpawn > 1600 / speed) { spawnAttack(); lastSpawn = ts; }
@@ -328,7 +313,6 @@ function loop(ts) {
   requestAnimationFrame(loop);
 }
 requestAnimationFrame(loop);
-// Log-Card aufklappen/zuklappen
 const logCard = document.getElementById('log-card');
 if (logCard) {
   logCard.addEventListener('click', () => {
