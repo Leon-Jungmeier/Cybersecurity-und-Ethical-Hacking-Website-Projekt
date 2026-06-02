@@ -904,8 +904,3 @@ body.light-mode .log-text { color: rgba(40,60,100,0.6); }
   #globe-container { min-height: 260px; }
 }
 /* Kein extra Abstand unter der Nav */
-
-main.dashboard-3d {
-  margin-top: 0;
-  padding-top: 0.4rem;
-}
