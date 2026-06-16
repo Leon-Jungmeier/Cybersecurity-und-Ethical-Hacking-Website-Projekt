@@ -242,6 +242,26 @@
         </div>
     </section>
 
+    <section class="text-block live-db-section">
+        <h2>Live aus der Datenbank</h2>
+        <p class="db-intro">
+            Die folgenden Einträge werden in Echtzeit vom <strong>JSON-Server</strong>
+            (<code>http://localhost:3001</code>) geladen. Sie liegen in <code>db.json</code>
+            und können dort jederzeit ergänzt werden – die Seite zeigt sie beim nächsten Laden automatisch an.
+        </p>
+
+        <div class="db-status" id="db-status" data-state="loading">
+            <span class="db-status-dot"></span>
+            <span id="db-status-text">Verbinde mit JSON-Server …</span>
+        </div>
+
+        <h3 class="db-subhead">// Angriffs-Themen</h3>
+        <div class="db-grid" id="topics-grid"></div>
+
+        <h3 class="db-subhead">// Security-Tools</h3>
+        <div class="db-grid" id="tools-grid"></div>
+    </section>
+
     <section class="next-step-box">
         <div class="next-step-content">
             <h3>Weiter zur Verteidigung</h3>
@@ -257,6 +277,7 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="live-data.js"></script>
 
 </body>
 </html>

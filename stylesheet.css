@@ -908,3 +908,147 @@ main.dashboard-3d {
   margin-top: 0;
   padding-top: 0.4rem;
 }
+
+/* === LIVE DB SECTION (Daten aus dem JSON-Server) === */
+.live-db-section { margin-top: 4rem; }
+.db-intro { color: var(--text-dim); max-width: 760px; margin-bottom: 1.5rem; }
+.db-intro code, .db-status code {
+    font-family: 'Courier New', monospace;
+    color: var(--accent-color);
+    background: rgba(0, 242, 255, 0.08);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.db-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    padding: 8px 16px;
+    border-radius: 50px;
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-dim);
+    margin-bottom: 2.5rem;
+}
+.db-status-dot { width: 9px; height: 9px; border-radius: 50%; background: #ffb703; flex-shrink: 0; }
+.db-status[data-state="loading"] .db-status-dot { animation: db-pulse 1s infinite; }
+.db-status[data-state="online"]  .db-status-dot { background: #00f2ff; box-shadow: 0 0 8px #00f2ff; }
+.db-status[data-state="online"]  { color: var(--text-color); }
+.db-status[data-state="offline"] .db-status-dot { background: #e63946; box-shadow: 0 0 8px #e63946; }
+
+@keyframes db-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+.db-subhead {
+    color: var(--accent-color);
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    margin: 2rem 0 1rem;
+}
+
+.db-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.db-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: var(--transition);
+}
+.db-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
+}
+
+.db-card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 0.9rem; }
+
+.db-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent-color);
+    border: 1px solid var(--border-color);
+    background: rgba(0, 242, 255, 0.06);
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+
+.db-diff {
+    font-size: 0.7rem;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 50px;
+}
+.db-diff.diff-easy   { color: #1d9e75; background: rgba(29, 158, 117, 0.12); }
+.db-diff.diff-medium { color: #ffb703; background: rgba(255, 183, 3, 0.12); }
+.db-diff.diff-hard   { color: #e63946; background: rgba(230, 57, 70, 0.12); }
+
+.db-card-title { color: var(--text-color); font-size: 1.15rem; margin: 0; }
+.db-tool-name  { color: var(--accent-color); font-family: 'Courier New', monospace; }
+.db-card-desc  { color: var(--text-dim); font-size: 0.9rem; margin-top: 0.5rem; }
+.db-empty      { color: var(--text-dim); font-style: italic; }
+
+body.light-mode .db-card { background: #ffffff; border: 1px solid #e0e0e0; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+body.light-mode .db-card-title { color: #1a1a1a; }
+body.light-mode .db-status { background: #f5f7fa; }
+
+/* === REGISTRIER-DEMO (Account erstellen via JSON-Server) === */
+.register-section { margin: 6rem 0; }
+.register-note {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    background: rgba(0, 242, 255, 0.04);
+    border-left: 3px solid var(--accent-color);
+    padding: 1rem 1.2rem;
+    margin-bottom: 2rem;
+}
+.register-note strong { color: var(--text-color); }
+
+.register-form { display: flex; flex-direction: column; gap: 1.4rem; max-width: 520px; }
+.reg-field { display: flex; flex-direction: column; }
+.reg-field label {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+}
+.reg-field input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #cbd5e0;
+    font-size: 1.1rem;
+    padding: 12px 14px;
+    font-family: monospace;
+    letter-spacing: 1px;
+    outline: none;
+    transition: all 0.3s;
+}
+.reg-field input:focus { border-color: var(--accent-color); box-shadow: inset 0 0 10px rgba(0, 242, 255, 0.2); }
+
+.reg-strength { display: flex; align-items: center; gap: 12px; margin-top: 12px; }
+.reg-strength-bar { flex: 1; height: 6px; background: rgba(255, 255, 255, 0.05); overflow: hidden; }
+#reg-strength-fill { height: 100%; width: 0; background: rgba(255, 255, 255, 0.1); transition: width 0.3s ease, background 0.3s ease; }
+#reg-strength-label { font-family: monospace; font-size: 0.75rem; color: var(--text-dim); min-width: 96px; text-align: right; }
+
+.register-form .cyber-button { align-self: flex-start; margin-top: 0; cursor: pointer; font-family: inherit; font-size: 0.95rem; }
+
+.reg-feedback { font-family: monospace; font-size: 0.85rem; min-height: 1.2em; margin: 0; }
+.reg-feedback[data-type="ok"]    { color: #1d9e75; }
+.reg-feedback[data-type="error"] { color: #e63946; }
+
+.registered-users { margin-top: 3rem; }
+
+body.light-mode .reg-field input { background: #ffffff; border: 1px solid #d1d5db; color: #1a1a1a; }
+body.light-mode .register-note { background: #eef9ff; }

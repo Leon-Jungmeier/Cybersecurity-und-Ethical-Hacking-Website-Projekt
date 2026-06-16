@@ -185,6 +185,52 @@
                 </div>
             </div>
         </section>
+
+        <section class="register-section" id="account">
+            <div class="audit-frame">
+                <div class="audit-header">
+                    <div class="terminal-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <h2>ACCOUNT ERSTELLEN</h2>
+                </div>
+
+                <p class="register-note">
+                    🔒 <strong>Datenschutz-Demo:</strong> Gespeichert werden nur <strong>Username</strong>,
+                    die <strong>Passwort-Stärke</strong> und das <strong>Datum</strong> – das Passwort selbst
+                    verlässt nie deinen Browser. Schwache Passwörter werden abgelehnt.
+                </p>
+
+                <form id="register-form" class="register-form" autocomplete="off">
+                    <div class="reg-field">
+                        <label for="reg-username">USERNAME</label>
+                        <input type="text" id="reg-username" placeholder="z. B. cyber_hero" maxlength="24" required>
+                    </div>
+
+                    <div class="reg-field">
+                        <label for="reg-password">PASSWORT</label>
+                        <input type="password" id="reg-password" placeholder="Sicheres Passwort wählen" required>
+                        <div class="reg-strength">
+                            <div class="reg-strength-bar"><div id="reg-strength-fill"></div></div>
+                            <span id="reg-strength-label">—</span>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="cyber-button" id="reg-submit">Account anlegen →</button>
+                    <p class="reg-feedback" id="reg-feedback"></p>
+                </form>
+            </div>
+
+            <div class="registered-users">
+                <div class="db-status" id="users-status" data-state="loading">
+                    <span class="db-status-dot"></span>
+                    <span id="users-status-text">Lade registrierte Accounts …</span>
+                </div>
+
+                <h3 class="db-subhead">// Registrierte Accounts (aus dem JSON-Server)</h3>
+                <div class="db-grid" id="users-grid"></div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -192,5 +238,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="register.js"></script>
 </body>
 </html>

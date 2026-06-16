@@ -103,50 +103,61 @@ function updateBruteForceDisplay(password) {
     `;
 }
 
+// Berechnet Score (0–100), Label und erfüllte Kriterien eines Passworts.
+// Wiederverwendbar – wird auch von register.js für die Registrier-Demo genutzt.
+function scorePassword(val) {
+    const criteria = {
+        length: val.length >= 12,
+        upper: /[A-Z]/.test(val) && /[a-z]/.test(val),
+        number: /[0-9]/.test(val),
+        special: /[^A-Za-z0-9]/.test(val)
+    };
+
+    let score = 0;
+    if (criteria.length) score += 25;
+    if (criteria.upper) score += 25;
+    if (criteria.number) score += 25;
+    if (criteria.special) score += 25;
+
+    let label;
+    if (val === "") label = "UNSICHER";
+    else if (score <= 25) label = "WENIG SICHER";
+    else if (score <= 75) label = "SICHER";
+    else label = "SEHR SICHER";
+
+    return { score, label, criteria };
+}
+
 if (passwordInput) {
     passwordInput.addEventListener('input', () => {
         const val = passwordInput.value;
-        let score = 0;
-
-        const criteria = {
-            length: val.length >= 12,
-            upper: /[A-Z]/.test(val) && /[a-z]/.test(val),
-            number: /[0-9]/.test(val),
-            special: /[^A-Za-z0-9]/.test(val)
-        };
+        const { score, label, criteria } = scorePassword(val);
 
         updateCriterion('crit-length', criteria.length);
         updateCriterion('crit-upper', criteria.upper);
         updateCriterion('crit-number', criteria.number);
         updateCriterion('crit-special', criteria.special);
 
-        if (criteria.length) score += 25;
-        if (criteria.upper) score += 25;
-        if (criteria.number) score += 25;
-        if (criteria.special) score += 25;
-
         if (strengthBar) strengthBar.style.width = score + "%";
         if (strengthGlow) strengthGlow.style.width = score + "%";
 
+        statusVal.innerText = label;
+
         if (val === "") {
-            statusVal.innerText = "UNSICHER";
             statusIndicator.style.background = "rgba(255, 255, 255, 0.1)";
             statusIndicator.style.boxShadow = "none";
             if (strengthBar) strengthBar.style.background = "rgba(255, 255, 255, 0.05)";
         } else if (score <= 25) {
-            statusVal.innerText = "WENIG SICHER";
             const color = "#e63946";
             statusIndicator.style.background = color;
             statusIndicator.style.boxShadow = `0 0 10px ${color}44`;
             if (strengthBar) strengthBar.style.background = color;
         } else if (score <= 75) {
-            statusVal.innerText = "SICHER";
             const color = "#ffb703";
             statusIndicator.style.background = color;
             statusIndicator.style.boxShadow = `0 0 10px ${color}44`;
             if (strengthBar) strengthBar.style.background = color;
         } else {
-            statusVal.innerText = "SEHR SICHER";
             const color = "#00d4ff";
             statusIndicator.style.background = color;
             statusIndicator.style.boxShadow = `0 0 15px ${color}66`;

@@ -1,10 +1,47 @@
 {
   "topics": [
-    { "id": 1, "title": "SQL Injection", "category": "Angriffe", "difficulty": "mittel" },
-    { "id": 2, "title": "XSS", "category": "Angriffe", "difficulty": "leicht" }
+    {
+      "id": "1",
+      "title": "SQL Injection",
+      "category": "Angriffe",
+      "difficulty": "mittel"
+    },
+    {
+      "id": "2",
+      "title": "XSS",
+      "category": "Angriffe",
+      "difficulty": "leicht"
+    }
   ],
   "tools": [
-    { "id": 1, "name": "Nmap", "description": "Netzwerk-Scanner" },
-    { "id": 2, "name": "Metasploit", "description": "Penetration Testing Framework" }
-  ]
+    {
+      "id": "1",
+      "name": "Nmap",
+      "description": "Netzwerk-Scanner"
+    },
+    {
+      "id": "2",
+      "name": "Metasploit",
+      "description": "Penetration Testing Framework"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "demo_admin",
+      "strengthLabel": "SEHR SICHER",
+      "strengthScore": 100,
+      "crackTime": "3 Milliarden Jahre",
+      "createdAt": "2026-06-01T09:30:00.000Z"
+    },
+    {
+      "username": "cyber_hero",
+      "strengthLabel": "SICHER",
+      "strengthScore": 50,
+      "crackTime": "6.4 Tausend Jahre",
+      "createdAt": "2026-06-16T09:41:02.020Z",
+      "id": "WggT0e1_Zks"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
