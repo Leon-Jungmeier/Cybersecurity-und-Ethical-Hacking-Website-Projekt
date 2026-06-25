@@ -123,6 +123,10 @@ nav ul li a:hover, nav ul li a.active { color: var(--accent-color); }
 body.light-mode .theme-btn { background: #cbd5e0; }
 body.light-mode .theme-btn .circle { transform: translateX(20px); background: #0066cc; }
 body.white-mode .theme-btn .circle { transform: translateX(25px); }
+
+/* Logo war im Hellmodus weiß auf weißem Header (unsichtbar) – jetzt sichtbar */
+body.light-mode .logo { color: #1a1a1a; }
+body.light-mode .logo span { color: #0055ff; }
  
 /* === LAYOUT === */
 .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
@@ -659,6 +663,56 @@ body.white-mode hr { border-color: #fffafa; }
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50%       { opacity: 0.2; }
+}
+
+/* Hellmodus: Karten-/Globus-Hintergrund hell statt dunkelblau */
+body.light-mode .dashboard-3d {
+  background: radial-gradient(circle at 50% 50%, #eef3fb 0%, #dde6f3 70%);
+}
+body.light-mode #globe-container {
+  background: #e7eef8;
+  border-color: rgba(0, 86, 179, 0.18);
+}
+
+/* === 2D / 3D – Ansicht-Umschalter === */
+.view-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 0.5px solid rgba(55,138,221,0.4);
+  background: rgba(8,15,30,0.55);
+  color: rgba(180,210,255,0.9);
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: all 0.2s ease;
+}
+.view-toggle-btn:hover {
+  border-color: rgba(55,138,221,0.85);
+  background: rgba(8,15,30,0.78);
+  color: #fff;
+}
+.view-toggle-btn:disabled { opacity: 0.55; cursor: wait; }
+.view-toggle-btn .vt-icon { font-size: 12px; line-height: 1; }
+
+body.light-mode .view-toggle-btn {
+  background: rgba(255,255,255,0.75);
+  border-color: rgba(0,86,179,0.3);
+  color: rgba(20,60,120,0.85);
+}
+body.light-mode .view-toggle-btn:hover {
+  border-color: rgba(0,86,179,0.6);
+  background: rgba(255,255,255,0.95);
+  color: #003366;
 }
 
 /* === Side Panel === */
